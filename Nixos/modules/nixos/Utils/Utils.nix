@@ -6,7 +6,8 @@ git
 wget
 kitty
 ranger
-
+floorp
+thunderbird
 
 
 ]; 
