@@ -25,6 +25,34 @@
     ./home-manager.nix
   ];
 
+
+
+
+
+  #System settings
+   boot.loader.grub.enable = true;
+   boot.loader.efi.canTouchEfiVariables = true;
+   boot.loader.grub.useOSProber = true;
+
+  # Set your time zone.
+  time.timeZone = "America/New_York";
+
+   # Select internationalisation properties.
+    i18n.defaultLocale = "en_US.UTF-8";
+
+    i18n.extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+   };
+
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -69,10 +97,6 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  # FIXME: Add the rest of your current configuration
-   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   #networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -135,31 +159,8 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+ 
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  #users.users.flugel = {
-    #isNormalUser = true;
-    #description = "Flugel";
-    #extraGroups = [ "networkmanager" "wheel" ];
-    #packages = with pkgs; [
-    #  kdePackages.kate
-    #  thunderbird
-   # ];
- # };
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-
-  ];
 
 
 
