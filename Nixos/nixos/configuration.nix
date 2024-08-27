@@ -29,10 +29,11 @@
 
 
 
-  #System settings
-   boot.loader.grub.enable = true;
+  #System settings TODO remove systemd-boot and replace it with Grub the only true bootloader before you install to hardware
+   boot.loader.systemd-boot = true;
+   #boot.loader.grub.enable = true;
    boot.loader.efi.canTouchEfiVariables = true;
-   boot.loader.grub.useOSProber = true;
+   #boot.loader.grub.useOSProber = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
