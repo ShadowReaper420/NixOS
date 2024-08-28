@@ -11,4 +11,10 @@
   ];
   };
 }
+{
+ home.file
+   ".config" = {
+     source = config.lib.file.mkOutOfStoreSymlink "./Dotfiles/wayfire.ini"
+    };
 
+  };
