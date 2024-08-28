@@ -12,6 +12,9 @@
     # ./nvim.nix
       ./Desktops/WM/Wayfire/Wayfire.nix
       ./Home/Gaming.nix
+      ./Desktops/WM/Wayland-Utils/Wayland-utils.nix
+      ./Utils/Utils.nix
+      
 
       ];
 }
