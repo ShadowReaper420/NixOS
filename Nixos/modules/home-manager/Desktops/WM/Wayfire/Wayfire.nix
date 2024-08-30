@@ -1,7 +1,6 @@
 {lib, config, pkgs, ...}:
 
 {
- pkgs: {
  programs.wayfire = {
   enable = true;
   plugins = with pkgs.wayfirePlugins; [
@@ -12,9 +11,9 @@
   };
 }
 {
- home.file
+ home.file = {
    ".config" = {
-     source = config.lib.file.mkOutOfStoreSymlink "./Dotfiles/wayfire.ini"
+     source = config.lib.file.mkOutOfStoreSymlink ./Dotfiles/wayfire.ini;
     };
 
   };

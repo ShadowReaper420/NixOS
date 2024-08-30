@@ -1,6 +1,6 @@
 {config, lib, pkgs, ...}:
 
-{ enviorment.systemPackages = with pkgs;[
+{ environment.systemPackages = with pkgs;[
 
 git
 wget

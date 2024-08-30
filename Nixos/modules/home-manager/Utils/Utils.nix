@@ -4,7 +4,7 @@
  home.packages = with pkgs; [
   mpv
   keepassxc
-  kePackages.dolphin
+  kdePackages.dolphin
   kdePackages.gwenview
   kdePackages.kate
   kdePackages.partitionmanager
