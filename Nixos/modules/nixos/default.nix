@@ -4,8 +4,8 @@
   import = [
    
    ./Utils/Utils.nix
+   ./Desktops/WM/Wayfire.nix
    
 
-
-  ]; 
+  ]t 
 }
