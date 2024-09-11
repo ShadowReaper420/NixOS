@@ -1,9 +1,13 @@
 {
   description = "Your new nix config";
+  import = [
+    ./pkgs/Flakestuff/Hyprsplit.nix
+  ];
 
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix.url = "github:danth/stylix";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -18,8 +22,72 @@
     self,
     nixpkgs,
     home-manager,
+  let
+    
+   
+
+
+   # _____SYSTEM SETTINGS______ #
+   systemSettings = {
+     system = "x86_64-linux"; #System Arch
+     hostname = "Steller"; # hostname
+     timezone = "America/New_York"; # Timezone
+     locale = "en_US.UTF-8"; # Locale
+     bootloader = "GRUB"; # Sets your bootloader. This one is really awkward to change, Just don't mess with it, all the other bootloaders suck anyways.
+   };
+   
+   #_____USER SETTINGS_____ #
+    userSettings = {
+     username = "flugel"; # username
+     name = "Flugel"; # name
+     email = "Shadowreaper26@proton.me"; # email, pretty much exists solely for git.
+     #theme = "" #Sets colour theme
+     icons = "BeautyLine"; # Sets the icon theme
+     font = "Intel One Mono"; # Sets the font
+     fontPkg = pkgs.intel-one-mono; # Font package
+     wm = "hyprland"; #selected WM or DE
+     wmType = "wayland"; # x11 or wayland
+     browser = "floorp"; # Web browser, pick your posion.
+     editor = "neovim"; # Sets the default text editor. used for some system stuff and keybinds.
+     fileManager = "dolphin"; # Sets the file manager, used in keybinds.
+     terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
+     Shell = "zsh"; # Sets your shell.
+   };
+    
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+    
     ...
-  } @ inputs: let
+  in } @ inputs: let
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     systems = [
@@ -54,10 +122,23 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
         nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+          inherit 
+          #inputs
+          #outputs
+          userSettings
+          systemSettings
+
+          ;};
+        
+
+
+
+
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          inputs.stylix.nixosModules.stylix
         ];
       };
     };
