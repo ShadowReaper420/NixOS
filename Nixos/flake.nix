@@ -2,7 +2,7 @@
   description = "Your new nix config";
 
   
-  let
+  let }
    # _____SYSTEM SETTINGS______ #
    systemSettings = {
      system = "x86_64-linux"; #System Arch
@@ -31,7 +31,6 @@
 
    };
     
-  };
 
 
 
