@@ -6,9 +6,9 @@
   wayland.windowMnager.hyprland = {
     enable = true;
     "$mod" = "SUPER";
-    "$browser" = browser;
-    "$term" = terminal;
-    "$filemanager" = fileManager;
+    "$browser" = userSettings.browser;
+    "$term" = userSettings.terminal;
+    "$filemanager" = userSettings.fileManager;
     bind =
     [
       #________Application Keybinds________#
@@ -17,6 +17,8 @@
       "$mod, E, exec, $filemanager"
       "$mod, T, exec, $term"
       "$mod, A, exec, rofi -show drun"
+    
+
 
       #________Workspace Keybinds________#
       "$mod, 1, split:workspace, 1"
@@ -28,6 +30,8 @@
       "$mod, 7, split:workspace, 7"
       "$mod, 8, split:workspace, 8"
       "$mod, 9, split:workspace, 9"
+      "$mod, Alt, S, movetoworkspacesilent, special"
+      "$mod, S, togglespecialworkspace,"
 
       #________Window Managment Keybinds________#
       "$mod, W, togglefloating,"

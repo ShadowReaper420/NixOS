@@ -1,8 +1,5 @@
 {
   description = "Your new nix config";
-  import = [
-    #./pkgs/Flakestuff/Hyprsplit.nix
-  ];
 
   
   let
@@ -31,7 +28,7 @@
      fileManager = "dolphin"; # Sets the file manager, used in keybinds.
      terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
      Shell = "zsh"; # Sets your shell.
-     
+
    };
     
   };

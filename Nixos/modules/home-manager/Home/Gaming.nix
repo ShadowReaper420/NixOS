@@ -3,16 +3,17 @@
 
 {
 home.packages = with pkgs; [
-steam
-lutris
-gamescope
-protontricks
-bottles
-prismlauncher
-steamtinkerlaunch 
+  steam
+  lutris
+  gamescope
+  protontricks
+  bottles
+  prismlauncher
+  steamtinkerlaunch
 
 
 
 
-];
+
+  ];
 }

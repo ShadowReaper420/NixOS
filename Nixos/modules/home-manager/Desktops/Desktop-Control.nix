@@ -1,6 +1,6 @@
 {lib, config, pkgs, usersSettings, systemSettings, ...}:
 {
-  Desktop = if (wmType == "wayland" then{
+  Desktop = if (userSettings.wmType == "wayland" then{
  
     import = [
 

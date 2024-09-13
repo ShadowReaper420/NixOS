@@ -19,7 +19,7 @@
 
 
 
-
+  
 
   
   #System settings TODO remove systemd-boot and replace it with Grub the only true bootloader before you install to hardware
@@ -30,11 +30,17 @@
    #boot.loader.grub.useOSProber = true;
 
   # Set your time zone.
-  time.timeZone = "America/New_York";
+  time.timeZone = systemSettings.timezone;
 
    # Select internationalisation properties.
-    i18n.defaultLocale = "locale";
-    i18n.extraLocaleSettings = "locale";
+    i18n.defaultLocale = systemSettings.locale;
+    i18n.extraLocaleSettings = systemSettings.locale;
+
+
+    environment.sessionVariables = {
+      FLAKE = "../flake.nix";
+    };
+    
 
 
 
@@ -104,12 +110,11 @@
 
 
 
-  networking.hostName = "nixos";
+  networking.hostName = systemSettings.hostName;
 
   users.users = {
 
-      "username" = {
-
+      userSettings.username = {
       #initialPassword = "1234";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
