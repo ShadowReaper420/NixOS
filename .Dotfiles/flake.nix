@@ -54,8 +54,14 @@
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.${userSettings.username} = import ./home.nix;
+        home-manager.extraSpecialArgs = {
+          inherit inputs;
+          inherit systemSettings;
+          inherit userSettings;
+          inherit pkgs;
+        };
       }
-     ];
+    ];
       specialArgs = {
       inherit inputs;
       inherit systemSettings;

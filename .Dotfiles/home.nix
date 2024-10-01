@@ -4,17 +4,11 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = userSettings.username;
-  home.homeDirectory = /home/flugel;
 
   home.stateVersion = "24.05";
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-
-  import = [
-    #../Modules/home-manager/default.nix
-
-  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
