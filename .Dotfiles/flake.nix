@@ -42,11 +42,15 @@
      terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
      Shell = "zsh"; # Sets your shell.
    };
-     lib = nixpkgs.lib;
-     pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+   pkgs = import nixpkgs {
+    inherit (systemSettings) system;
+    config.allowUnfree = true;
+   };
+
  in {
   
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    inherit pkgs;
     modules = [
       ./System/configuration.nix
       inputs.home-manager.nixosModules.home-manager
@@ -58,7 +62,6 @@
           inherit inputs;
           inherit systemSettings;
           inherit userSettings;
-          inherit pkgs;
         };
       }
     ];
@@ -66,8 +69,8 @@
       inherit inputs;
       inherit systemSettings;
       inherit userSettings;
-      inherit pkgs;
-      inherit lib;
+
+
 
       };
      };
