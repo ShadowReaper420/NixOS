@@ -4,16 +4,26 @@
    
  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
     
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland-plugins = {
+      url = "github:shezdy/hyprsplit";
+      inputs.hyprland.follows = "hyprland";
+    };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
   };
 
 
 
-   outputs = { nixpkgs, home-manager, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nvf, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -33,7 +43,6 @@
      #theme = "" #Sets colour theme
      icons = "BeautyLine"; # Sets the icon theme
      font = "Intel One Mono"; # Sets the font
-     #fontPkg = pkgs.intel-one-mono; # Font package
      wm = "hyprland"; #selected WM or DE
      wmType = "wayland"; # x11 or wayland
      browser = "floorp"; # Web browser, pick your posion.

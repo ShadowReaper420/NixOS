@@ -17,6 +17,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Nix rebuild helper
+  programs.nh = {
+    enable = true;
+    flake = "/home/flugel/.Dotfiles";
+  };
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
@@ -53,13 +59,13 @@
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  #services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -72,31 +78,12 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.flugel = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "Flugel";
+    description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    git
-    nil
-    vscodium
-  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -1,14 +1,17 @@
-{config, lib, userSettings.systemSettings. ...}:
+{config, lib, pkgs, userSettings, systemSettings, ...}:
 
 {
 
   #Hyprland config
   wayland.windowMnager.hyprland = {
     enable = true;
+    plugins = [
+      inputs.hyprland-plugins.packages."${pkgs.system}".hyprsplit
+    ];
     "$mod" = "SUPER";
-    "$browser" = browser;
-    "$term" = terminal;
-    "$filemanager" = fileManager;
+    "$browser" = userSettings.browser;
+    "$term" = userSettings.terminal;
+    "$filemanager" = userSettings.fileManager;
     bind =
     [
       #________Application Keybinds________#
@@ -39,7 +42,7 @@
 
     
 
-    ] 
+    ];
      
     settings = {
 
@@ -68,8 +71,8 @@
       "animation = workspaces, 1, 5, wind"
 
 
-    }
-  }
+    };
+  };
 
 
 

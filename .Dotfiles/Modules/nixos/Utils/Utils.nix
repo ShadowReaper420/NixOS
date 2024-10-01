@@ -6,6 +6,7 @@ git
 wget
 kitty
 ranger
+nil
 
 
 
