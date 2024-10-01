@@ -11,7 +11,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
       #./Desktops/WM/Wayfire/Wayfire.nix
-      ./Home/Gaming.nix
+      #./Home/Gaming.nix
       #./Desktops/WM/Wayland-Utils/Wayland-utils.nix
       ./Utils/Utils.nix
       #./Desktops/WM/Desktop-Control.nix

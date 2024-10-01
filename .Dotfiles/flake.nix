@@ -53,7 +53,7 @@
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.${userSettings.username} = import ./home.nix;
+        home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
         home-manager.extraSpecialArgs = {
           inherit inputs;
           inherit systemSettings;

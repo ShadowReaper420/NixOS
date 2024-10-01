@@ -8,8 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-     # ../Home-Manager/home.nix
-     # ../Modules/nixos/default.nix
+      ../Modules/nixos/default.nix
       inputs.home-manager.nixosModules.home-manager
       
     ];
