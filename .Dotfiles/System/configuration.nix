@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
      # ../Home-Manager/home.nix
      # ../Modules/nixos/default.nix
-      inputs.home-manager.nixosModules.default
+      inputs.home-manager.nixosModules.home-manager
       
     ];
 
@@ -98,17 +98,6 @@
     nil
     vscodium
   ];
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-      inherit systemSettings;
-      inherit userSettings;
-    };
-    users = {
-     userSettings.username = import ./home.nix;
-    };
-  
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
