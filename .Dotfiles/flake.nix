@@ -23,7 +23,6 @@
      timezone = "America/New_York"; # Timezone
      locale = "en_US.UTF-8"; # Locale
      bootloader = "GRUB"; # Sets your bootloader. This one is really awkward to change, Just don't mess with it, all the other bootloaders suck anyways.
-     home-directory = "/home/flugel"; # Just change the name at the end to whatever your username is.
    };
 
    #________USER SETTINGS________#
