@@ -5,6 +5,7 @@
  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
+    stylix.url = "github:danth/stylix";
     
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -63,6 +64,8 @@
     modules = [
       ./System/configuration.nix
       inputs.home-manager.nixosModules.home-manager
+      inputs.stylix.nixosModules.stylix
+      inputs.nvf.nixosModules.default
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -85,5 +88,3 @@
      };
    };
 }
-
-   

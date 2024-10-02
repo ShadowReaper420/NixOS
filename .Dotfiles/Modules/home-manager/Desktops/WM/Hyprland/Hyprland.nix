@@ -31,6 +31,7 @@
       "$mod, 7, split:workspace, 7"
       "$mod, 8, split:workspace, 8"
       "$mod, 9, split:workspace, 9"
+      "$mod, 0, split:workspace, 10"
 
       #________Window Managment Keybinds________#
       "$mod, W, togglefloating,"
@@ -44,7 +45,7 @@
 
     ];
      
-    settings = {
+    Hypr-settings = [
 
       # █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█
       # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
@@ -71,7 +72,7 @@
       "animation = workspaces, 1, 5, wind"
 
 
-    };
+    ];
   };
 
 

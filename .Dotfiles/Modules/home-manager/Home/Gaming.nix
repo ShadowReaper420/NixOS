@@ -10,6 +10,7 @@ protontricks
 bottles
 prismlauncher
 steamtinkerlaunch 
+openmw
 
 
 
