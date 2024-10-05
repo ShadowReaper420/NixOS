@@ -11,7 +11,6 @@
   obsidian
   thunderbird
   vscodium
-  fastfetch
   #____________________
   #Web browsers, pick your poision, I recommend either Floorp or Brave.
   floorp

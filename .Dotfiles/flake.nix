@@ -55,6 +55,7 @@
    pkgs = import nixpkgs {
     inherit (systemSettings) system;
     config.allowUnfree = true;
+    #overlays = [import ./Overlays/Control.nix];
    };
 
  in {

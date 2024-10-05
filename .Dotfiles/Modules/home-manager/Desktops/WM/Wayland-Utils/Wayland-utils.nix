@@ -9,9 +9,10 @@
  wlogout
  waybar
  swaylock
- xwayland
  clipse
  wlsunset
+ hyprshot
+ ags
 
 
  ];
