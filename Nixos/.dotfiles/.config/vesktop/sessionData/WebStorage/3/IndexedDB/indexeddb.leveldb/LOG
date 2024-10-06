@@ -1,0 +1,33 @@
+2024/09/22-15:28:24.306 1c4a04 Reusing MANIFEST /home/flugel/.config/vesktop/sessionData/WebStorage/3/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/09/22-15:28:24.306 1c4a04 Recovering log #10
+2024/09/22-15:28:24.306 1c4a04 Reusing old log /home/flugel/.config/vesktop/sessionData/WebStorage/3/IndexedDB/indexeddb.leveldb/000010.log 
+2024/09/22-15:28:24.353 1c4a17 Level-0 table #14: started
+2024/09/22-15:28:24.358 1c4a17 Level-0 table #14: 1365 bytes OK
+2024/09/22-15:28:24.365 1c4a17 Delete type=0 #10
+2024/09/22-15:28:24.365 1c4a05 Manual compaction at level-0 from '\x00\x05\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at '\x00\x05\x00\x00\x05' @ 175 : 1
+2024/09/22-15:28:24.365 1c4a05 Compacting 1@0 + 1@1 files
+2024/09/22-15:28:24.370 1c4a05 Generated table #15@0: 18 keys, 844 bytes
+2024/09/22-15:28:24.370 1c4a05 Compacted 1@0 + 1@1 files => 844 bytes
+2024/09/22-15:28:24.377 1c4a05 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/09/22-15:28:24.377 1c4a05 Delete type=2 #14
+2024/09/22-15:28:24.377 1c4a05 Manual compaction at level-0 from '\x00\x05\x00\x00\x05' @ 175 : 1 .. '\x00\x06\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/22-16:40:34.520 1c4a17 Level-0 table #17: started
+2024/09/22-16:40:34.526 1c4a17 Level-0 table #17: 256 bytes OK
+2024/09/22-16:40:34.532 1c4a17 Delete type=0 #13
+2024/09/22-16:40:34.532 1c4a17 Delete type=2 #11
+2024/09/22-16:40:34.532 1c4a17 Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 189 : 0
+2024/09/22-16:40:34.532 1c4a17 Compacting 1@0 + 1@1 files
+2024/09/22-16:40:34.538 1c4a17 Generated table #18@0: 20 keys, 860 bytes
+2024/09/22-16:40:34.538 1c4a17 Compacted 1@0 + 1@1 files => 860 bytes
+2024/09/22-16:40:34.544 1c4a17 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/09/22-16:40:34.545 1c4a17 Delete type=2 #15
+2024/09/22-16:40:34.545 1c4a17 Delete type=2 #17
+2024/09/22-16:40:34.545 1c4a17 Manual compaction at level-0 from '\x00\x00\x00\x002\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 189 : 0 .. (end); will stop at (end)
+2024/09/22-16:40:34.545 1c4a17 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x02\x01\x02\x012\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x002\x009\x005\x005\x008\x009\x005\x000\x000\x003\x006\x00:\x00w\x00e\x00b\x00:\x00a\x00f\x009\x00a\x002\x004\x002\x008\x000\x00f\x00d\x003\x002\x00a\x002\x009\x002\x004\x000\x00c\x008\x001' @ 165 : 1
+2024/09/22-16:40:34.545 1c4a17 Compacting 1@1 + 1@2 files
+2024/09/22-16:40:34.550 1c4a17 Generated table #19@1: 34 keys, 911 bytes
+2024/09/22-16:40:34.550 1c4a17 Compacted 1@1 + 1@2 files => 911 bytes
+2024/09/22-16:40:34.557 1c4a17 compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/09/22-16:40:34.557 1c4a17 Delete type=2 #8
+2024/09/22-16:40:34.557 1c4a17 Delete type=2 #18
+2024/09/22-16:40:34.557 1c4a17 Manual compaction at level-1 from '\x00\x02\x01\x02\x012\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x002\x009\x005\x005\x008\x009\x005\x000\x000\x003\x006\x00:\x00w\x00e\x00b\x00:\x00a\x00f\x009\x00a\x002\x004\x002\x008\x000\x00f\x00d\x003\x002\x00a\x002\x009\x002\x004\x000\x00c\x008\x001' @ 165 : 1 .. (end); will stop at (end)

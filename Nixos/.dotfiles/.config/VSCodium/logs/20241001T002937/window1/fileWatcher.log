@@ -1,0 +1,2 @@
+2024-10-01 00:35:01.805 [warning] [File Watcher (parcel)] Watcher shutdown because watched path got deleted (path: /home/flugel/nvf)
+2024-10-01 00:35:14.079 [warning] [File Watcher (parcel)] Watcher restarts because watched path got created again (path: /home/flugel/nvf)

@@ -1,0 +1,31 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-05+630-mmcprism-new-java/.minecraft/screenshots/2024-09-12_01.03.51.png
+File10[$e]=$HOME/Pictures/Art/Monster girls/Catgirls/sample_d456ad33b0c33f51e77652015bfef83e.jpg
+File2[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-11+641-mmcprism-new-java/.minecraft/screenshots/2024-09-12_22.09.43.png
+File3[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-11+641-mmcprism-new-java/.minecraft/screenshots/2024-09-12_22.19.47.png
+File4[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-11+641-mmcprism-new-java/.minecraft/screenshots/2024-09-12_23.56.50.png
+File5[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-11+641-mmcprism-new-java/.minecraft/screenshots/2024-09-13_17.31.47.png
+File6[$e]=/run/media/flugel/Modding/instances/GTNH-2024-09-11+641-mmcprism-new-java/.minecraft/screenshots/2024-09-13_17.33.17.png
+File7[$e]=$HOME/Pictures/Art/122441930_p14_master1200.jpg
+File8[$e]=$HOME/Pictures/Art/Favorites/da9caa4087c0908a373648a6b4ff78398fdfd97f.png
+File9[$e]=$HOME/Pictures/Art/Yes/y7sd63v1lxn81.jpg
+Name1[$e]=2024-09-12_01.03.51.png
+Name10[$e]=sample_d456ad33b0c33f51e77652015bfef83e.jpg
+Name2[$e]=2024-09-12_22.09.43.png
+Name3[$e]=2024-09-12_22.19.47.png
+Name4[$e]=2024-09-12_23.56.50.png
+Name5[$e]=2024-09-13_17.31.47.png
+Name6[$e]=2024-09-13_17.33.17.png
+Name7[$e]=122441930_p14_master1200.jpg
+Name8[$e]=da9caa4087c0908a373648a6b4ff78398fdfd97f.png
+Name9[$e]=y7sd63v1lxn81.jpg
+
+[SideBar]
+InformationSplitterSizes=231,236

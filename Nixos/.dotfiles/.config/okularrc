@@ -1,0 +1,21 @@
+[Desktop Entry]
+FullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/BeautyLine/BeautyFolders/ReadMe
+File2[$e]=$HOME/.config/hypr/userprefs.conf
+File3[$e]=/run/media/flugel/Modding/.config/hypr/windowrules.conf
+File4[$e]=$HOME/HyDE/README.md
+File5[$e]=$HOME/.config/hypr/animations.conf
+Name1[$e]=ReadMe
+Name2[$e]=userprefs.conf
+Name3[$e]=windowrules.conf
+Name4[$e]=README.md
+Name5[$e]=animations.conf

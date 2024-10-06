@@ -1,0 +1,12 @@
+2024-09-07 15:38:08.172 [info] Getting Manifest... jnoortheen.nix-ide
+2024-09-07 15:38:08.216 [info] Installing extension: jnoortheen.nix-ide {"isMachineScoped":false,"installPreReleaseVersion":false,"pinned":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/flugel/.vscode-oss/extensions/extensions.json","path":"/home/flugel/.vscode-oss/extensions/extensions.json","scheme":"vscode-userdata"},"installOnlyNewlyAddedFromExtensionPack":true,"isApplicationScoped":false,"productVersion":{"version":"1.92.2","date":"2024-08-18T09:14:58.429Z"}}
+2024-09-07 15:38:08.475 [info] Extracted extension to file:///home/flugel/.vscode-oss/extensions/jnoortheen.nix-ide-0.3.3-universal: jnoortheen.nix-ide
+2024-09-07 15:38:08.481 [info] Renamed to /home/flugel/.vscode-oss/extensions/jnoortheen.nix-ide-0.3.3-universal
+2024-09-07 15:38:08.491 [info] Extension installed successfully: jnoortheen.nix-ide vscode-userdata:/home/flugel/.vscode-oss/extensions/extensions.json
+2024-09-07 15:38:08.561 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/flugel/.vscode-oss/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/flugel/.vscode-oss/extensions/extensions.json.vsctmp'
+    at o.create (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:22226)
+    at h (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:54:22357)
+    at S.toFileSystemProviderError (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:48043)
+    at S.stat (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:38518)
+    at async c.stat (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:59:19793)
+    at async q.onDidFilesChange (/usr/share/vscodium/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:105:148300)

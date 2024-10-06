@@ -1,0 +1,7 @@
+2024/09/22-15:26:25.219 1c4a05 Reusing MANIFEST /home/flugel/.config/vesktop/sessionData/WebStorage/3/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2024/09/22-15:26:25.219 1c4a05 Recovering log #6
+2024/09/22-15:26:25.219 1c4a05 Reusing old log /home/flugel/.config/vesktop/sessionData/WebStorage/3/IndexedDB/indexeddb.leveldb/000006.log 
+2024/09/22-15:26:25.247 1c4a17 Level-0 table #11: started
+2024/09/22-15:26:25.252 1c4a17 Level-0 table #11: 667 bytes OK
+2024/09/22-15:26:25.257 1c4a17 Delete type=0 #6
+2024/09/22-15:26:25.257 1c4a04 Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)

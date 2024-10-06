@@ -1,0 +1,31 @@
+2024-09-13 19:17:59.624 [info] [main] Log level: Info
+2024-09-13 19:17:59.624 [info] [main] Validating found git in: "git"
+2024-09-13 19:17:59.624 [info] [main] Using git "2.46.0" from "git"
+2024-09-13 19:17:59.624 [info] [Model][doInitialScan] Initial repository scan started
+2024-09-13 19:17:59.624 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-13 19:17:59.624 [info] > git rev-parse --git-dir --git-common-dir [6ms]
+2024-09-13 19:17:59.624 [info] [Model][openRepository] Opened repository: /home/flugel/Repos
+2024-09-13 19:17:59.624 [info] > git config --get commit.template [3ms]
+2024-09-13 19:17:59.631 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [3ms]
+2024-09-13 19:17:59.632 [info] > git rev-parse --show-toplevel [0ms]
+2024-09-13 19:17:59.637 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-13 19:17:59.640 [info] > git status -z -uall [3ms]
+2024-09-13 19:17:59.648 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [5ms]
+2024-09-13 19:17:59.650 [info] > git rev-parse --show-toplevel [10ms]
+2024-09-13 19:17:59.653 [info] > git config --local branch.Rewrite.vscode-merge-base [3ms]
+2024-09-13 19:17:59.655 [info] > git config --get commit.template [8ms]
+2024-09-13 19:17:59.656 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-13 19:17:59.665 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [10ms]
+2024-09-13 19:17:59.669 [info] > git merge-base refs/heads/Rewrite refs/remotes/origin/Rewrite [1ms]
+2024-09-13 19:17:59.671 [info] > git rev-parse --show-toplevel [6ms]
+2024-09-13 19:17:59.671 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [9ms]
+2024-09-13 19:17:59.674 [info] > git rev-parse --show-toplevel [0ms]
+2024-09-13 19:17:59.674 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2024-09-13 19:17:59.674 [info] > git rev-list --count --left-right refs/heads/Rewrite...refs/remotes/origin/Rewrite [3ms]
+2024-09-13 19:17:59.707 [info] > git status -z -uall [28ms]
+2024-09-13 19:17:59.711 [info] > git diff --name-status -z --diff-filter=ADMR 3a7c751178382351f3a178095de2d05b56a22d3e...refs/remotes/origin/Rewrite [34ms]
+2024-09-13 19:17:59.712 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [2ms]
+2024-09-13 19:17:59.716 [info] > git config --local branch.Rewrite.vscode-merge-base [1ms]
+2024-09-13 19:17:59.719 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [1ms]
+2024-09-13 19:18:00.133 [info] > git check-ignore -v -z --stdin [3ms]
+2024-09-13 19:18:35.784 [info] > git check-ignore -v -z --stdin [1ms]

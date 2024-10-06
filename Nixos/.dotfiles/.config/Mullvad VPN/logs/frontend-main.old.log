@@ -1,0 +1,50 @@
+[2024-09-10 02:00:29.889][verbose] Chromium sandbox is enabled
+[2024-09-10 02:00:29.890][info] Running version 2024.5
+[2024-09-10 02:00:29.960][info] Detected locale: en-US
+[2024-09-10 02:00:30.017][info] Connected to the daemon
+[2024-09-10 02:00:30.055][info] Skip autoconnect because GUI setting is disabled
+[2024-09-10 02:00:30.110][error] Child process of type GPU exited with exit code 8704 due to abnormal-exit
+[2024-09-10 02:00:30.291][error] Child process of type GPU exited with exit code 8704 due to abnormal-exit
+[2024-09-10 02:00:30.468][error] Child process of type GPU exited with exit code 8704 due to abnormal-exit
+[2024-09-10 02:00:30.600][error] Failed to check autostart file: ENOENT: no such file or directory, access '/home/flugel/.config/autostart/mullvad-vpn.desktop'
+[2024-09-10 03:00:30.039][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 04:00:30.050][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 05:00:30.059][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 06:00:30.065][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 07:00:30.068][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 08:00:30.069][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 09:00:30.074][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 10:00:30.077][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 11:00:30.078][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 12:00:30.083][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 13:00:30.086][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 14:00:30.103][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 15:00:30.106][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 16:00:30.108][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 17:00:30.118][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 18:00:30.124][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 19:00:30.127][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 20:00:30.134][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 21:00:30.137][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 22:00:30.139][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-10 23:00:30.148][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 00:00:30.152][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 01:00:30.154][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 02:00:30.157][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 03:00:30.161][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 04:00:30.163][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 05:00:30.170][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 06:00:30.174][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 07:00:30.175][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 08:00:30.183][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 09:00:30.186][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 10:00:30.186][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 11:00:30.192][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 12:00:30.195][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 13:00:30.204][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 14:00:30.211][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 15:00:30.210][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 16:00:30.220][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 17:00:30.226][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 18:00:30.229][verbose] GRPC Channel connectivity state changed to 2
+[2024-09-11 19:00:30.239][verbose] GRPC Channel connectivity state changed to 2

@@ -1,0 +1,35 @@
+2024-09-13 19:16:55.743 [info] [main] Log level: Info
+2024-09-13 19:16:55.743 [info] [main] Validating found git in: "git"
+2024-09-13 19:16:55.743 [info] [main] Using git "2.46.0" from "git"
+2024-09-13 19:16:55.743 [info] [Model][doInitialScan] Initial repository scan started
+2024-09-13 19:16:55.743 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-13 19:16:55.743 [info] > git rev-parse --git-dir --git-common-dir [7ms]
+2024-09-13 19:16:55.743 [info] [Model][openRepository] Opened repository: /home/flugel/Repos
+2024-09-13 19:16:55.743 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-13 19:16:55.744 [info] > git config --get commit.template [3ms]
+2024-09-13 19:16:55.750 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [3ms]
+2024-09-13 19:16:55.750 [info] > git rev-parse --show-toplevel [0ms]
+2024-09-13 19:16:55.756 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-13 19:16:55.759 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-13 19:16:55.762 [info] > git rev-parse --show-toplevel [1ms]
+2024-09-13 19:16:55.765 [info] > git status -z -uall [12ms]
+2024-09-13 19:16:55.772 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [5ms]
+2024-09-13 19:16:55.774 [info] > git rev-parse --show-toplevel [10ms]
+2024-09-13 19:16:55.777 [info] > git config --local branch.Rewrite.vscode-merge-base [3ms]
+2024-09-13 19:16:55.780 [info] > git config --get commit.template [8ms]
+2024-09-13 19:16:55.780 [info] > git rev-parse --show-toplevel [3ms]
+2024-09-13 19:16:55.780 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2024-09-13 19:16:55.788 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [9ms]
+2024-09-13 19:16:55.792 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [4ms]
+2024-09-13 19:16:55.792 [info] > git merge-base refs/heads/Rewrite refs/remotes/origin/Rewrite [1ms]
+2024-09-13 19:16:55.798 [info] > git rev-list --count --left-right refs/heads/Rewrite...refs/remotes/origin/Rewrite [3ms]
+2024-09-13 19:16:55.828 [info] > git status -z -uall [31ms]
+2024-09-13 19:16:55.828 [info] > git diff --name-status -z --diff-filter=ADMR 3a7c751178382351f3a178095de2d05b56a22d3e...refs/remotes/origin/Rewrite [28ms]
+2024-09-13 19:16:55.834 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/Rewrite refs/remotes/Rewrite [2ms]
+2024-09-13 19:16:55.840 [info] > git config --local branch.Rewrite.vscode-merge-base [2ms]
+2024-09-13 19:16:55.844 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/main refs/remotes/origin/main [1ms]
+2024-09-13 19:16:56.048 [info] > git show --textconv :Nixos/flake.nix [5ms]
+2024-09-13 19:16:56.048 [info] > git ls-files --stage -- /home/flugel/Repos/Nixos/flake.nix [0ms]
+2024-09-13 19:16:56.053 [info] > git cat-file -s a72174b429666daa0864019e66a3bc229b9e4a46 [1ms]
+2024-09-13 19:16:56.251 [info] > git check-ignore -v -z --stdin [1ms]
+2024-09-13 19:16:59.337 [info] > git check-ignore -v -z --stdin [1ms]
