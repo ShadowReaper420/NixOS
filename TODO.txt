@@ -1,0 +1,6 @@
+Rewrite Neovim conf to use NVF.
+Figure Overlays out
+Make Beauty line inherit candy icons using Overlays
+Setup grub theme
+Setup SDDM theme
+Setup DWM config
