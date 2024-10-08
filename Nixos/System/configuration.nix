@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       ../Modules/nixos/default.nix
       inputs.home-manager.nixosModules.home-manager
-      ../Themes/Stylix.nix
+      #../Themes/Stylix.nix
       
     ];
 

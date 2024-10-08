@@ -1,6 +1,13 @@
  {config, lib, pkgs, ...}:
 
   {
+ #   programs.rofi = {
+ #     theme = ../Wayland
+
+   # };
+
+
+
  home.packages = with pkgs; [
  rofi-wayland
  waypaper

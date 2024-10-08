@@ -6,6 +6,7 @@
    ./Utils/Utils.nix
    #./Desktops/WM/Wayfire.nix
    ./Desktops/WM/Hyprland.nix
+   ./Utils/sh.nix
    
 
   ];
