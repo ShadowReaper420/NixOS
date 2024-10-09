@@ -1,4 +1,0 @@
-[Error - 7:21:22 PM] Nix client: couldn't create connection to server.
-Launching server using command Nil failed. Error: spawn Nil ENOENT
-[Error - 7:21:22 PM] Failed to restart Nix language server
-Launching server using command Nil failed. Error: spawn Nil ENOENT

@@ -2,10 +2,13 @@
 
 { environment.systemPackages = with pkgs;[
 
-git
-wget
-kitty
-nil
+  git
+  wget
+  kitty
+  nil
+  kdePackages.partitionmanager
+  cpio
+  cmake
 
 
 

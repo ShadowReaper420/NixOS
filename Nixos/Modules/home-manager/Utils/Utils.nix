@@ -7,10 +7,10 @@
   kdePackages.dolphin
   kdePackages.gwenview
   kdePackages.kate
-  kdePackages.partitionmanager
   obsidian
   thunderbird
   vscodium
+  
   #____________________
   #Web browsers, pick your poision, I recommend either Floorp or Brave.
   floorp

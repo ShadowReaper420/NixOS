@@ -1,9 +1,0 @@
-2024-10-01 00:29:38.895 [info] Started local extension host with pid 113631.
-2024-10-01 00:29:42.112 [info] [perf] Render performance baseline is 14ms
-2024-10-01 00:29:57.948 [warning] [backup tracker] suspended, ignoring dirty change event file:///home/flugel/Repos/Nixos/flake.nix 
-2024-10-01 00:29:58.186 [info] Started local extension host with pid 114324.
-2024-10-01 00:30:00.794 [info] [perf] Render performance baseline is 15ms
-2024-10-01 00:30:35.831 [info] Started local extension host with pid 115420.
-2024-10-01 00:30:38.413 [info] [perf] Render performance baseline is 15ms
-2024-10-01 00:35:01.804 [warning] [File Watcher (parcel)] Watcher shutdown because watched path got deleted (path: /home/flugel/nvf)
-2024-10-01 00:35:14.079 [warning] [File Watcher (parcel)] Watcher restarts because watched path got created again (path: /home/flugel/nvf)

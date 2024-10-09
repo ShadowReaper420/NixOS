@@ -5,24 +5,38 @@
 
 {
   imports =
-    [ (modulesPath + "/profiles/qemu-guest.nix")
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/cb2b6396-ada0-4f50-953e-9d330ae5ed0b";
+    { device = "/dev/disk/by-uuid/0bfb7b41-aaf0-4f86-87cf-4dea2d39d4b8";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/68F8-165C";
+    { device = "/dev/disk/by-uuid/CF5D-346F";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
+  
+  fileSystems."/run/media/flugel/Modding" = 
+  {
+    device = "/dev/nvme1n1p1";
+    fsType = "ext4";
+  };
+
+  fileSystems."/run/media/flugel/Gaming" = 
+  {
+    device = "/dev/sdb1";
+    fsType = "ext4";
+  };
+
+
 
   swapDevices = [ ];
 
@@ -31,7 +45,9 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp14s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp15s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

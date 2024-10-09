@@ -12,12 +12,13 @@
     # ./nvim.nix
       ./Desktops/WM/Wayfire/Wayfire.nix
       ./Home/Gaming.nix
+      ./Home/Misc.nix
       ./Desktops/WM/Wayland-Utils/Wayland-utils.nix
       ./Utils/Utils.nix
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
-      
+      ./stylix.nix
 
       ];
 }

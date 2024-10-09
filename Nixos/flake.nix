@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
+    #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -70,6 +71,7 @@
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.backupFileExtension = "hm-backup";
         home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
         home-manager.extraSpecialArgs = {
           inherit inputs;

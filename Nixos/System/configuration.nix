@@ -10,7 +10,8 @@
       ./hardware-configuration.nix
       ../Modules/nixos/default.nix
       inputs.home-manager.nixosModules.home-manager
-      #../Themes/Stylix.nix
+      ../Themes/Stylix.nix
+      ./Nvidia.nix
       
     ];
 
@@ -21,10 +22,14 @@
   # Nix rebuild helper
   programs.nh = {
     enable = true;
-    flake = "/home/flugel/.Dotfiles";
+    flake = "/home/flugel/Nixos";
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  services.mullvad-vpn.enable = true;
+
+  programs.steam.enable = true;
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
