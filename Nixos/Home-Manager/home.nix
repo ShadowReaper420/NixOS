@@ -19,7 +19,7 @@
 
   imports = [
     ../Modules/home-manager/default.nix
-    ../Modules/home-manager/stylix.nix
+    #../Modules/home-manager/stylix.nix
 
   ];
 

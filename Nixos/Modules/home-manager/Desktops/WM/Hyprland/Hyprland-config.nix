@@ -45,8 +45,8 @@
       env = MOZ_ENABLE_WAYLAND,1
       env = GDK_SCALE,1
 
-      monitor=DP-1, 2560x1440, 0x0, 1
-      monitor=DP-2, 2560x1440, -1440x0, 1
+      monitor=DP-5, 2560x1440, 0x0, 1
+      monitor=HDMI-A-2, 2560x1440, -1440x0, 1
 
       cursor {
         no_hardware_cursors = true
@@ -55,17 +55,19 @@
 
       dwindle {
          pseudotile = yes
-         perserve_split = yes
+         
       
       }
 
 
-       bezier = wind, 0.05, 0.9, 0.1, 1.05
-       bezier = winIn, 0.1, 1.1, 0.1, 1.1
-       bezier = winOut, 0.3, -0.3, 0, 1
+ 
 
       animations {
        enabled = yes
+       bezier = wind, 0.05, 0.9, 0.1, 1.05
+       bezier = winIn, 0.1, 1.1, 0.1, 1.1
+       bezier = winOut, 0.3, -0.3, 0, 1
+       bezier = liner, 1, 1, 1, 1
        animation = workspaces, 1, 5, wind
        animation = windowsIn, 1, 6, winIn, slide
        animation = windowsOut, 1, 5, winOut, slide
@@ -88,9 +90,13 @@
  #________Window Managment Keybinds________#
      bind = $mod, W, togglefloating,
      bind = $mod, G, togglegroup,"
-     bind = $mod, Alt, Return, fullscreen
-     bind = $mod, Q, closewindow,
-      
+    # bind = $mod, Alt, Return, fullscreen,
+     bind = $mod, Q, killactive,
+
+     # Move/Resize focused window
+
+     bindm = $mod, mouse:272, movewindow
+     bindm = $mod, mouse:273, resizeactive
       
       
   #________Workspace Keybinds________#
@@ -105,6 +111,8 @@
      bind = $mod, 8, split:workspace, 8
      bind = $mod, 9, split:workspace, 9
      bind = $mod, 0, split:workspace, 10
+     bind = $mod+Alt, S, movetoworkspacesilent, special
+     bind = $mod, S, togglespecialworkspace,
      
 # █░█░█ █ █▄░█ █▀▄ █▀█ █░█░█   █▀█ █░█ █░░ █▀▀ █▀
 # ▀▄▀▄▀ █ █░▀█ █▄▀ █▄█ ▀▄▀▄▀   █▀▄ █▄█ █▄▄ ██▄ ▄█
@@ -113,7 +121,7 @@
 
 #indowrulev2 = opacity 0.90 0.90,class:^(floorp)$
 windowrulev2 = opacity 0.90 0.90,class:^(Brave-browser)$
-windowrulev2 = opacity 0.80 0.80,class:^(code-oss)$
+#windowrulev2 = opacity 0.80 0.80,class:^(code-oss)$
 windowrulev2 = opacity 0.80 0.80,class:^(Code)$
 windowrulev2 = opacity 0.80 0.80,class:^(vscodium)$
 windowrulev2 = opacity 0.80 0.80,class:^(code-url-handler)$
@@ -237,6 +245,9 @@ decoration {
 }
 
 layerrule = blur,waybar
+
+
+
 
     
       

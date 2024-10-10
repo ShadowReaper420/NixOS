@@ -18,7 +18,7 @@
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
-      ./stylix.nix
+      #./stylix.nix
 
       ];
 }
