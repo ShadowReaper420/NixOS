@@ -1,1 +1,1 @@
-In the off chance someone finds this do not use I'm still setting this crap up and it wont even work unless you pass the --impure flag when using nixos-rebuild
+My very cursed nixos config if for whatever reason you decide to use this make sure it is in home/Nixos otherwise shit wont work
