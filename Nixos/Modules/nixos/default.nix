@@ -7,7 +7,8 @@
    #./Desktops/WM/Wayfire.nix
    ./Desktops/WM/Hyprland.nix
    ./Utils/sh.nix
-   
+   ./Home/Gaming.nix
+   ./Home/Spotify.nix
 
   ];
 }

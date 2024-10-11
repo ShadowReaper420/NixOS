@@ -5,6 +5,7 @@
  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
+    nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
     #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
     
@@ -25,7 +26,7 @@
 
 
 
-   outputs = { nixpkgs, home-manager, nvf, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nvf, nur, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -68,6 +69,7 @@
       inputs.home-manager.nixosModules.home-manager
       inputs.stylix.nixosModules.stylix
       inputs.nvf.nixosModules.default
+      inputs.nur.nixosModules.nur
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;

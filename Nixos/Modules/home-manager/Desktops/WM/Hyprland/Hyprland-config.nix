@@ -24,11 +24,11 @@
     # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
      
       exec-once = waybar
-      exec-once = mako
+      #exec-once = mako
+      exec-once = swaync
       exec-once = clipse
       exec-once = waypaper-engine daemon
       exec-once = hyprpm reload
-
 
 
       env = LIBVA_DRIVER_NAME,nvidia
@@ -44,9 +44,10 @@
       env = QT_AUTO_SCREEN_SCALE_FACTOR,1
       env = MOZ_ENABLE_WAYLAND,1
       env = GDK_SCALE,1
-
-      monitor=DP-5, 2560x1440, 0x0, 1
-      monitor=HDMI-A-2, 2560x1440, -1440x0, 1
+      
+      
+      monitor=HDMI-A-2,2560x1440@60.0,5120x0,1.0
+      monitor=DP-5,2560x1440@60.0,2560x0,1.0
 
       cursor {
         no_hardware_cursors = true

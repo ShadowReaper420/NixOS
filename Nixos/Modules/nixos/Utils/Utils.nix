@@ -9,6 +9,8 @@
   kdePackages.partitionmanager
   cpio
   cmake
+  nwg-displays
+  font-awesome
 
 
 

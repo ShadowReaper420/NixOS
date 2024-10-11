@@ -6,7 +6,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      os-rebuild = "sudo nixos-rebuild switch --flake ~/Nixos";
+      os-rebuild = "nh os switch";
 
     };
 
