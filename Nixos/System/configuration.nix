@@ -11,6 +11,7 @@
       ../Modules/nixos/default.nix
       inputs.home-manager.nixosModules.home-manager
       ../Themes/Stylix.nix
+      ../Themes/Icons/BeautyLine.nix
       ./Nvidia.nix
       
     ];
@@ -18,6 +19,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
 
   # Nix rebuild helper
   programs.nh = {
@@ -30,8 +32,12 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   services.mullvad-vpn.enable = true;
+  services.flatpak.enable = true;
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+
+  };
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

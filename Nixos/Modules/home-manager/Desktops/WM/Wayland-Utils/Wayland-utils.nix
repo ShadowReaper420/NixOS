@@ -19,7 +19,7 @@
  clipse
  wlsunset
  hyprshot
- #ags
+ ags
  swaynotificationcenter
 
 

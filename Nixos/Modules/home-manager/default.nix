@@ -1,5 +1,5 @@
 # Add your reusable home-manager modules to this directory, on their own file (https://nixos.wiki/wiki/Module).
-{lib, config, pkgs, ...}:
+{ config, pkgs, inputs, systemSettings, userSettings, ... }:
 {
    imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -17,7 +17,11 @@
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
-      #./stylix.nix
+     # ./stylix.nix
+     # ./Themes/Catppuccin.nix
 
       ];
+  # users.userSettings.username = {
+  #    imports = [../Themes/Catppuccin.nix];
+  # };
 }

@@ -40,6 +40,7 @@
       env = XDG_SESSION_DESKTOP,Hyprland
       env = QT_QPA_PLATFORM,wayland;xcb
       env = QT_QPA_PLATFORMTHEME,qt6ct
+      env = QT_STYLE_OVERRIDE=kvantum
       env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
       env = QT_AUTO_SCREEN_SCALE_FACTOR,1
       env = MOZ_ENABLE_WAYLAND,1
@@ -90,8 +91,8 @@
 
  #________Window Managment Keybinds________#
      bind = $mod, W, togglefloating,
-     bind = $mod, G, togglegroup,"
-    # bind = $mod, Alt, Return, fullscreen,
+     bind = $mod, G, togglegroup,
+     bind = Alt, Return, fullscreen,
      bind = $mod, Q, killactive,
 
      # Move/Resize focused window

@@ -8,4 +8,7 @@
       };
     };
   };
+  config.vim.extraPlugins = with pkgs.vimPlugins; {
+    
+  }
 }

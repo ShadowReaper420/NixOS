@@ -6,16 +6,20 @@
   wget
   kitty
   nil
-  kdePackages.partitionmanager
+ # kdePackages.partitionmanager
+  kdePackages.dolphin
+  libsForQt5.ark
   cpio
   cmake
   nwg-displays
-  font-awesome
-
+  xfce.thunar
+  zenity
+  p7zip
+  themechanger
+  kdePackages.qtstyleplugin-kvantum
 
 
 ]; 
-
 
 
 

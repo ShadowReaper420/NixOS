@@ -8,5 +8,6 @@
     fastfetch
     ranger
     btop
+    lazygit
   ];
 }

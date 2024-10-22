@@ -4,10 +4,11 @@
    
  inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-23.05";
     hyprland.url = "github:hyprwm/Hyprland";
     nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
-    #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    pyprland.url = "github:hyprland-community/pyprland";
     
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -50,10 +51,11 @@
      wmType = "wayland"; # x11 or wayland
      browser = "floorp"; # Web browser, pick your posion.
      editor = "neovim"; # Sets the default text editor. used for some system stuff and keybinds.
-     fileManager = "dolphin"; # Sets the file manager, used in keybinds.
+     fileManager = "thunar"; # Sets the file manager, used in keybinds.
      terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
      Shell = "zsh"; # Sets your shell.
    };
+   pkgs-legacy = inputs.nixpkgs-stable;
    pkgs = import nixpkgs {
     inherit (systemSettings) system;
     config.allowUnfree = true;
@@ -70,6 +72,9 @@
       inputs.stylix.nixosModules.stylix
       inputs.nvf.nixosModules.default
       inputs.nur.nixosModules.nur
+     # inputs.catppuccin.nixosModules.catppuccin
+     # inputs.catppuccin.homeManagerModules.catppuccin
+      
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
@@ -79,6 +84,7 @@
           inherit inputs;
           inherit systemSettings;
           inherit userSettings;
+          inherit pkgs-legacy;
         };
       }
     ];

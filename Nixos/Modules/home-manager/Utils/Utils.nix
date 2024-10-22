@@ -4,7 +4,6 @@
  home.packages = with pkgs; [
   mpv
   keepassxc
-  kdePackages.dolphin
   kdePackages.gwenview
   kdePackages.kate
   obsidian

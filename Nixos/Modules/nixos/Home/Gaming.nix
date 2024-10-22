@@ -5,7 +5,7 @@
 environment.systemPackages = with pkgs;[
  lutris
  gamescope
- protontricks
+ #protontricks
   bottles
  prismlauncher
  steamtinkerlaunch 

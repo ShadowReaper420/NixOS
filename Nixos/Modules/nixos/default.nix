@@ -9,6 +9,8 @@
    ./Utils/sh.nix
    ./Home/Gaming.nix
    ./Home/Spotify.nix
-
+   ./VM-stuff/QEMU.nix
+   ./VM-stuff/Distro-box.nix
+   ./Utils/Fonts.nix
   ];
 }
