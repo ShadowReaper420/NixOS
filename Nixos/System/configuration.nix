@@ -34,11 +34,6 @@
   services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 
-  programs.steam = {
-    enable = true;
-
-  };
-
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

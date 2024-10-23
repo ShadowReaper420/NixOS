@@ -3,7 +3,6 @@
 
 {
 environment.systemPackages = with pkgs;[
- lutris
  gamescope
  #protontricks
   bottles
@@ -12,9 +11,12 @@ environment.systemPackages = with pkgs;[
  openmw
  winetricks
  wine
+ ryujinx
+];
+  
 
+programs.steam = {
+  enable = true;
 
-
-
- ];
+ };
 }

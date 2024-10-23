@@ -6,6 +6,7 @@
   wget
   kitty
   nil
+  fuse
  # kdePackages.partitionmanager
   kdePackages.dolphin
   libsForQt5.ark
@@ -13,14 +14,12 @@
   cmake
   nwg-displays
   xfce.thunar
-  zenity
+  #zenity
   p7zip
   themechanger
   kdePackages.qtstyleplugin-kvantum
 
 
 ]; 
-
-
 
   }
