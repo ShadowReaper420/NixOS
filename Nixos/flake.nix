@@ -9,6 +9,12 @@
     nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
     pyprland.url = "github:hyprland-community/pyprland";
+    catppuccin.url = "github:catppuccin/nix";
+
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -23,11 +29,16 @@
     nvf = {
       url = "github:notashelf/nvf";
     };
+
+    nixvim = {
+      url = github:nix-community/nixvim;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
 
-   outputs = { nixpkgs, home-manager, nvf, nur, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nvf, nur, aagl, nixvim, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -68,12 +79,13 @@
     inherit pkgs;
     modules = [
       ./System/configuration.nix
+      inputs.nixvim.nixosModules.nixvim
       inputs.home-manager.nixosModules.home-manager
       inputs.stylix.nixosModules.stylix
       inputs.nvf.nixosModules.default
       inputs.nur.nixosModules.nur
-     # inputs.catppuccin.nixosModules.catppuccin
-     # inputs.catppuccin.homeManagerModules.catppuccin
+      inputs.catppuccin.nixosModules.catppuccin
+      inputs.catppuccin.homeManagerModules.catppuccin
       
       {
         home-manager.useGlobalPkgs = true;

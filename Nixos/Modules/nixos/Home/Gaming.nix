@@ -11,12 +11,18 @@ environment.systemPackages = with pkgs;[
  openmw
  winetricks
  wine
- ryujinx
-];
+ lutris
+# ryujinx
+ ];
   
 
 programs.steam = {
   enable = true;
 
  };
+
+programs.appimage = {
+  enable = true;
+  binfmt = true;
+};
 }

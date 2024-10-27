@@ -12,5 +12,6 @@
    ./VM-stuff/QEMU.nix
    ./VM-stuff/Distro-box.nix
    ./Utils/Fonts.nix
+   #./Utils/Nixvim.nix
   ];
 }

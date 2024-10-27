@@ -14,11 +14,12 @@
       ./Home/Misc.nix
       ./Desktops/WM/Wayland-Utils/Wayland-utils.nix
       ./Utils/Utils.nix
+      ./Work/Workspace.nix
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
      # ./stylix.nix
-     # ./Themes/Catppuccin.nix
+      #./Themes/qt.nix
 
       ];
   # users.userSettings.username = {

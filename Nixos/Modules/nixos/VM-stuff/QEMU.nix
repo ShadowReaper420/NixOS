@@ -5,6 +5,6 @@
  environment.systemPackages = with pkgs;[
   qemu
   virt-manager
-  quickemu
+  #quickemu
  ];
 }

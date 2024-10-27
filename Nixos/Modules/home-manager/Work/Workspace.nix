@@ -1,4 +1,4 @@
-{config, lib, pgks,}:
+{config, lib, pkgs, ...}:
 {
   home.packages = with pkgs; [
     libreoffice
