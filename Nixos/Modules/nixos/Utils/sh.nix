@@ -1,9 +1,9 @@
 {config, lib, pkgs, userSettings, systemSettings, inputs, ...}:
 
 {
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
     shellAliases = {
       os-rebuild = "nh os switch";

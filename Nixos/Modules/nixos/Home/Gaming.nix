@@ -1,4 +1,4 @@
-{config, lib, pkgs, ...}:
+{config, lib, pkgs, inputs, systemSettings, ...}:
 
 
 {
@@ -13,6 +13,7 @@ environment.systemPackages = with pkgs;[
  wine
  lutris
 # ryujinx
+ inputs.suyu.packages.x86_64-linux.suyu
  ];
   
 
@@ -25,4 +26,5 @@ programs.appimage = {
   enable = true;
   binfmt = true;
 };
+
 }

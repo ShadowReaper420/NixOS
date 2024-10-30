@@ -8,8 +8,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
-    pyprland.url = "github:hyprland-community/pyprland";
-    catppuccin.url = "github:catppuccin/nix";
+   # pyprland.url = "github:hyprland-community/pyprland";
+   # catppuccin.url = "github:catppuccin/nix";
 
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
@@ -34,11 +34,16 @@
       url = github:nix-community/nixvim;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    suyu = {
+      url = "github:Noodlez1232/suyu-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
 
-   outputs = { nixpkgs, home-manager, nvf, nur, aagl, nixvim, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nvf, nur, aagl, nixvim, suyu, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -84,8 +89,8 @@
       inputs.stylix.nixosModules.stylix
       inputs.nvf.nixosModules.default
       inputs.nur.nixosModules.nur
-      inputs.catppuccin.nixosModules.catppuccin
-      inputs.catppuccin.homeManagerModules.catppuccin
+      #inputs.catppuccin.nixosModules.catppuccin
+      #inputs.catppuccin.homeManagerModules.catppuccin
       
       {
         home-manager.useGlobalPkgs = true;

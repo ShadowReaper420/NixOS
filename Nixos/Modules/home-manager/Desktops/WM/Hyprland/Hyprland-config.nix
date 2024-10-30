@@ -1,9 +1,16 @@
 {config, lib, pkgs, userSettings, systemSettings, inputs, ...}:
 
 {
-
+  home.packages = with pkgs; [
+    pyprland
+  ];
 
   #Hyprland config
+    
+  xdg.configFile. "./hypr".source = ./pyprland.toml;
+    
+
+
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     enable = true;
@@ -29,6 +36,7 @@
       exec-once = clipse
       exec-once = waypaper-engine daemon
       exec-once = hyprpm reload
+      exec-once = /usr/bin/pypr
 
 
       env = LIBVA_DRIVER_NAME,nvidia
@@ -94,6 +102,11 @@
      bind = $mod, G, togglegroup,
      bind = Alt, Return, fullscreen,
      bind = $mod, Q, killactive,
+     bind = $mod, M, exec, pypr layout_center toggle
+     bind = $mod, left, exec, pypr layout_center prev
+     bind = $mod, right, exec, pypr layout_center next
+     bind = $mod, up, exec, pypr layout_center prev2
+     bind = $mod, down, exec, pypr layout_center next2
 
      # Move/Resize focused window
 

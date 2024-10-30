@@ -14,6 +14,7 @@
       ./Home/Misc.nix
       ./Desktops/WM/Wayland-Utils/Wayland-utils.nix
       ./Utils/Utils.nix
+      ./Utils/Git.nix
       ./Work/Workspace.nix
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
