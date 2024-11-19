@@ -9,6 +9,8 @@
   obsidian
   thunderbird
   vscodium
+  swww
+  upscayl
   
   #____________________
   #Web browsers, pick your poision, I recommend either Floorp or Brave.

@@ -1,13 +1,26 @@
 {config, lib, pkgs, userSettings, systemSettings, inputs, ...}:
 
 {
-  home.packages = with pkgs; [
-    pyprland
-  ];
 
   #Hyprland config
     
-  xdg.configFile. "./hypr".source = ./pyprland.toml;
+  xdg.configFile. "./hypr/pyprland.toml".source = ./pyprland.toml;
+
+   home.packages = with pkgs; [
+   rofi-wayland
+   #waypaper
+   swww
+   mako
+   wlogout
+   waybar
+   swaylock
+   clipse
+   wlsunset
+   hyprshot
+   ags
+   swaynotificationcenter
+   pavucontrol
+  ];
     
 
 
@@ -34,9 +47,9 @@
       #exec-once = mako
       exec-once = swaync
       exec-once = clipse
-      exec-once = waypaper-engine daemon
+      exec-once = swww-daemon
       exec-once = hyprpm reload
-      exec-once = /usr/bin/pypr
+      exec-once = pypr
 
 
       env = LIBVA_DRIVER_NAME,nvidia
@@ -95,7 +108,7 @@
      bind = $mod, E, exec, $filemanager
      bind = $mod, T, exec, $term
      bind = $mod, A, exec, rofi -show drun
-     bind = $mod, P, exec, hyprshot -m region
+     bind = $mod, P, exec, hyprshot -m region --clipboard-only --freeze
 
  #________Window Managment Keybinds________#
      bind = $mod, W, togglefloating,
@@ -126,6 +139,16 @@
      bind = $mod, 8, split:workspace, 8
      bind = $mod, 9, split:workspace, 9
      bind = $mod, 0, split:workspace, 10
+     bind = $mod+shift, 1, split:movetoworkspace, 1
+     bind = $mod+shift, 2, split:movetoworkspace, 2
+     bind = $mod+shift, 3, split:movetoworkspace, 3
+     bind = $mod+shift, 4, split:movetoworkspace, 4
+     bind = $mod+shift, 5, split:movetoworkspace, 5
+     bind = $mod+shift, 6, split:movetoworkspace, 6
+     bind = $mod+shift, 7, split:movetoworkspace, 7
+     bind = $mod+shift, 8, split:movetoworkspace, 8
+     bind = $mod+shift, 9, split:movetoworkspace, 9
+     bind = $mod+shift, 0, split:movetoworkspace, 10
      bind = $mod+Alt, S, movetoworkspacesilent, special
      bind = $mod, S, togglespecialworkspace,
      

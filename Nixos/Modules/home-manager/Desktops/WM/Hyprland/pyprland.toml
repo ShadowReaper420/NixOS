@@ -1,4 +1,5 @@
 [pyprland]
+hyprland_version = "0.44.0"
 plugins = [
     "layout_center",
 
@@ -6,8 +7,8 @@ plugins = [
 ]
 
 [layout_center]
-margin = 60
-offset = [0, 30]
+margin = 40
+offset = [0, 20]
 next = "movefocus r"
 prev = "movefocus l"
 next2 = "movefocus d"

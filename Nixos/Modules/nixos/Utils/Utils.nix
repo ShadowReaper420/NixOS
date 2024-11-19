@@ -5,22 +5,19 @@
   git
   wget
   kitty
-  nil
   fuse
- # kdePackages.partitionmanager
   kdePackages.dolphin
-  libsForQt5.ark
+  kdePackages.ark
   cpio
   cmake
-  nwg-displays
+  libadwaita
   xfce.thunar
-  #zenity
+  zenity
   p7zip
   themechanger
   kdePackages.qtstyleplugin-kvantum
   libsForQt5.qt5ct
   kdePackages.qt6ct
-  wallust
   nixd
 
 

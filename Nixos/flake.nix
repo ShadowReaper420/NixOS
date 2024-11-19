@@ -8,7 +8,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
-   # pyprland.url = "github:hyprland-community/pyprland";
    # catppuccin.url = "github:catppuccin/nix";
 
     aagl = {
@@ -26,12 +25,8 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    nvf = {
-      url = "github:notashelf/nvf";
-    };
-
-    nixvim = {
-      url = github:nix-community/nixvim;
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -39,11 +34,16 @@
       url = "github:Noodlez1232/suyu-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+    };
+
   };
 
 
 
-   outputs = { nixpkgs, home-manager, nvf, nur, aagl, nixvim, suyu, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nur, aagl, suyu, pyprland, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -60,9 +60,7 @@
      username = "flugel"; # username
      name = "Flugel"; # name
      email = "Shadowreaper26@proton.me"; # email, pretty much exists solely for git.
-     #theme = "" #Sets colour theme
      icons = "BeautyLine"; # Sets the icon theme
-     font = "Intel One Mono"; # Sets the font
      wm = "hyprland"; #selected WM or DE
      wmType = "wayland"; # x11 or wayland
      browser = "floorp"; # Web browser, pick your posion.
@@ -84,15 +82,18 @@
     inherit pkgs;
     modules = [
       ./System/configuration.nix
-      inputs.nixvim.nixosModules.nixvim
       inputs.home-manager.nixosModules.home-manager
       inputs.stylix.nixosModules.stylix
-      inputs.nvf.nixosModules.default
       inputs.nur.nixosModules.nur
+      inputs.nixvim.nixosModules.nixvim
       #inputs.catppuccin.nixosModules.catppuccin
       #inputs.catppuccin.homeManagerModules.catppuccin
       
       {
+        environment.systemPackages = [ pyprland.packages."x86_64-linux".pyprland ];
+        imports = [ aagl.nixosModules.default ];
+        nix.settings = aagl.nixConfig; # Set up Cachix
+        programs.honkers-railway-launcher.enable = true;
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "hm-backup";
@@ -101,6 +102,7 @@
           inherit inputs;
           inherit systemSettings;
           inherit userSettings;
+          inherit aagl;
           inherit pkgs-legacy;
         };
       }
