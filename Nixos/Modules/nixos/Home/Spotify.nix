@@ -1,8 +1,8 @@
-{config, lib, pkgs, inputs, nur, ...}:
+{config, lib, pkgs, inputs, ...}:
 
 {
 
   environment.systemPackages = with pkgs; [
-    config.nur.repos.nltch.spotify-adblock
+    nur.repos.nltch.spotify-adblock
     ];
 }

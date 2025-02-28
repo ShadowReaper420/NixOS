@@ -12,14 +12,14 @@
         servers = {
 
           #rust
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installCargo = true;
             installRustc = true;
           };
 
           #lua
-          lua-ls.enable = true;
+          lua_ls.enable = true;
 
           #nix
           nixd.enable = true;

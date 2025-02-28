@@ -8,7 +8,6 @@
 
    home.packages = with pkgs; [
    rofi-wayland
-   #waypaper
    swww
    mako
    wlogout
@@ -18,11 +17,10 @@
    wlsunset
    hyprshot
    ags
-   swaynotificationcenter
    pavucontrol
+   grimblast
   ];
     
-
 
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -44,8 +42,8 @@
     # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
      
       exec-once = waybar
-      #exec-once = mako
-      exec-once = swaync
+      exec-once = mako
+      #exec-once = hyprpanel
       exec-once = clipse
       exec-once = swww-daemon
       exec-once = hyprpm reload
@@ -109,6 +107,7 @@
      bind = $mod, T, exec, $term
      bind = $mod, A, exec, rofi -show drun
      bind = $mod, P, exec, hyprshot -m region --clipboard-only --freeze
+     bind =, ctrl, pass, class:^(discord)$
 
  #________Window Managment Keybinds________#
      bind = $mod, W, togglefloating,
@@ -270,7 +269,6 @@ group {
 
 decoration {
     rounding = 10
-    drop_shadow = false
 
     blur {
         enabled = yes

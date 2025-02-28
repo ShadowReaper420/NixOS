@@ -7,5 +7,7 @@
       enable = true;
     };
   };
+ #home-manager.users.${userSettings.username} = {
 
+ #};
 }

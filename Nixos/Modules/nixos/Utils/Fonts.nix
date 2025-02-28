@@ -3,6 +3,5 @@
 {
   fonts.packages = with pkgs; [
     font-awesome
-    nerdfonts
-  ];
+  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 }

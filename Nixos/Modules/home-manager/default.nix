@@ -4,15 +4,12 @@
    imports = [
 
     # You can also split up your configuration and import pieces of it here:
-      ./Home/Misc.nix
-      ./Utils/Utils.nix
-      ./Utils/Git.nix
-      ./Work/Workspace.nix
+      #./Work/Workspace.nix
       #./Desktops/WM/Desktop-Control.nix
       ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
      # ./stylix.nix
-      #./Themes/qt.nix
+      ./Themes/QT.nix
 
       ];
 }

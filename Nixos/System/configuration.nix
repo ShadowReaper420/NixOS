@@ -17,8 +17,26 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      useOSProber = true;
+      efiSupport = true;
+      devices = [ "nodev" ];
+     # theme = pkgs.stdenv.mkDerivation {
+       # pname = "grub-theme-garuda";
+       # version = "1.0";
+       # src = 
+
+      #  };
+       # installPhase = "cp -r customize/nixos $out";
+      #};
+    };
+  };
 
 
   # Nix rebuild helper
@@ -28,6 +46,8 @@
     clean.extraArgs = "--keep-since 4d --keep 5";
     flake = "/home/flugel/Nixos";
   };
+
+
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -62,10 +82,10 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
+  services.xserver.excludePackages = [ pkgs.xterm ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -73,11 +93,8 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  #services.printing.enable = true;
-
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

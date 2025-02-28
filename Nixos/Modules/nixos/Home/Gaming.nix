@@ -12,14 +12,17 @@ environment.systemPackages = with pkgs;[
  winetricks
  wine
  lutris
-# ryujinx
+ nexusmods-app-unfree
+ ryujinx-greemdev
+ protonup-qt
  inputs.suyu.packages.x86_64-linux.suyu
+ xivlauncher
  ];
   
 
 programs.steam = {
   enable = true;
-  protontricks.enable = true;
+  #protontricks.enable = true;
   extraCompatPackages = with pkgs; [
     proton-ge-bin
   ];

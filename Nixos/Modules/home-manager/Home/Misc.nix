@@ -2,7 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    vesktop
-    ktorrent
+    kdePackages.ktorrent
+    discord
+    
   ];
 }

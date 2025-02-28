@@ -6,9 +6,13 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-23.05";
     hyprland.url = "github:hyprwm/Hyprland";
-    nur.url =  "github:nix-community/NUR/";
     stylix.url = "github:danth/stylix";
    # catppuccin.url = "github:catppuccin/nix";
+
+   nur = {
+    url =  "github:nix-community/NUR/";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
@@ -32,18 +36,21 @@
 
     suyu = {
       url = "github:Noodlez1232/suyu-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
       url = "github:nix-community/nixvim";
     };
 
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+    };
+
   };
 
 
 
-   outputs = { nixpkgs, home-manager, nur, aagl, suyu, pyprland, ... } @ inputs:
+   outputs = { nixpkgs, home-manager, nur, aagl, suyu, pyprland, hyprpanel, ... } @ inputs:
 
   let
   #________SYSTEM SETTINGS________#
@@ -73,7 +80,9 @@
    pkgs = import nixpkgs {
     inherit (systemSettings) system;
     config.allowUnfree = true;
-    #overlays = [import ./Overlays/Control.nix];
+    overlays = [
+      inputs.hyprpanel.overlay
+    ];
    };
 
  in {
@@ -84,7 +93,7 @@
       ./System/configuration.nix
       inputs.home-manager.nixosModules.home-manager
       inputs.stylix.nixosModules.stylix
-      inputs.nur.nixosModules.nur
+      inputs.nur.modules.nixos.default
       inputs.nixvim.nixosModules.nixvim
       #inputs.catppuccin.nixosModules.catppuccin
       #inputs.catppuccin.homeManagerModules.catppuccin
@@ -94,6 +103,7 @@
         imports = [ aagl.nixosModules.default ];
         nix.settings = aagl.nixConfig; # Set up Cachix
         programs.honkers-railway-launcher.enable = true;
+        programs.anime-game-launcher.enable = true;
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.backupFileExtension = "hm-backup";

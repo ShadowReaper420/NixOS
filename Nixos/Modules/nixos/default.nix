@@ -5,7 +5,7 @@
    
    ./Utils/Utils.nix
    #./Desktops/WM/Wayfire.nix
-   ./Desktops/WM/Hyprland.nix
+   ./Desktops/WM/Hyprland/Hyprland.nix
    ./Utils/sh.nix
    ./Home/Gaming.nix
    ./Home/Spotify.nix

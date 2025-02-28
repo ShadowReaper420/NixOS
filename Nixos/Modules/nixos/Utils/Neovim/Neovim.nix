@@ -8,6 +8,7 @@
     ./Plugins/Treesitter.nix
     ./Plugins/Lsp.nix
     ./Plugins/Nvim-tree.nix
+   # ./Plugins/Startup.nix
 
   ];
 
