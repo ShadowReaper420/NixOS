@@ -2,14 +2,14 @@
 {
   home.packages = [
   
-  (pkgs.writeShellScriptBin "rofi" '' 
+  (pkgs.writeShellScriptBin "rofi-theme" '' 
   
   dir="$HOME/.config/rofi/launchers/type-6"
   theme='style-2'
   ## Run
   rofi \
     -show drun \
-    -theme ${dir}/${theme}.rasi 
+    -theme ''${dir}/''${theme}.rasi 
     '')
   ];
 }

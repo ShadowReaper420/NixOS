@@ -1,20 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, systemSettings, userSettings, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../Modules/nixos/default.nix
-      inputs.home-manager.nixosModules.home-manager
-      ../Themes/Stylix.nix
-      ../Themes/Icons/BeautyLine.nix
-      ./Nvidia.nix
-      
-    ];
+  config,
+  pkgs,
+  inputs,
+  systemSettings,
+  userSettings,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../Modules/nixos/default.nix
+    inputs.home-manager.nixosModules.home-manager
+    ../Themes/Stylix.nix
+    ../Themes/Icons/BeautyLine.nix
+    ./Nvidia.nix
+  ];
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
@@ -26,18 +29,17 @@
       enable = true;
       useOSProber = true;
       efiSupport = true;
-      devices = [ "nodev" ];
-     # theme = pkgs.stdenv.mkDerivation {
-       # pname = "grub-theme-garuda";
-       # version = "1.0";
-       # src = 
+      devices = ["nodev"];
+      # theme = pkgs.stdenv.mkDerivation {
+      # pname = "grub-theme-garuda";
+      # version = "1.0";
+      # src =
 
       #  };
-       # installPhase = "cp -r customize/nixos $out";
+      # installPhase = "cp -r customize/nixos $out";
       #};
     };
   };
-
 
   # Nix rebuild helper
   programs.nh = {
@@ -47,8 +49,6 @@
     flake = "/home/flugel/Nixos";
   };
 
-
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   services.mullvad-vpn.enable = true;
@@ -56,7 +56,6 @@
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -82,10 +81,13 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
+  services.xserver.excludePackages = [pkgs.xterm];
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "sddm-astronaut";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -107,7 +109,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "disk" "networkmanager"];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -136,5 +138,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

@@ -10,6 +10,7 @@
       ./CLI-Collection/CLI-Crap.nix
      # ./stylix.nix
       ./Themes/QT.nix
+      ./Desktops/Rofi/Rofi.nix
 
       ];
 }
