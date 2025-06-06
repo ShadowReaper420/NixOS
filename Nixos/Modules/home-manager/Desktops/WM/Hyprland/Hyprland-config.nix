@@ -24,13 +24,15 @@
           # █░░ ▄▀█ █░█ █▄░█ █▀▀ █░█
           # █▄▄ █▀█ █▄█ █░▀█ █▄▄ █▀█
 
-            exec-once = waybar
-            exec-once = mako
-            #exec-once = hyprpanel
+            #exec-once = waybar
+            #exec-once = mako
+            exec-once = hyprpanel
             exec-once = clipse
-            exec-once = swww-daemon
+            exec-once = linux-wallpaperengine --silent --screen-root DP-5 --scaling stretch 1139304621
+            exec-once = linux-wallpaperengine --silent --screen-root HDMI-A-2 --scaling  stretch 1126387049
             exec-once = hyprpm reload
             exec-once = pypr
+            #exec-once = mpvpaper '*' /home/flugel/Nixos/.dotfiles/Wallpapers/Galaxy.mp4
 
 
             env = LIBVA_DRIVER_NAME,nvidia
@@ -88,7 +90,7 @@
            bind = $mod, F, exec, $browser
            bind = $mod, E, exec, $filemanager
            bind = $mod, T, exec, $term
-           bind = $mod, A, exec, rofi -show drun
+           bind = $mod, A, exec, ~/.config/rofi/launchers/type-6/launcher.sh
            bind = $mod, P, exec, hyprshot -m region --clipboard-only --freeze
            bind =, ctrl, pass, class:^(discord)$
            bind =, ctrl, pass, class:^(com\.obsproject\.Studio)$
@@ -149,6 +151,7 @@
       windowrulev2 = opacity 0.80 0.80,class:^(code-url-handler)$
       windowrulev2 = opacity 0.80 0.80,class:^(code-insiders-url-handler)$
       windowrulev2 = opacity 0.70 0.70,class:^(kitty)$
+       windowrulev2 = opacity 0.70 0.70,class:^(emacs)$
       windowrulev2 = opacity 0.80 0.80,class:^(org.kde.dolphin)$
       windowrulev2 = opacity 0.80 0.80,class:^(org.kde.ark)$
       windowrulev2 = opacity 0.80 0.80,class:^(nwg-look)$

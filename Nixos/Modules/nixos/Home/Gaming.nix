@@ -4,24 +4,31 @@
   pkgs,
   inputs,
   systemSettings,
+  pkgs-stable,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    gamescope
-    #protontricks
+  environment.systemPackages = 
+
+  with pkgs; [
+    
+    
     bottles
     prismlauncher
     steamtinkerlaunch
     openmw
     winetricks
     wine
+    #gamescope
     lutris
     nexusmods-app-unfree
-    #ryujinx-greemdev
     protonup-qt
-    suyu
     xivlauncher
+   # ryubing
+    
   ];
+  
+  
+
 
   programs.steam = {
     enable = true;

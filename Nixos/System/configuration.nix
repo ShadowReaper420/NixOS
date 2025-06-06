@@ -40,7 +40,6 @@
       #};
     };
   };
-
   # Nix rebuild helper
   programs.nh = {
     enable = true;
@@ -83,11 +82,7 @@
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "sddm-astronaut";
-  };
+
 
   # Configure keymap in X11
   services.xserver.xkb = {

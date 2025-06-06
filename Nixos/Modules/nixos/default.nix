@@ -6,11 +6,15 @@
     #./Desktops/WM/Wayfire.nix
     ./Desktops/WM/Hyprland/Hyprland.nix
     ./Utils/sh.nix
+    ./Utils/Git.nix
     ./Home/Gaming.nix
     ./Home/Spotify.nix
     ./VM-stuff/QEMU.nix
     ./VM-stuff/Distro-box.nix
     ./Utils/Fonts.nix
-    ./Utils/Neovim/Neovim.nix
+#    ./Utils/Neovim/Neovim.nix
+    ./Desktops/WM/Niri/Niri.nix
+    ./Utils/Emacs.nix
+    #./Desktops/DE/KDE.nix
   ];
 }

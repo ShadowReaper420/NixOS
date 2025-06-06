@@ -3,10 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-23.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
-    # catppuccin.url = "github:catppuccin/nix";
 
     nur = {
       url = "github:nix-community/NUR/";
@@ -40,6 +39,17 @@
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+    };
+
+
+   # microvm = {
+    #  url = "github:astro/microvm.nix";
+   #   inputs.nixpkgs.follows = "nixpkgs";
+   # };
+
   };
 
   outputs = {
@@ -49,6 +59,9 @@
     aagl,
     pyprland,
     hyprpanel,
+    nixpkgs-stable,
+    niri,
+    #microvm,
     ...
   } @ inputs: let
     #________SYSTEM SETTINGS________#
@@ -68,18 +81,19 @@
       icons = "BeautyLine"; # Sets the icon theme
       wm = "hyprland"; #selected WM or DE
       wmType = "wayland"; # x11 or wayland
-      browser = "brave"; # Web browser, pick your posion.
+      browser = "floorp"; # Web browser, pick your posion.
       editor = "neovim"; # Sets the default text editor. used for some system stuff and keybinds.
       fileManager = "thunar"; # Sets the file manager, used in keybinds.
       terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
-      Shell = "zsh"; # Sets your shell.
+      #Shell = "zsh"; # Sets your shell.
     };
-    pkgs-legacy = inputs.nixpkgs-stable;
+    pkgs-stable = inputs.nixpkgs-stable;
     pkgs = import nixpkgs {
       inherit (systemSettings) system;
       config.allowUnfree = true;
       overlays = [
         inputs.hyprpanel.overlay
+        inputs.niri.overlays.niri
       ];
     };
   in {
@@ -91,6 +105,8 @@
         inputs.stylix.nixosModules.stylix
         inputs.nur.modules.nixos.default
         inputs.nixvim.nixosModules.nixvim
+        inputs.niri.nixosModules.niri
+        #inputs.microvm.nixosModules.microvm
 
         {
           environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
@@ -98,7 +114,6 @@
           nix.settings = aagl.nixConfig; # Set up Cachix
           programs.honkers-railway-launcher.enable = true;
           programs.anime-game-launcher.enable = true;
-          #home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "hm-backup";
           home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
@@ -107,7 +122,8 @@
             inherit systemSettings;
             inherit userSettings;
             inherit aagl;
-            inherit pkgs-legacy;
+            inherit pkgs-stable;
+            inherit niri;
           };
         }
       ];
@@ -115,6 +131,8 @@
         inherit inputs;
         inherit systemSettings;
         inherit userSettings;
+        inherit pkgs-stable;
+        
       };
     };
   };

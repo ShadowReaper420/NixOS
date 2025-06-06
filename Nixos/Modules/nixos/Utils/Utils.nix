@@ -8,7 +8,7 @@
 }: {
   environment.systemPackages = 
   with pkgs; [
-    #godot_4_3
+    godot
     git
     wget
     kitty
@@ -39,9 +39,9 @@
     r2modman
     alejandra
     docker-compose
-    ryubing
     wireplumber
-    sddm-astronaut
+    rust-analyzer
+    python313Packages.python-lsp-server
 
   ];
 
