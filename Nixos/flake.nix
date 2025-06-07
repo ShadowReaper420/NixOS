@@ -59,7 +59,7 @@
     aagl,
     pyprland,
     hyprpanel,
-    nixpkgs-stable,
+   # nixpkgs-stable,
     niri,
     #microvm,
     ...
@@ -83,9 +83,8 @@
       wmType = "wayland"; # x11 or wayland
       browser = "floorp"; # Web browser, pick your posion.
       editor = "neovim"; # Sets the default text editor. used for some system stuff and keybinds.
-      fileManager = "thunar"; # Sets the file manager, used in keybinds.
+      fileManager = "dolphin"; # Sets the file manager, used in keybinds.
       terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
-      #Shell = "zsh"; # Sets your shell.
     };
     pkgs-stable = inputs.nixpkgs-stable;
     pkgs = import nixpkgs {
@@ -111,9 +110,6 @@
         {
           environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
           imports = [aagl.nixosModules.default];
-          nix.settings = aagl.nixConfig; # Set up Cachix
-          programs.honkers-railway-launcher.enable = true;
-          programs.anime-game-launcher.enable = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "hm-backup";
           home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
@@ -122,7 +118,7 @@
             inherit systemSettings;
             inherit userSettings;
             inherit aagl;
-            inherit pkgs-stable;
+            #inherit pkgs-stable;
             inherit niri;
           };
         }
@@ -131,7 +127,7 @@
         inherit inputs;
         inherit systemSettings;
         inherit userSettings;
-        inherit pkgs-stable;
+        #inherit pkgs-stable;
         
       };
     };

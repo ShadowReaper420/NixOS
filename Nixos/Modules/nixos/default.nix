@@ -5,7 +5,8 @@
     ./Utils/Utils.nix
     #./Desktops/WM/Wayfire.nix
     ./Desktops/WM/Hyprland/Hyprland.nix
-    ./Utils/sh.nix
+    #./Utils/Sh/zsh.nix
+    ./Utils/Sh/Nushell.nix
     ./Utils/Git.nix
     ./Home/Gaming.nix
     ./Home/Spotify.nix
@@ -15,6 +16,6 @@
 #    ./Utils/Neovim/Neovim.nix
     ./Desktops/WM/Niri/Niri.nix
     ./Utils/Emacs.nix
-    #./Desktops/DE/KDE.nix
+    ./Utils/Dolphin.nix
   ];
 }

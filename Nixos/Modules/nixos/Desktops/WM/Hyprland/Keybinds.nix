@@ -35,20 +35,20 @@
 
 
 
-      ] ++
-      (
-       #________Workspace Keybinds________#
+    ] ++
+    (
+      #________Workspace Keybinds________#
       builtins.concatLists (builtins.genList (i:
-       let ws = i + 1;
-       in [
-       "$mod, code:i${toString i}, split:workspace, ${toString ws}"
-       "$mod SHIFT,code:i${toString i}, split:workspace, ${toString ws}"
-       "$mod+Alt, S, movetoworkspacesilent, special"
-       "$mod, S, togglespecialworkspace,"
-       ]
+      let ws = i + 1;
+      in [
+        "$mod, code:${toString i}, split:workspace, ${toString ws}"
+        "$mod SHIFT,code:${toString i}, split:workspace, ${toString ws}"
+        "$mod+Alt, S, movetoworkspacesilent, special"
+        "$mod, S, togglespecialworkspace,"
+      ]
       )
       9)
-      );
+    );
 
 
 

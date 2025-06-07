@@ -18,7 +18,6 @@
     swww
     waypaper
     waybar
-    kando
   ];
 
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
@@ -109,7 +108,7 @@
       };
 
       input = {
-        focus-follows-mouse.enable = true;
+        #focus-follows-mouse.enable = true;
       };
 
       animations = let

@@ -6,7 +6,7 @@
     # You can also split up your configuration and import pieces of it here:
       #./Work/Workspace.nix
       #./Desktops/WM/Desktop-Control.nix
-      ./Desktops/WM/Hyprland/Hyprland-config.nix
+#      ./Desktops/WM/Hyprland/Hyprland-config.nix
       ./CLI-Collection/CLI-Crap.nix
      # ./stylix.nix
       ./Themes/QT.nix

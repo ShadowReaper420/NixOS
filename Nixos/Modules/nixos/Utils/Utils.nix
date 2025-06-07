@@ -42,7 +42,6 @@
     wireplumber
     rust-analyzer
     python313Packages.python-lsp-server
-
   ];
 
   programs.thunar = {

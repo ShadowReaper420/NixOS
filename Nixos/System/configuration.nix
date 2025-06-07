@@ -14,8 +14,8 @@
     ./hardware-configuration.nix
     ../Modules/nixos/default.nix
     inputs.home-manager.nixosModules.home-manager
-    ../Themes/Stylix.nix
-    ../Themes/Icons/BeautyLine.nix
+ #   ../Themes/Stylix.nix
+#    ../Themes/Icons/BeautyLine.nix
     ./Nvidia.nix
   ];
 
