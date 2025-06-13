@@ -17,5 +17,6 @@
     ./Desktops/WM/Niri/Niri.nix
     ./Utils/Emacs.nix
     ./Utils/Dolphin.nix
+    ./Utils/Flatpak.nix
   ];
 }

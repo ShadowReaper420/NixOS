@@ -188,7 +188,8 @@
           windowrulev2 = opacity 0.80 0.80,class:^(code-url-handler)$
           windowrulev2 = opacity 0.80 0.80,class:^(code-insiders-url-handler)$
           windowrulev2 = opacity 0.70 0.70,class:^(kitty)$
-          windowrulev2 = opacity 0.70 0.70,class:^(emacs)$
+          windowrulev2 = opacity 0.60 override 0.60 override, class: Emacs
+          windowrulev2 = opacity 0.70 0.70,class:^(emacsclient)$
           windowrulev2 = opacity 0.80 0.80,class:^(org.kde.dolphin)$
           windowrulev2 = opacity 0.80 0.80,class:^(org.kde.ark)$
           windowrulev2 = opacity 0.80 0.80,class:^(nwg-look)$

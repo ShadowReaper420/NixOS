@@ -25,6 +25,7 @@
     themechanger
     kdePackages.qtstyleplugin-kvantum
     nixd
+    #nil
     #davinci-resolve
     libreoffice
     obs-studio

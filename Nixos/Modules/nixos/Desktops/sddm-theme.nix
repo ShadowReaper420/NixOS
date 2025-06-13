@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    themeConfig = { ConfigFile = "purple_leaves.conf"; };
+    themeConfig = { ConfigFile = "hyprland_kath.conf"; };
 
   };
 in {

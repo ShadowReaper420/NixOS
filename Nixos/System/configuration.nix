@@ -45,7 +45,7 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 4d --keep 5";
-    flake = "/home/flugel/Nixos";
+    flake = "/home/flugel/NixOS-Dev/Nixos/";
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

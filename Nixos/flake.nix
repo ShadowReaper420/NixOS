@@ -44,6 +44,10 @@
       url = "github:sodiboo/niri-flake";
     };
 
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+};
+
 
    # microvm = {
     #  url = "github:astro/microvm.nix";
@@ -59,6 +63,7 @@
     aagl,
     pyprland,
     hyprpanel,
+    nix-flatpak,
    # nixpkgs-stable,
     niri,
     #microvm,
@@ -105,6 +110,7 @@
         inputs.nur.modules.nixos.default
         inputs.nixvim.nixosModules.nixvim
         inputs.niri.nixosModules.niri
+        inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
 
         {
