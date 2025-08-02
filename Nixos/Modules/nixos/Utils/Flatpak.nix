@@ -9,7 +9,7 @@
 }];
     packages = [
       {appId = "com.github.unrud.VideoDownloader"; origin = "flathub";}
-      "io.github.ryubing.Ryujin"
+
 ];
      update.onActivation = true;
 

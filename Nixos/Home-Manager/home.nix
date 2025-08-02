@@ -18,7 +18,7 @@
   # environment.
 
   imports = [
-    ../Modules/home-manager/default.nix
+#    ../Modules/home-manager/default.nix
 
   ];
 

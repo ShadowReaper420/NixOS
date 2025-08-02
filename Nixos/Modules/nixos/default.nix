@@ -4,13 +4,13 @@
   imports = [
     ./Utils/Utils.nix
     #./Desktops/WM/Wayfire.nix
-    ./Desktops/WM/Hyprland/Hyprland.nix
+    #./Desktops/WM/Hyprland/Hyprland.nix
     #./Utils/Sh/zsh.nix
     ./Utils/Sh/Nushell.nix
     ./Utils/Git.nix
     ./Home/Gaming.nix
     ./Home/Spotify.nix
-    ./VM-stuff/QEMU.nix
+   # ./VM-stuff/QEMU.nix
     ./VM-stuff/Distro-box.nix
     ./Utils/Fonts.nix
 #    ./Utils/Neovim/Neovim.nix
@@ -18,5 +18,6 @@
     ./Utils/Emacs.nix
     ./Utils/Dolphin.nix
     ./Utils/Flatpak.nix
+    ./Desktops/WM/Theming/Theming.nix
   ];
 }

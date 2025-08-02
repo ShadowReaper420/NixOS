@@ -18,9 +18,31 @@
     swww
     waypaper
     waybar
+    rofi-wayland
+    wl-clipboard
   ];
 
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
+  xdg = {
+   portal = {
+    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
+   };
+   mime = {
+    enable = true;
+    addedAssociations = {
+      "inode/directory" = [
+        "org.kde.dolphin.desktop"
+        "thunar.desktop"
+      ];
+    };
+   defaultApplications = {
+     "inode/directory" = "org.kde.dolphin.desktop";
+    };
+
+   };
+
+  };
+
+
 
   programs.niri = {
     package = pkgs.niri-unstable;
@@ -34,16 +56,13 @@
           command = ["waybar"];
         }
         {
-          command = ["waypaper-engine daemon"];
+          command = ["swww-daemon"];
         }
         {
           command = ["xwayland-satellite"];
         }
         {
           command = ["mako"];
-        }
-        {
-          command = ["clipse"];
         }
       ];
 
@@ -66,8 +85,6 @@
 
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
-        "Mod+Plus".action = set-column-width "+10";
-        "Mod+Minus".action = set-column-width "-10";
         "Mod+Left".action = focus-column-left;
         "Mod+Down".action = focus-window-or-workspace-down;
         "Mod+Up".action = focus-window-or-workspace-up;
@@ -79,6 +96,7 @@
         "Mod+M".action = maximize-column;
         "Mod+C".action = center-column;
         "Mod+G".action = toggle-column-tabbed-display;
+        "Mod+V".action = switch-preset-column-width;
 
         "Mod+H".action = focus-column-left;
         "Mod+J".action = focus-window-or-workspace-down;
@@ -100,9 +118,19 @@
       };
 
       layout = {
-        gaps = 8;
-        struts.left = 16;
-        struts.right = 16;
+
+        always-center-single-column = true;
+
+        preset-column-widths = [
+          { proportion = 1. / 2.; }
+          { proportion = 2. / 3.; }
+          { proportion = 3. / 3.; }
+        ];
+
+
+        gaps = 6;
+        struts.left = 8;
+        struts.right = 8;
         border.width = 4;
 
         border.active.gradient = {
@@ -126,12 +154,6 @@
         };
       };
 
-      workspaces."scratchpad-1" = {
-        name = "scratchpad-1";
-        open-on-output = null;
-};
-
-
 
 
       prefer-no-csd = true;
@@ -145,9 +167,9 @@
           };
         };
       in {
-        horizontal-view-movement = movement-conf;
-        window-movement = movement-conf;
-        workspace-switch = movement-conf;
+        horizontal-view-movement.kind = movement-conf;
+        window-movement.kind = movement-conf;
+        workspace-switch.kind = movement-conf;
       };
       window-rules = [{
         geometry-corner-radius = {

@@ -23,7 +23,7 @@
     nexusmods-app-unfree
     protonup-qt
     xivlauncher
-   # ryubing
+    ryubing
     
   ];
   

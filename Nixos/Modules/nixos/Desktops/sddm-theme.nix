@@ -1,9 +1,7 @@
 { pkgs, ... }:
 let
-  sddm-astronaut = pkgs.sddm-astronaut.override {
-    themeConfig = { ConfigFile = "hyprland_kath.conf"; };
+sddm-astronaut = pkgs.sddm-astronaut.override { embeddedTheme = "hyprland_kath";};
 
-  };
 in {
   services.displayManager.sddm = {
     enable = true;

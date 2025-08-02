@@ -8,8 +8,6 @@
 }: {
   environment.systemPackages = 
   with pkgs; [
-    godot
-    git
     wget
     kitty
     fuse
@@ -24,7 +22,6 @@
     p7zip
     themechanger
     kdePackages.qtstyleplugin-kvantum
-    nixd
     #nil
     #davinci-resolve
     libreoffice
@@ -32,17 +29,35 @@
     blender
     krita
     gimp
-    emacs
     brave
     kdePackages.kwalletmanager
     desmume
-    cargo
     r2modman
-    alejandra
-    docker-compose
     wireplumber
+  ]
+  ++
+  [
+    #lsp and other Dev crap
+    git
+    nixd
     rust-analyzer
     python313Packages.python-lsp-server
+    emacs
+    cargo
+    alejandra
+    docker-compose
+    godot
+  ]
+  ++
+  [
+    #CLI Collection
+    zoxide
+    fzf
+    fastfetch
+    ranger
+    btop
+    lazygit
+
   ];
 
   programs.thunar = {

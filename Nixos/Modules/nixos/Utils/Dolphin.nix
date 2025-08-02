@@ -10,11 +10,6 @@
     kdePackages.kio-admin
     kdePackages.kservice
   ];
-  xdg.mime.defaultApplications = {
-   "inode/directory" = "dolphin.desktop";
-   "image/png" = "gwenview";
-
-};
 
   # Fixes dolphin not having mime types.
   #credit to saygo on vimjoyers discord I stole this fix from their post.

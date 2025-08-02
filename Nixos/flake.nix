@@ -36,10 +36,6 @@
       url = "github:nix-community/nixvim";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake";
     };
@@ -62,7 +58,6 @@
     nur,
     aagl,
     pyprland,
-    hyprpanel,
     nix-flatpak,
    # nixpkgs-stable,
     niri,
@@ -96,7 +91,6 @@
       inherit (systemSettings) system;
       config.allowUnfree = true;
       overlays = [
-        inputs.hyprpanel.overlay
         inputs.niri.overlays.niri
       ];
     };
