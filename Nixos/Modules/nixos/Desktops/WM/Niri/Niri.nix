@@ -20,6 +20,7 @@
     waybar
     rofi-wayland
     wl-clipboard
+    hyprlock
   ];
 
   xdg = {

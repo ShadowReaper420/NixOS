@@ -24,7 +24,7 @@ stdenvNoCC.mkDerivation rec {
     sparseCheckout = [
       "BeautyLine-V3"
     ];
-    hash = "";
+    hash = "sha256-PKO6Mob23NlVgCOJ5guBd/KEZ8KrYPuJyUyomOSOIuU";
   };
 
   sourceRoot = "${src.name}/BeautyLine-V3";

@@ -19,5 +19,6 @@
     ./Utils/Dolphin.nix
     ./Utils/Flatpak.nix
     ./Desktops/WM/Theming/Theming.nix
+    ./Desktops/sddm-theme.nix
   ];
 }
