@@ -29,11 +29,13 @@
     blender
     krita
     gimp
+    floorp
     brave
     kdePackages.kwalletmanager
     desmume
     r2modman
     wireplumber
+    kdePackages.partitionmanager
   ]
   ++
   [
@@ -43,6 +45,7 @@
     rust-analyzer
     python313Packages.python-lsp-server
     emacs
+    ripgrep
     cargo
     alejandra
     docker-compose
@@ -78,17 +81,8 @@
       kdePackages.kate
       obsidian
       thunderbird
-      vscodium
-      #swww
       kdePackages.ktorrent
       discord
-      #upscayl
-
-      #____________________
-      #Web browsers, pick your poision, I recommend either Floorp or Brave.
-      floorp
-      #brave
-      #____________________
     ];
   };
 }
