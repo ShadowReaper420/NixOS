@@ -20,5 +20,6 @@
     ./Utils/Flatpak.nix
     ./Desktops/WM/Theming/Theming.nix
     ./Desktops/sddm-theme.nix
+    ./Utils/Quickshell.nix
   ];
 }

@@ -4,6 +4,8 @@
   pkgs,
   pkgs-stable,
   userSettings,
+  inputs,
+  systemSettings,
   ...
 }: {
   environment.systemPackages = 
@@ -61,6 +63,11 @@
     btop
     lazygit
 
+  ]
+  ++
+  [
+    #quickshell shite
+    wallust
   ];
 
   programs.thunar = {
@@ -74,6 +81,7 @@
   services.gvfs.enable = true;
 
   home-manager.users.${userSettings.username} = {
+
     home.packages = with pkgs; [
       mpv
       keepassxc

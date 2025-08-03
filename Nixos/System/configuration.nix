@@ -10,18 +10,14 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../Modules/nixos/default.nix
     inputs.home-manager.nixosModules.home-manager
- #   ../Themes/Stylix.nix
-#    ../Themes/Icons/BeautyLine.nix
-    ./Nvidia.nix
+     ./Nvidia.nix
+    ./Drives.nix
   ];
 
   # Bootloader.
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -30,15 +26,7 @@
       useOSProber = true;
       efiSupport = true;
       devices = ["nodev"];
-      # theme = pkgs.stdenv.mkDerivation {
-      # pname = "grub-theme-garuda";
-      # version = "1.0";
-      # src =
-
-      #  };
-      # installPhase = "cp -r customize/nixos $out";
-      #};
-    };
+      };
   };
   # Nix rebuild helper
   programs.nh = {

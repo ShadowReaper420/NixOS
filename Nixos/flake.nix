@@ -32,23 +32,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
-
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
-};
+    };
 
-
-   # microvm = {
-    #  url = "github:astro/microvm.nix";
-   #   inputs.nixpkgs.follows = "nixpkgs";
-   # };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -59,9 +55,7 @@
     aagl,
     pyprland,
     nix-flatpak,
-   # nixpkgs-stable,
     niri,
-    #microvm,
     ...
   } @ inputs: let
     #________SYSTEM SETTINGS________#
@@ -102,7 +96,6 @@
         inputs.home-manager.nixosModules.home-manager
         inputs.stylix.nixosModules.stylix
         inputs.nur.modules.nixos.default
-        inputs.nixvim.nixosModules.nixvim
         inputs.niri.nixosModules.niri
         inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
@@ -128,7 +121,7 @@
         inherit systemSettings;
         inherit userSettings;
         #inherit pkgs-stable;
-        
+
       };
     };
   };

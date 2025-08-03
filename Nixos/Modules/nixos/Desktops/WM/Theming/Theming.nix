@@ -48,6 +48,10 @@
 
     gtk = {
      enable = true;
+     cursorTheme = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+     };
      iconTheme = {
        package = pkgs.callPackage ./BeautyLine-custom.nix {};
        name = "BeautyLine";
