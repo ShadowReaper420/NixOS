@@ -9,6 +9,9 @@
 }];
     packages = [
       {appId = "com.github.unrud.VideoDownloader"; origin = "flathub";}
+      "com.github.Matoking.protontricks"
+      "com.github.tchx84.Flatseal"
+
 
 ];
      update.onActivation = true;
