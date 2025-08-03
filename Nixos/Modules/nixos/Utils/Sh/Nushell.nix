@@ -102,9 +102,7 @@
 
     programs.starship = {
       enable = true;
-      #settings = {
+      #settings = {};
     };
-    programs.carapace.enable = true;
-
   };
 }
