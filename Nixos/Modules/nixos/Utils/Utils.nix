@@ -24,8 +24,7 @@
     p7zip
     themechanger
     kdePackages.qtstyleplugin-kvantum
-    #nil
-    #davinci-resolve
+    davinci-resolve
     libreoffice
     obs-studio
     blender
@@ -38,6 +37,7 @@
     r2modman
     wireplumber
     kdePackages.partitionmanager
+
   ]
   ++
   [
@@ -52,6 +52,8 @@
     alejandra
     docker-compose
     godot
+    lua-language-server
+
   ]
   ++
   [
@@ -68,6 +70,14 @@
   [
     #quickshell shite
     wallust
+    quickshell
+    kdePackages.qt5compat
+    kdePackages.qtmultimedia
+    kdePackages.qtsvg
+    kdePackages.qtimageformats
+    inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
+    inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
+
   ];
 
   programs.thunar = {
@@ -77,10 +87,12 @@
     ];
   };
 
+
   services.tumbler.enable = true;
   services.gvfs.enable = true;
 
   home-manager.users.${userSettings.username} = {
+
 
     home.packages = with pkgs; [
       mpv
@@ -91,6 +103,7 @@
       thunderbird
       kdePackages.ktorrent
       discord
+      vesktop
     ];
   };
 }

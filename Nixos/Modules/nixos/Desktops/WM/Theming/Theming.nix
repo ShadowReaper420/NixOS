@@ -1,13 +1,13 @@
 {config, lib, userSettings, systemSettings, inputs, pkgs, ...}: {
 
 
-    stylix = {
+  stylix = {
     enable = true;
-   # image = ../.dotfiles/Wallpapers/Kath.png; # ignore this it wont actually be used for anything but the option is require for the time being
+    # image = ../.dotfiles/Wallpapers/Kath.png; # ignore this it wont actually be used for anything but the option is require for the time being
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     autoEnable = false;
 
-    };
+  };
 
   home-manager.users.${userSettings.username} = {
 
@@ -16,19 +16,19 @@
       enable = true;
       platformTheme.name = "qtct";
       style = {
-         name = "kvantum";
-         package = pkgs.catppuccin-kvantum.override {
-         variant = "mocha";
-         accent = "blue";
+        name = "kvantum";
+        package = pkgs.catppuccin-kvantum.override {
+          variant = "mocha";
+          accent = "blue";
+        };
       };
-   };
-  };
-  home.packages = with pkgs; [
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct
-  ];
+    };
+    home.packages = with pkgs; [
+      libsForQt5.qtstyleplugin-kvantum
+      libsForQt5.qt5ct
+    ];
 
-     stylix = {
+    stylix = {
       enable = true;
       #image = ../.dotfiles/Wallpapers/Kath.png; # ignore this it wont actually be used for anything but the option is require for the time being
       base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
@@ -43,20 +43,24 @@
         emacs.enable = true;
 
 
-     };
-   };
+      };
+    };
+    home.pointerCursor = {
+      gtk.enable = true;
+      # x11.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 16;
+    };
+
 
     gtk = {
-     enable = true;
-     cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-     };
-     iconTheme = {
-       package = pkgs.callPackage ./BeautyLine-custom.nix {};
-       name = "BeautyLine";
+      enable = true;
+      iconTheme = {
+        package = pkgs.callPackage ./BeautyLine-custom.nix {};
+        name = "BeautyLine";
       };
-   };
+    };
 
- };
+  };
 }

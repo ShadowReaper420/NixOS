@@ -100,6 +100,13 @@
 
     };
 
+    home.sessionPath = [
+      "/home/${userSettings.username}/.local/bin"
+     "/home/${userSettings.username}/.config/emacs/bin"
+     
+   
+    ];
+
     programs.starship = {
       enable = true;
       #settings = {};

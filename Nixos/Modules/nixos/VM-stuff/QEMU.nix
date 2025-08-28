@@ -25,9 +25,9 @@
   };
 
   environment.systemPackages = [
-    pkgs.qemu_full
+    pkgs.qemu
     pkgs.virt-manager
-    pkgs.quickemu
+    #pkgs.quickemu
   ];
 
   home-manager.users.${userSettings.username} = {

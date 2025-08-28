@@ -29,11 +29,6 @@
   
   home.sessionVariables = {
      EDITOR = userSettings.editor;
-    QML2_IMPORT_PATH = lib.makeSearchPath "lib/qt-6/qml" [
-      inputs.quickshell.packages.${systemSettings.system}.default
-      pkgs.kdePackages.qt5compat
-
-    ];
   };
 
   # Let Home Manager install and manage itself.

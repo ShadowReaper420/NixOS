@@ -12,11 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,10 +36,18 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    nix-qml = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+      url = "github:NotAShelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
+
 
   };
 
@@ -52,7 +55,6 @@
     nixpkgs,
     home-manager,
     nur,
-    aagl,
     pyprland,
     nix-flatpak,
     niri,
@@ -99,10 +101,11 @@
         inputs.niri.nixosModules.niri
         inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
+        inputs.nvf.nixosModules.default
 
         {
           environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
-          imports = [aagl.nixosModules.default];
+          imports = [];
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "hm-backup";
           home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
@@ -110,8 +113,6 @@
             inherit inputs;
             inherit systemSettings;
             inherit userSettings;
-            inherit aagl;
-            #inherit pkgs-stable;
             inherit niri;
           };
         }
@@ -120,7 +121,6 @@
         inherit inputs;
         inherit systemSettings;
         inherit userSettings;
-        #inherit pkgs-stable;
 
       };
     };

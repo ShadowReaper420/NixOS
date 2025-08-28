@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   systemSettings,
+   userSettings,
   pkgs-stable,
   ...
 }: {
@@ -26,9 +27,6 @@
     ryubing
     
   ];
-  
-  
-
 
   programs.steam = {
     enable = true;
@@ -42,4 +40,5 @@
     enable = true;
     binfmt = true;
   };
+
 }
