@@ -21,25 +21,57 @@
     rofi-wayland
     wl-clipboard
     hyprlock
+    cliphist
   ];
+  environment.variables = {
+    #XCURSOR_SIZE = "24";
+    QT_QPA_PLATFORM = "wayland";
+  };
+
+  systemd.user.services.xdg-desktop-portal = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+
+  systemd.user.services.xdg-desktop-portal-gnome = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+
+  systemd.user.services.niri-flake-polkit = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+
 
   xdg = {
-   portal = {
-    extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
-   };
-   mime = {
-    enable = true;
-    addedAssociations = {
-      "inode/directory" = [
-        "org.kde.dolphin.desktop"
-        "thunar.desktop"
-      ];
+    portal = {
+      config.niri = {
+        default = [ "gnome" "gtk" ];
+        "org.freedesktop.impl.portal.Access" = "gtk";
+        "org.freedesktop.impl.portal.Notification" = "gtk";
+        "org.freedesktop.impl.portal.Secret" = "gnome-keyring";
+        "org.freedesktop.impl.portal.FileChooser" = "gtk";
+      };
+      extraPortals = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome pkgs.gnome-keyring];
     };
-   defaultApplications = {
-     "inode/directory" = "org.kde.dolphin.desktop";
-    };
+    mime = {
+      enable = true;
+      addedAssociations = {
+        "inode/directory" = [
+          "org.kde.dolphin.desktop"
+          "thunar.desktop"
+        ];
+      };
+      defaultApplications = {
+        "inode/directory" = [
+          "org.kde.dolphin.desktop"
+          #"thunar.desktop"
+        ];
+      };
 
-   };
+    };
 
   };
 
@@ -54,16 +86,19 @@
     programs.niri.settings = {
       spawn-at-startup = [
         {
-          command = ["waybar"];
-        }
-        {
           command = ["swww-daemon"];
         }
         {
           command = ["xwayland-satellite"];
         }
         {
-          command = ["mako"];
+          command = ["quickshell"];
+        }
+        {
+          command = [ "wl-paste --type text --watch cliphist store"];
+        }
+        {
+          command = ["wl-paste --type image --watch cliphist store"];
         }
       ];
 
@@ -117,6 +152,10 @@
 
 
       };
+
+      gestures.hot-corners.enable = false;
+
+      cursor.theme = "Bibata-Modern-Classic";
 
       layout = {
 
