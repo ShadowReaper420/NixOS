@@ -89,6 +89,9 @@
         # Note: zoxide only supports Nushell v0.89.0+.
 
 
+       $env.path ++= ["~/.local/bin"]
+       $env.path ++= ["~/.config/emacs/bin/"]
+
       '';
       shellAliases = {
         os-rebuild = "nh os switch";
