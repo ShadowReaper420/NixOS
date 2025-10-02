@@ -119,7 +119,7 @@
         "Alt+Return".action = fullscreen-window;
         "Mod+W".action = toggle-window-floating;
         "Mod+Escape".action = toggle-overview;
-        #"Mod+Shift+W".action = toggle-window-tile;
+
 
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
@@ -131,6 +131,8 @@
         "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
         "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
         "Mod+Shift+Right".action = move-column-right;
+        "Alt+Right".action = focus-monitor-right;
+        "Alt+Left".action = focus-monitor-left;
         "Mod+M".action = maximize-column;
         "Mod+C".action = center-column;
         "Mod+G".action = toggle-column-tabbed-display;
@@ -258,7 +260,7 @@
 
       workspaces."04-monitor2" = {
         open-on-output = "HDMI-A-1";
-        name = "monitor1-WS-4";
+        name = "monitor2-WS-4";
       };
 
       workspaces."05-monitor2" = {
