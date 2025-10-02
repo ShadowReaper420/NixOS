@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
@@ -32,20 +33,34 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=latest";
-    };
+     #nix-flatpak = {
+      #  url = "github:gmodena/nix-flatpak/?ref=latest";
+     # };
 
-    nix-qml = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+      #  nix-qml = {
+        #  url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support";
+        #   inputs.nixpkgs.follows = "nixpkgs";
+        #};
 
-    nvf = {
-      url = "github:NotAShelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+        nvf = {
+          url = "github:NotAShelf/nvf";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
 
+        niri-scratchpad-flake = {
+          url = "github:gvolpe/niri-scratchpad";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+        quickshell = {
+          url = "github:outfoxxed/quickshell";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        noctalia = {
+          url = "github:noctalia-dev/noctalia-shell";
+          inputs.nixpkgs.follows = "nixpkgs";
+          inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+        };
 
 
 
@@ -56,8 +71,9 @@
     home-manager,
     nur,
     pyprland,
-    nix-flatpak,
+    #nix-flatpak,
     niri,
+    chaotic,
     ...
   } @ inputs: let
     #________SYSTEM SETTINGS________#
@@ -95,11 +111,13 @@
       inherit pkgs;
       modules = [
         ./System/configuration.nix
+        #./noctalia.nix
         inputs.home-manager.nixosModules.home-manager
         inputs.stylix.nixosModules.stylix
         inputs.nur.modules.nixos.default
+        chaotic.nixosModules.default
         inputs.niri.nixosModules.niri
-        inputs.nix-flatpak.nixosModules.nix-flatpak
+       # inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
         inputs.nvf.nixosModules.default
 

@@ -18,14 +18,15 @@
     swww
     waypaper
     waybar
-    rofi-wayland
+    rofi
     wl-clipboard
     hyprlock
     cliphist
+    inputs.noctalia.packages.${system}.default
   ];
   environment.variables = {
     #XCURSOR_SIZE = "24";
-    QT_QPA_PLATFORM = "wayland";
+    #QT_QPA_PLATFORM = "wayland";
   };
 
   systemd.user.services.xdg-desktop-portal = {
@@ -92,7 +93,7 @@
           command = ["xwayland-satellite"];
         }
         {
-          command = ["quickshell"];
+          command = ["noctalia-shell"];
         }
         {
           command = [ "wl-paste --type text --watch cliphist store"];
@@ -117,6 +118,7 @@
         "Mod+Q".action = close-window;
         "Alt+Return".action = fullscreen-window;
         "Mod+W".action = toggle-window-floating;
+        "Mod+Escape".action = toggle-overview;
         #"Mod+Shift+W".action = toggle-window-tile;
 
         "Mod+Comma".action = consume-window-into-column;
@@ -148,7 +150,6 @@
         "Mod+7".action.focus-workspace = 7;
         "Mod+8".action.focus-workspace = 8;
         "Mod+9".action.focus-workspace = 9;
-        #"Mod+S".action.focus-workspace = scratchpad-1;
 
 
       };
@@ -195,6 +196,94 @@
       };
 
 
+      #Workspaces Be warned this is gonna be ugly as sin.
+      #Monitor 1
+      workspaces."01-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-1";
+      };
+      workspaces."02-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-2";
+      };
+
+      workspaces."03-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-3";
+      };
+
+      workspaces."04-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-4";
+      };
+
+      workspaces."05-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-5";
+      };
+
+      workspaces."06-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-6";
+      };
+
+      workspaces."07-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-7";
+      };
+      workspaces."08-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-8";
+      };
+
+      workspaces."09-monitor1" = {
+        open-on-output = "DP-2";
+        name = "monitor1-WS-9";
+      };
+
+      #Monitor 2
+            workspaces."01-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-1";
+      };
+      workspaces."02-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-2";
+      };
+
+      workspaces."03-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-3";
+      };
+
+      workspaces."04-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor1-WS-4";
+      };
+
+      workspaces."05-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-5";
+      };
+
+      workspaces."06-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-6";
+      };
+
+      workspaces."07-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-7";
+      };
+      workspaces."08-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-8";
+      };
+
+      workspaces."09-monitor2" = {
+        open-on-output = "HDMI-A-1";
+        name = "monitor2-WS-9";
+      };
 
       prefer-no-csd = true;
 
@@ -221,5 +310,7 @@
         clip-to-geometry = true;
       }];
     };
+
+
   };
 }

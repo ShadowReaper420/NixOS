@@ -30,13 +30,14 @@
     blender
     krita
     gimp
-    floorp
+    floorp-bin
     brave
     kdePackages.kwalletmanager
     desmume
     r2modman
     wireplumber
     kdePackages.partitionmanager
+    planify
 
   ]
   ++
@@ -70,13 +71,13 @@
   [
     #quickshell shite
     wallust
-    quickshell
+    #quickshell
     kdePackages.qt5compat
     kdePackages.qtmultimedia
     kdePackages.qtsvg
     kdePackages.qtimageformats
-    inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
-    inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
+  #  inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
+  #  inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
 
   ];
 

@@ -13,12 +13,12 @@
     ./hardware-configuration.nix
     ../Modules/nixos/default.nix
     inputs.home-manager.nixosModules.home-manager
-     ./Nvidia.nix
+     #./Nvidia.nix
     ./Drives.nix
   ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
