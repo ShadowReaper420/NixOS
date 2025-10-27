@@ -29,9 +29,10 @@
     #QT_QPA_PLATFORM = "wayland";
   };
 
+  imports = [./screenshot.nix];
+
   systemd.user.services.xdg-desktop-portal = {
     after = [ "xdg-desktop-autostart.target" ];
-  };
 
   systemd.user.services.xdg-desktop-portal-gtk = {
     after = [ "xdg-desktop-autostart.target" ];
@@ -108,7 +109,9 @@
       };
 
 
-      binds = with config.home-manager.users.${userSettings.username}.lib.niri.actions; {
+
+      binds =
+        with config.home-manager.users.${userSettings.username}.lib.niri.actions; {
         #_________Aplication Keybinds_________#
         "Mod+T".action = spawn userSettings.terminal;
         "Mod+E".action = spawn userSettings.fileManager;
@@ -119,7 +122,7 @@
         "Alt+Return".action = fullscreen-window;
         "Mod+W".action = toggle-window-floating;
         "Mod+Escape".action = toggle-overview;
-
+       # "Mod+P".action = screenshot;
 
         "Mod+Comma".action = consume-window-into-column;
         "Mod+Period".action = expel-window-from-column;
@@ -149,7 +152,6 @@
         "Mod+7".action.focus-workspace = 7;
         "Mod+8".action.focus-workspace = 8;
         "Mod+9".action.focus-workspace = 9;
-
 
         };
 

@@ -50,7 +50,7 @@
     inputs.winapps.packages."${system}".winapps-launcher
     inputs.winboat.packages."${system}".winboat
     freerdp
-    zulu25
+
 
     #kdePackages.kdenlive
 
