@@ -16,7 +16,7 @@
     bottles
     prismlauncher
     steamtinkerlaunch
-    openmw
+    #openmw
     winetricks
     wine
     #gamescope

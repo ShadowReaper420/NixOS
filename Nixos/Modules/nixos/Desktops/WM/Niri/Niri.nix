@@ -107,13 +107,14 @@
         DISPLAY = ":1"; # xwayland-satellite
       };
 
+
       binds = with config.home-manager.users.${userSettings.username}.lib.niri.actions; {
         #_________Aplication Keybinds_________#
         "Mod+T".action = spawn userSettings.terminal;
         "Mod+E".action = spawn userSettings.fileManager;
         "Mod+F".action = spawn userSettings.browser;
         "Mod+A".action = spawn "~/.config/rofi/launchers/type-6/launcher.sh";
-        "Mod+P".action = screenshot;
+        "Mod+P".action.screenshot = [true];
         #___________Window Keybinds___________#
         "Mod+Q".action = close-window;
         "Alt+Return".action = fullscreen-window;
@@ -137,11 +138,8 @@
         "Mod+C".action = center-column;
         "Mod+G".action = toggle-column-tabbed-display;
         "Mod+V".action = switch-preset-column-width;
+        "Mod+H".action = switch-preset-window-height;
 
-        "Mod+H".action = focus-column-left;
-        "Mod+J".action = focus-window-or-workspace-down;
-        "Mod+K".action = focus-window-or-workspace-up;
-        "Mod+L".action = focus-column-right;
 
         "Mod+1".action.focus-workspace = 1;
         "Mod+2".action.focus-workspace = 2;
@@ -154,7 +152,7 @@
         "Mod+9".action.focus-workspace = 9;
 
 
-      };
+        }
 
       gestures.hot-corners.enable = false;
 

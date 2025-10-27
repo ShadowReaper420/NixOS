@@ -6,6 +6,7 @@
   userSettings,
   inputs,
   systemSettings,
+  winapps,
   ...
 }: {
   environment.systemPackages = 
@@ -15,7 +16,7 @@
     fuse
     kdePackages.ark
     unrar
-    kdePackages.full
+    #kdePackages.full
     kdePackages.kservice
     cpio
     cmake
@@ -33,18 +34,32 @@
     floorp-bin
     brave
     kdePackages.kwalletmanager
+    kdePackages.qtbase
+    kdePackages.qttools
+    kdePackages.qtdeclarative
+    kdePackages.qtquick3d
+    kdePackages.qtscxml
+    kdePackages.qt6gtk2
     desmume
     r2modman
     wireplumber
     kdePackages.partitionmanager
+    kdePackages.qt6ct
     planify
+    inputs.winapps.packages."${system}".winapps
+    inputs.winapps.packages."${system}".winapps-launcher
+    inputs.winboat.packages."${system}".winboat
+    freerdp
+    #jdk25
+    #kdePackages.kdenlive
 
   ]
   ++
   [
     #lsp and other Dev crap
     git
-    nixd
+    #nixd
+    nil
     rust-analyzer
     python313Packages.python-lsp-server
     emacs
@@ -70,14 +85,14 @@
   ++
   [
     #quickshell shite
-    wallust
+    #wallust
     #quickshell
     kdePackages.qt5compat
     kdePackages.qtmultimedia
     kdePackages.qtsvg
     kdePackages.qtimageformats
-  #  inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
-  #  inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
+    #  inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
+    #  inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
 
   ];
 

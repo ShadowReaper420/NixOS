@@ -1,11 +1,14 @@
 {config, lib, pkgs, userSettings, systemSettings, ...}:
 {
-  virtualisation.podman = {
-  enable = true;
-  dockerCompat = true;
-};
+ # virtualisation.podman = {
+  #enable = true;
+ #};
 
-environment.systemPackages = [ pkgs.distrobox pkgs.boxbuddy ];
+  virtualisation.docker = {
+   enable = true;
+  };
+
+#environment.systemPackages = [ pkgs.distrobox pkgs.boxbuddy ];
 
 
 }

@@ -18,7 +18,8 @@
   ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages;
+    #pkgs.linuxPackages_cachyos;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -37,6 +38,15 @@
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+#The things I do for skyrim modding
+  security.pam.loginLimits = [{
+    domain = "${userSettings.username}";
+    type = "soft";
+    item = "nofile";
+    value = "32768";
+  }];
+
 
   services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
@@ -92,7 +102,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "disk" "networkmanager"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "disk" "networkmanager" "docker"];
   };
 
   # Some programs need SUID wrappers, can be configured further or are

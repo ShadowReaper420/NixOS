@@ -80,7 +80,7 @@
         Theme=${userSettings.icons}
 
         [Colors:View]
-        BackgroundNormal=#00000000
+        BackgroundNormal=#CDD6F4
 
         [KDE]
         widgetStyle=kvantum

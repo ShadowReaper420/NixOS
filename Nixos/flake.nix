@@ -7,10 +7,16 @@
     nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nur = {
       url = "github:nix-community/NUR/";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -33,34 +39,49 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-     #nix-flatpak = {
+    mango = {
+     url = "github:DreamMaoMao/mango";
+     inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    winboat = {
+      url = "github:TibixDev/winboat";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #nix-flatpak = {
       #  url = "github:gmodena/nix-flatpak/?ref=latest";
-     # };
+      # };
 
       #  nix-qml = {
         #  url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support";
         #   inputs.nixpkgs.follows = "nixpkgs";
         #};
 
-        nvf = {
-          url = "github:NotAShelf/nvf";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
+      nvf = {
+        url = "github:NotAShelf/nvf";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
 
-        niri-scratchpad-flake = {
-          url = "github:gvolpe/niri-scratchpad";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
-        quickshell = {
-          url = "github:outfoxxed/quickshell";
-          inputs.nixpkgs.follows = "nixpkgs";
-        };
+      niri-scratchpad-flake = {
+        url = "github:gvolpe/niri-scratchpad";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+      quickshell = {
+        url = "github:outfoxxed/quickshell";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
 
-        noctalia = {
-          url = "github:noctalia-dev/noctalia-shell";
-          inputs.nixpkgs.follows = "nixpkgs";
-          inputs.quickshell.follows = "quickshell";  # Use same quickshell version
-        };
+      noctalia = {
+        url = "github:noctalia-dev/noctalia-shell";
+        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+      };
 
 
 
@@ -74,6 +95,9 @@
     #nix-flatpak,
     niri,
     chaotic,
+    winapps,
+    winboat,
+    mango,
     ...
   } @ inputs: let
     #________SYSTEM SETTINGS________#
@@ -113,11 +137,13 @@
         ./System/configuration.nix
         #./noctalia.nix
         inputs.home-manager.nixosModules.home-manager
+        inputs.mango.nixosModules.mango
         inputs.stylix.nixosModules.stylix
         inputs.nur.modules.nixos.default
         chaotic.nixosModules.default
         inputs.niri.nixosModules.niri
-       # inputs.nix-flatpak.nixosModules.nix-flatpak
+        inputs.spicetify-nix.nixosModules.default
+        # inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
         inputs.nvf.nixosModules.default
 

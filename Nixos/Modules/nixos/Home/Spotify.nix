@@ -1,8 +1,36 @@
-{config, lib, pkgs, inputs, ...}:
-
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  systemSettings,
+  userSettings,
+  pkgs-stable,
+  ...
+}:
+{
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
+      enable = true;
 
-  environment.systemPackages = with pkgs; [
-    nur.repos.nltch.spotify-adblock
-    ];
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
+      ];
+      enabledCustomApps = with spicePkgs.apps; [
+        newReleases
+        ncsVisualizer
+      ];
+      enabledSnippets = with spicePkgs.snippets; [
+        rotatingCoverart
+        pointer
+      ];
+
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "mocha";
+    };
 }
