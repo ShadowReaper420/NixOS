@@ -3,9 +3,21 @@
 {
   programs.mango.enable = true;
 
+    environment.systemPackages =
+          with pkgs; [
+           cliphist
+          ];
+
   home-manager.users.${userSettings.username} = {
     wayland.windowManager.mango = {
       enable = true;
+      autostart_sh = ''
+       wl-clip-persist --clipboard regular --reconnect-tries 0 &
+
+       # clipboard content manager
+       wl-paste --type text --watch cliphist store &
+
+'';
       settings = ''
 
 

@@ -114,7 +114,6 @@
         "Mod+E".action = spawn userSettings.fileManager;
         "Mod+F".action = spawn userSettings.browser;
         "Mod+A".action = spawn "~/.config/rofi/launchers/type-6/launcher.sh";
-        "Mod+P".action.screenshot = [true];
         #___________Window Keybinds___________#
         "Mod+Q".action = close-window;
         "Alt+Return".action = fullscreen-window;
@@ -152,7 +151,7 @@
         "Mod+9".action.focus-workspace = 9;
 
 
-        }
+        };
 
       gestures.hot-corners.enable = false;
 

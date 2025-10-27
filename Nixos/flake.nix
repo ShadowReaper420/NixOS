@@ -147,12 +147,16 @@
         #inputs.microvm.nixosModules.microvm
         inputs.nvf.nixosModules.default
 
+
         {
           environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
           imports = [];
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "hm-backup";
-          home-manager.users.${userSettings.username} = import ./Home-Manager/home.nix;
+          home-manager.users.${userSettings.username}.imports = [
+            ./Home-Manager/home.nix
+            inputs.mango.hmModules.mango
+          ];
           home-manager.extraSpecialArgs = {
             inherit inputs;
             inherit systemSettings;
