@@ -12,6 +12,7 @@
       jdk21
       jdk17
       jdk25
+      jdk
       zulu8
       zulu17
       zulu

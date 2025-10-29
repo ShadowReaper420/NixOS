@@ -17,7 +17,7 @@
 #    ./Utils/Neovim/Neovim.nix
     ./Desktops/WM/Niri/Niri.nix
     ./Utils/Emacs.nix
-    ./Utils/Dolphin.nix
+    ./Utils/Dolphin2.nix
     ./Utils/Flatpak.nix
     ./Desktops/WM/Theming/Theming.nix
     ./Desktops/sddm-theme.nix

@@ -18,8 +18,8 @@
   ];
 
   # Bootloader.
-  boot.kernelPackages = #pkgs.linuxPackages;
-    pkgs.linuxPackages_cachyos;
+  #boot.kernelPackages = #pkgs.linuxPackages_6_14;
+   # pkgs.linuxPackages_cachyos;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
