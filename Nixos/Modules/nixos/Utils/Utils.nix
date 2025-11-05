@@ -2,15 +2,18 @@
   config,
   lib,
   pkgs,
-  pkgs-stable,
+  pkgs-unstable,
   userSettings,
   inputs,
   systemSettings,
   winapps,
   ...
 }: {
+
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+
   environment.systemPackages = 
-  with pkgs; [
+    (with pkgs; [
     wget
     kitty
     fuse
@@ -31,7 +34,6 @@
     blender
     krita
     gimp
-    floorp-bin
     brave
     kdePackages.kwalletmanager
     kdePackages.qtbase
@@ -46,21 +48,21 @@
     kdePackages.partitionmanager
     kdePackages.qt6ct
     planify
-    inputs.winapps.packages."${system}".winapps
-    inputs.winapps.packages."${system}".winapps-launcher
-    inputs.winboat.packages."${system}".winboat
-    freerdp
+    #inputs.winapps.packages."${system}".winapps
+    #inputs.winapps.packages."${system}".winapps-launcher
+    #inputs.winboat.packages."${system}".winboat
+    #freerdp
 
 
     #kdePackages.kdenlive
 
-  ]
+    ]
   ++
   [
     #lsp and other Dev crap
     git
-    #nixd
-    nil
+    nixd
+    #nil
     rust-analyzer
     python313Packages.python-lsp-server
     emacs
@@ -95,7 +97,12 @@
     #  inputs.nix-qml.packages.${systemSettings.system}.tree-sitter-qmljs
     #  inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
 
-  ];
+  ])
+      ++
+      (with pkgs-unstable; [
+        prismlauncher
+        floorp-bin
+      ]);
 
   programs.thunar = {
     enable = true;

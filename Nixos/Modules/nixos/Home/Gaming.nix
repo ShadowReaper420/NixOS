@@ -14,7 +14,7 @@
     
     
     bottles
-    prismlauncher
+#    prismlauncher
     steamtinkerlaunch
     #openmw
     winetricks

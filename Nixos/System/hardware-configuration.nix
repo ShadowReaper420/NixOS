@@ -12,17 +12,14 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [
-   "video=DP-2:2560x1440@144"
-   "video=HDMI-A-1:2560x1440@144"
-   ];
+
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/1dd8bc25-fab7-45cb-91e1-9d29ec42579a";
+    { device = "/dev/disk/by-uuid/961d840f-6ce6-46e8-8938-8ed88e1dc376";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/735D-0455";
+    { device = "/dev/disk/by-uuid/2C02-C14E";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };

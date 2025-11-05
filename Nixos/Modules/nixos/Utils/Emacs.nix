@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   userSettings,
   systemSettings,
   inputs,
@@ -10,7 +11,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs;
+    package = pkgs-unstable.emacs;
 
   };
   home-manager.users.${userSettings.username} = {

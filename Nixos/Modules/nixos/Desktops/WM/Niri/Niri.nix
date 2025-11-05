@@ -18,14 +18,12 @@
     swww
     waypaper
     waybar
-    rofi
+    rofi-wayland
     wl-clipboard
     hyprlock
     cliphist
     inputs.noctalia.packages.${system}.default
   ];
-
-  programs.dolphin.enable = true;
 
   environment.variables = {
     #XCURSOR_SIZE = "24";
@@ -83,7 +81,7 @@
 
 
   programs.niri = {
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     enable = true;
   };
 

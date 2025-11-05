@@ -2,11 +2,11 @@
   description = "The Source of all my suffering";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-25.05";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/release-25.05";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     nur = {
@@ -20,7 +20,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,6 +89,7 @@
 
   outputs = {
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     nur,
     pyprland,
@@ -122,7 +123,7 @@
       fileManager = "dolphin"; # Sets the file manager, used in keybinds.
       terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
     };
-    pkgs-stable = inputs.nixpkgs-stable;
+    pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${systemSettings.system};
     pkgs = import nixpkgs {
       inherit (systemSettings) system;
       config.allowUnfree = true;
@@ -148,6 +149,8 @@
         inputs.nvf.nixosModules.default
 
 
+
+
         {
           environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
           imports = [];
@@ -169,6 +172,7 @@
         inherit inputs;
         inherit systemSettings;
         inherit userSettings;
+        inherit pkgs-unstable;
 
       };
     };

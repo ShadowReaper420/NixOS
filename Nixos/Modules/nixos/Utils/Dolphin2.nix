@@ -33,8 +33,8 @@ in
 
       systemPackages = with pkgs; [
         cfg.package
-        baloo-widgets # baloo information in Dolphin
-        dolphin-plugins
+        kdePackages.baloo-widgets # baloo information in Dolphin
+        kdePackages.dolphin-plugins
       ];
     };
   };

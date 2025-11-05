@@ -10,6 +10,7 @@
     ./Utils/Git.nix
     ./Home/Gaming.nix
     ./Home/Spotify.nix
+    ./Home/Lutris.nix
     ./Home/Prismlauncher.nix
     ./VM-stuff/QEMU.nix
     ./VM-stuff/Distro-box.nix
@@ -17,7 +18,7 @@
 #    ./Utils/Neovim/Neovim.nix
     ./Desktops/WM/Niri/Niri.nix
     ./Utils/Emacs.nix
-    ./Utils/Dolphin2.nix
+    ./Utils/Dolphin.nix
     ./Utils/Flatpak.nix
     ./Desktops/WM/Theming/Theming.nix
     ./Desktops/sddm-theme.nix
