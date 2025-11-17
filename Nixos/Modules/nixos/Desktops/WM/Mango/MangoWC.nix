@@ -1,6 +1,17 @@
 { config, lib, pkgs, userSettings, ... }:
 
+with lib;
+let
+  cfg = config.modules.desktops.mangowc;
+  
+  in
 {
+  options.modules.desktops.mangowc = {
+    enable = lib.mkEnableOption "Mango WM config";
+  };
+
+  config = mkIf cfg.enable  {
+  
   programs.mango.enable = true;
 
     environment.systemPackages =
@@ -183,7 +194,7 @@
 
       # layout support:
       # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
-      tagrule=id:1,layout_name:tile
+      tagrule=id:1,layout_name:tile  
       tagrule=id:2,layout_name:tile
       tagrule=id:3,layout_name:tile
       tagrule=id:4,layout_name:tile
@@ -312,9 +323,15 @@
       layerrule=animation_type_close:zoom,layer_name:rofi
 
 
+     #Monitor rules
+      monitorrule=DP-2 0.55,1,scroller,0,1,0,0,2560,1440,144
+      monitorrule=HDMI-A-1 0.55,1,scroller,0,5120,0,1920,1080,60
+
+
 
 '';
     };
+  };
   };
 
 }

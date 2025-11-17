@@ -49,14 +49,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    winboat = {
-      url = "github:TibixDev/winboat";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+   # winboat = {
+      #url = "github:TibixDev/winboat";
+     # inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
-    #nix-flatpak = {
-      #  url = "github:gmodena/nix-flatpak/?ref=latest";
-      # };
+    nix-flatpak = {
+        url = "github:gmodena/nix-flatpak/?ref=latest";
+       };
 
       #  nix-qml = {
         #  url = "git+https://git.outfoxxed.me/outfoxxed/nix-qml-support";
@@ -123,7 +123,12 @@
       fileManager = "dolphin"; # Sets the file manager, used in keybinds.
       terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
     };
-    pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${systemSettings.system};
+    
+    pkgs-unstable = import inputs.nixpkgs-unstable {
+     system = pkgs.system;
+     config.allowUnfree = true;
+
+    };
     pkgs = import nixpkgs {
       inherit (systemSettings) system;
       config.allowUnfree = true;
@@ -144,7 +149,7 @@
         chaotic.nixosModules.default
         inputs.niri.nixosModules.niri
         inputs.spicetify-nix.nixosModules.default
-        # inputs.nix-flatpak.nixosModules.nix-flatpak
+        inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
         inputs.nvf.nixosModules.default
 

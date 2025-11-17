@@ -10,6 +10,8 @@
   ...
 }: {
 
+  
+
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = 
@@ -64,6 +66,7 @@
     nixd
     #nil
     rust-analyzer
+    rustc
     python313Packages.python-lsp-server
     emacs
     ripgrep
@@ -72,6 +75,8 @@
     docker-compose
     godot
     lua-language-server
+    ispell
+    fd
 
   ]
   ++
@@ -102,6 +107,7 @@
       (with pkgs-unstable; [
         prismlauncher
         floorp-bin
+        nexusmods-app-unfree
       ]);
 
   programs.thunar = {

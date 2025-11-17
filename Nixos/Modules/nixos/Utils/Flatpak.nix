@@ -4,17 +4,18 @@
 
   services.flatpak = {
     enable = true;
-    #remotes = [{
-      #name = "flathub"; location = "https://flathub.org/beta-repo/flathub.flatpakrepo";
-    #}];
-   # packages = [
-    #"com.github.unrud.VideoDownloader"
+    remotes = [{
+      name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+    }];
+    packages = [
+    "com.github.unrud.VideoDownloader"
     #"com.github.Matoking.protontricks"
-    #"com.github.tchx84.Flatseal"
+    "com.github.tchx84.Flatseal"
+    "at.vintagestory.VintageStory"
 
 
-   # ];
-    #update.onActivation = true;
+    ];
+    update.onActivation = true;
 
 
   };

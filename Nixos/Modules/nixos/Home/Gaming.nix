@@ -19,7 +19,7 @@
     #openmw
     winetricks
     wine
-    #gamescope
+    gamescope
     lutris
     nexusmods-app-unfree
     protonup-qt

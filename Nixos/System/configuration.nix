@@ -16,6 +16,8 @@
      #./Nvidia.nix
     ./Drives.nix
   ];
+ 
+  modules.desktops.niri.enable = true;
 
   # Bootloader.
 #boot.kernelPackages = pkgs.linuxPackages;
