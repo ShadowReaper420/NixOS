@@ -97,7 +97,7 @@
     niri,
     chaotic,
     winapps,
-    winboat,
+    #winboat,
     mango,
     ...
   } @ inputs: let

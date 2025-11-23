@@ -24,7 +24,6 @@
     #kdePackages.full
     kdePackages.kservice
     cpio
-    cmake
     libadwaita
     zenity
     p7zip
@@ -41,7 +40,7 @@
     kdePackages.qtbase
     kdePackages.qttools
     kdePackages.qtdeclarative
-    kdePackages.qtquick3d
+    kdePackages.qtquick3d  
     kdePackages.qtscxml
     kdePackages.qt6gtk2
     desmume
@@ -65,8 +64,12 @@
     git
     nixd
     #nil
+    rustup
+    pkg-config-unwrapped
+    cmake
+    clang
     rust-analyzer
-    rustc
+    rustc 
     python313Packages.python-lsp-server
     emacs
     ripgrep
@@ -87,7 +90,7 @@
     fastfetch
     ranger
     btop
-    lazygit
+    #lazygit
 
   ]
   ++
@@ -107,6 +110,7 @@
       (with pkgs-unstable; [
         prismlauncher
         floorp-bin
+        lazygit
         nexusmods-app-unfree
       ]);
 
