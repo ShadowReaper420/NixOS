@@ -64,16 +64,14 @@
     git
     nixd
     #nil
-    rustup
-    pkg-config-unwrapped
     cmake
     clang
-    rust-analyzer
-    rustc 
+    #rust-analyzer
+    #rustc 
     python313Packages.python-lsp-server
     emacs
     ripgrep
-    cargo
+    #cargo
     alejandra
     docker-compose
     godot
@@ -112,6 +110,7 @@
         floorp-bin
         lazygit
         nexusmods-app-unfree
+        vintagestory
       ]);
 
   programs.thunar = {

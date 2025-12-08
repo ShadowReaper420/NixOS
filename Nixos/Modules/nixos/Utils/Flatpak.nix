@@ -11,7 +11,7 @@
     "com.github.unrud.VideoDownloader"
     #"com.github.Matoking.protontricks"
     "com.github.tchx84.Flatseal"
-    "at.vintagestory.VintageStory"
+    #"at.vintagestory.VintageStory"
 
 
     ];

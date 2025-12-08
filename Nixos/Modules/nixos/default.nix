@@ -24,5 +24,6 @@
     ./Desktops/sddm-theme.nix
     ./Desktops/WM/Mango/MangoWC.nix
     ./Utils/Dev/Dev-env.nix
+    ./Desktops/Kanshi.nix
   ];
 }

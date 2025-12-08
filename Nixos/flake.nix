@@ -49,10 +49,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-   # winboat = {
-      #url = "github:TibixDev/winboat";
-     # inputs.nixpkgs.follows = "nixpkgs";
-    #};
 
     nix-flatpak = {
         url = "github:gmodena/nix-flatpak/?ref=latest";
@@ -79,8 +75,7 @@
 
       noctalia = {
         url = "github:noctalia-dev/noctalia-shell";
-        inputs.nixpkgs.follows = "nixpkgs";
-        inputs.quickshell.follows = "quickshell";  # Use same quickshell version
+        #inputs.nixpkgs.follows = "nixpkgs";
       };
 
 
@@ -152,6 +147,7 @@
         inputs.nix-flatpak.nixosModules.nix-flatpak
         #inputs.microvm.nixosModules.microvm
         inputs.nvf.nixosModules.default
+        
 
 
 
@@ -164,6 +160,7 @@
           home-manager.users.${userSettings.username}.imports = [
             ./Home-Manager/home.nix
             inputs.mango.hmModules.mango
+            inputs.noctalia.homeModules.default
           ];
           home-manager.extraSpecialArgs = {
             inherit inputs;

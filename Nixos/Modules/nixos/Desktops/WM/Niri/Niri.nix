@@ -13,7 +13,7 @@
 
 with lib;
 let
-cfg = config.modules.desktops.niri; 
+  cfg = config.modules.desktops.niri; 
 in
 
 {
@@ -37,7 +37,7 @@ in
       wl-clipboard
       hyprlock
       cliphist
-      inputs.noctalia.packages.${system}.default
+      inputs.niri-scratchpad-flake.packages.${systemSettings.system}.default
     ];
 
     environment.variables = {
@@ -101,6 +101,12 @@ in
     };
 
     home-manager.users.${userSettings.username} = {
+
+      programs.noctalia-shell = {
+       enable = true;
+      }; 
+
+      
       programs.niri.settings = {
         spawn-at-startup = [
           {
@@ -158,6 +164,8 @@ in
             "Mod+G".action = toggle-column-tabbed-display;
             "Mod+V".action = switch-preset-column-width;
             "Mod+H".action = switch-preset-window-height;
+            "Mod+S".action = spawn-sh "nscratch -id discord -s discord -m -a";
+            "Mod+X".action = spawn-sh "nscratch -id spotify-wrapped -s spotify -m -a";
 
 
             "Mod+1".action.focus-workspace = 1;
@@ -215,6 +223,13 @@ in' = "oklch shorter hue";
 
 
           #Workspaces Be warned this is gonna be ugly as sin.
+          #
+
+          #Scratchpad
+          workspaces."scratch" = {
+            name = "scratch";
+          };         
+
           #Monitor 1
           workspaces."01-monitor1" = {
             open-on-output = "DP-2";
@@ -318,18 +333,59 @@ in' = "oklch shorter hue";
             window-movement.kind = movement-conf;
             workspace-switch.kind = movement-conf;
           };
-          window-rules = [{
-            geometry-corner-radius = {
-              bottom-left = 12.0;
-              bottom-right = 12.0;
-              top-left = 12.0;
-              top-right = 12.0;
-            };
-            clip-to-geometry = true;
-          }];
-      };
 
+
+          window-rules = [
+
+            {
+
+            geometry-corner-radius =
+             let
+               r = 12.0;
+             in
+            {
+              bottom-left = r;
+              bottom-right = r;
+              top-left = r;
+              top-right = r;
+            };
+           clip-to-geometry = true;
+
+          }
+           #
+          {
+            matches = [
+             {
+              app-id = "^discord$";
+              at-startup = true;
+             }
+           ];
+           open-on-workspace = "scratch";
+           open-floating = true;
+
+          }
+          #                
+          {
+            matches = [
+            {
+             app-id = "^spotify-wrapped";
+             at-startup = true;
+            }            
+          ];
+          open-on-workspace = "scratch";
+          open-floating = true;
+          
+          }
+
+          ];
+         #
+                  
+                          
+       };
+       
+      
 
     };
+    
   };
 }
