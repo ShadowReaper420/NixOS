@@ -29,6 +29,7 @@
     p7zip
     themechanger
     kdePackages.qtstyleplugin-kvantum
+    kicad
     davinci-resolve
     libreoffice
     obs-studio

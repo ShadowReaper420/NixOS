@@ -18,7 +18,7 @@
   ];
  
   modules.desktops.niri.enable = true;
-  modules.desktops.mangowc.enable = true;
+  #modules.desktops.mangowc.enable = true;
   modules.desktops-tools.kanshi.enable = true;
 
   # Bootloader.

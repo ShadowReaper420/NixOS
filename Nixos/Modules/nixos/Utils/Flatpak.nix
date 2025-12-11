@@ -12,6 +12,7 @@
     #"com.github.Matoking.protontricks"
     "com.github.tchx84.Flatseal"
     #"at.vintagestory.VintageStory"
+    "org.prismlauncher.PrismLauncher"
 
 
     ];

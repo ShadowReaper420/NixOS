@@ -15,9 +15,6 @@ in
     services.gnome.gnome-keyring.enable = true;
     programs.mango.enable = true;
 
-
-  };
-
   environment.systemPackages =
     with pkgs; [
       cliphist
@@ -63,7 +60,7 @@ in
           env=GLFW_IM_MODULE,ibus
 
           # scale factor about qt (herr is 1.4)
-          env=QT_QPA_PLATFORMTHEME,qt5ct
+          #env=QT_QPA_PLATFORMTHEME,qt5ct
           env=QT_AUTO_SCREEN_SCALE_FACTOR,1
           env=QT_QPA_PLATFORM,Wayland;xcb
           env=QT_WAYLAND_FORCE
@@ -119,15 +116,15 @@ in
           animation_type_close=slide
           animation_fade_in=1
           animation_fade_out=1
-          tag_animation_direction=1
+          tag_animation_direction=0
           zoom_initial_ratio=0.3
           zoom_end_ratio=0.8
           fadein_begin_opacity=0.5
           fadeout_begin_opacity=0.8
-          animation_duration_move=500
-          animation_duration_open=400
-          animation_duration_tag=350
-          animation_duration_close=800
+          animation_duration_move=200
+          animation_duration_open=250
+          animation_duration_tag=250
+          animation_duration_close=400
           animation_curve_open=0.46,1.0,0.29,1
           animation_curve_move=0.46,1.0,0.29,1
           animation_curve_tag=0.46,1.0,0.29,1
@@ -158,7 +155,7 @@ in
           # Misc
           no_border_when_single=0
           axis_bind_apply_timeout=100
-          focus_on_activate=1
+          focus_on_activate=0
           inhibit_regardless_of_visibility=0
           sloppyfocus=1
           warpcursor=1
@@ -207,6 +204,12 @@ in
           scratchpadcolor=0x516c93ff
           globalcolor=0xb153a7ff
           overlaycolor=0x14a57cff
+          #focused_opacity =0.9
+          #unfocused_opacity=0.9
+          #blur = 1
+
+          #scratchpad
+           scratchpad_cross_monitor = 1
 
           # layout support:
           # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
@@ -216,8 +219,7 @@ in
           tagrule=id:4,monitor_name:DP-2,layout_name:scroller
           tagrule=id:5,monitor_name:DP-2,layout_name:scroller
           tagrule=id:6,monitor_name:DP-2,layout_name:scroller
-          tagrule=id:7,monitor_name:DP-2,layout_name:scroller
-          tagrule=id:8,monitor_name:DP-2,layout_name:scroller
+          tagrule=id:7,monitor_name:DP-2,layout_name:scroller  
           tagrule=id:9,monitor_name:DP-2,layout_name:scroller
 
           #second monitor
@@ -239,9 +241,15 @@ in
           # reload config
           bind=SUPER,r,reload_config
 
-          # menu and terminal
+          # menu and app keybinds
           bind=SUPER,a,spawn,~/.config/rofi/launchers/type-6/launcher.sh
           bind=SUPER,t,spawn,${userSettings.terminal}
+          bind=SUPER,f,spawn,${userSettings.browser}
+          bind=SUPER,e,spawn,${userSettings.fileManager}
+
+          #scratchpads
+           bind=SUPER,s,toggle_named_scratchpad,discord,none,discord
+          
 
           # exit
           bind=SUPER,q,killclient,
@@ -269,7 +277,7 @@ in
           bind=SUPER,i,minimized,
           bind=SUPER,o,toggleoverlay,
           bind=SUPER+SHIFT,I,restore_minimized
-          bind=SUPER,s,toggle_scratchpad
+          bind=SUPER,x,toggle_scratchpad
 
           # scroller layout
           bind=ALT,e,set_proportion,1.0
@@ -279,9 +287,9 @@ in
           bind=SUPER,n,switch_layout
 
           # tag switch
-          bind=SUPER,Left,viewtoleft_have_client,0
+          #bind=SUPER,Left,viewtoleft_have_client,0
           #bind=CTRL,Left,viewtoleft_have_client,0
-          bind=SUPER,Right,viewtoright_have_client,0
+          #bind=SUPER,Right,viewtoright_have_client,0
           #bind=CTRL,Right,viewtoright_have_client,0
           bind=CTRL+SUPER,Left,tagtoleft,0
           bind=CTRL+SUPER,Right,tagtoright,0
@@ -355,5 +363,6 @@ in
         '';
         };
       };
-    }
+    };
+}
   
