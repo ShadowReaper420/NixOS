@@ -94,7 +94,8 @@ in
 
     };
 
-
+    #monitor config
+    modules.desktops-tools.kanshi.enable = true;
 
     programs.niri = {
       package = pkgs.niri;

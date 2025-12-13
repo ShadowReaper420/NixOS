@@ -10,9 +10,10 @@
   home-manager.users.${userSettings.username} = {
     programs.git = {
       enable = true;
-      #userName = userSettings.name;
-      userName = "ShadowReaper420";
-      userEmail = userSettings.email;
+      settings = {
+      user.name = "ShadowReaper420";
+      user.email = userSettings.email;
+      };
     };
   };
 }

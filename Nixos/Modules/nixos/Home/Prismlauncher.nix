@@ -1,7 +1,7 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 
 {
-  environment.systemPackages = with pkgs-unstable; [
+  environment.systemPackages = with pkgs-stable; [
   (prismlauncher.override {
     # Add binary required by some mod
     additionalPrograms = [ ffmpeg ];

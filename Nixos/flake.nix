@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    nixpkgs-unstable.url = "nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     hyprland.url = "github:hyprwm/Hyprland";
     stylix.url = "github:danth/stylix/";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -29,10 +29,10 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    pyprland = {
-      url = "github:hyprland-community/pyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #pyprland = {
+      #url = "github:hyprland-community/pyprland";
+     # inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -94,11 +94,11 @@
 
       outputs = {
         nixpkgs,
-        nixpkgs-unstable,
+        nixpkgs-stable,
         home-manager,
         nur,
         dankMaterialShell,
-        pyprland,
+     #   pyprland,
         niri,
         chaotic,
         winapps,
@@ -129,8 +129,8 @@
           terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
         };
 
-        pkgs-unstable = import inputs.nixpkgs-unstable {
-          system = pkgs.system;
+        pkgs-stable = import inputs.nixpkgs-stable {
+          system = pkgs.stdenv.hostPlatform.system;
           config.allowUnfree = true;
 
         };
@@ -164,7 +164,7 @@
 
 
             {
-              environment.systemPackages = [pyprland.packages."x86_64-linux".pyprland];
+              
               imports = [];
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "hm-backup";
@@ -188,7 +188,7 @@
             inherit inputs;
             inherit systemSettings;
             inherit userSettings;
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
 
           };
         };

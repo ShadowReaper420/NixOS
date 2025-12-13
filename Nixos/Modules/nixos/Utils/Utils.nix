@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  pkgs-unstable,
+  pkgs-stable,
   userSettings,
   inputs,
   systemSettings,
@@ -36,7 +36,7 @@
     blender
     krita
     gimp
-    brave
+    #brave  
     kdePackages.kwalletmanager
     kdePackages.qtbase
     kdePackages.qttools
@@ -61,15 +61,16 @@
     ]
   ++
   [
-    #lsp and other Dev crap
+    #lsp and other Dev crap 
     git
     nixd
+    #python315
     #nil
     cmake
     clang
     #rust-analyzer
     #rustc 
-    python313Packages.python-lsp-server
+    #python313Packages.python-lsp-server
     emacs
     ripgrep
     #cargo
@@ -106,7 +107,7 @@
 
   ])
       ++
-      (with pkgs-unstable; [
+      (with pkgs-stable; [
         prismlauncher
         floorp-bin
         lazygit
@@ -121,7 +122,7 @@
     ];
   };
 
-
+  
   services.tumbler.enable = true;
   services.gvfs.enable = true;
 

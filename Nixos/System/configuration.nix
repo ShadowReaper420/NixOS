@@ -27,6 +27,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
+      theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
       enable = true;
       useOSProber = true;
       efiSupport = true;
@@ -66,17 +67,21 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = systemSettings.locale;
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = systemSettings.locale;
-    LC_IDENTIFICATION = systemSettings.locale;
-    LC_MEASUREMENT = systemSettings.locale;
-    LC_MONETARY = systemSettings.locale;
-    LC_NAME = systemSettings.locale;
-    LC_NUMERIC = systemSettings.locale;
-    LC_PAPER = systemSettings.locale;
-    LC_TELEPHONE = systemSettings.locale;
-    LC_TIME = systemSettings.locale;
+  
+  i18n.extraLocaleSettings =
+     let
+       x = systemSettings.locale;
+     in
+    {
+    LC_ADDRESS = x;
+    LC_IDENTIFICATION = x;
+    LC_MEASUREMENT = x;
+    LC_MONETARY = x;
+    LC_NAME = x;
+    LC_NUMERIC = x;
+    LC_PAPER = x;
+    LC_TELEPHONE = x;
+    LC_TIME = x;
   };
 
   # Enable the X11 windowing system.

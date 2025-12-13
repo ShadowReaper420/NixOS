@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  pkgs-unstable,
   userSettings,
   systemSettings,
   inputs,
@@ -11,9 +10,22 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs-unstable.emacs;
+    package = pkgs.emacs;
 
   };
+
+  
+
+  environment.systemPackages = with pkgs; [
+    #libtool
+    #libvterm
+    emacsPackages.vterm
+  ];
+
+  programs.direnv = {
+    enable = true;
+  };
+  
   home-manager.users.${userSettings.username} = {
   #  xdg.desktopEntries = {
    #   Doom = {
