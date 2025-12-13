@@ -14,11 +14,11 @@ in
     home-manager.users.${userSettings.username} = {
       services.kanshi = {
         enable = true;
-
-        profiles = {
-          home = {
-            outputs = [
-              {
+        settings = [
+          {
+            profile.name = "home";
+            profile.outputs = [
+                            {
                 criteria = "DP-2";
                 position = "0,0";
                 mode = "2560x1440@144Hz";
@@ -30,9 +30,10 @@ in
                 mode = "1920x1080@60Hz";
                 scale = 1.0;
               }
+
             ];
-          };
-        };
+          }
+        ];
       };
     };
   };
