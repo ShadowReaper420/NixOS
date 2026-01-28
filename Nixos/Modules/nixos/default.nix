@@ -11,7 +11,7 @@
     ./Home/Gaming.nix
     ./Home/Spotify.nix
     ./Home/Lutris.nix
-    #./Home/Prismlauncher.nix
+    ./Home/Prismlauncher.nix
     ./VM-stuff/QEMU.nix
     ./VM-stuff/Distro-box.nix
     ./Utils/Fonts.nix

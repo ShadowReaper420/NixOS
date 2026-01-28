@@ -20,6 +20,8 @@
     #libtool
     #libvterm
     emacsPackages.vterm
+    nodejs_25
+    rust-analyzer
   ];
 
   programs.direnv = {

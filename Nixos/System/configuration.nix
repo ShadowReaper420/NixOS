@@ -22,8 +22,7 @@
   modules.desktops-tools.kanshi.enable = true;
 
   # Bootloader.
-#boot.kernelPackages = pkgs.linuxPackages;
-   # pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -53,7 +52,7 @@
   }];
 
 
-  services.mullvad-vpn.enable = true;
+  #services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
@@ -98,6 +97,10 @@
   };
 
   # Enable sound with pipewire.
+  services.pulseaudio.configFile = pkgs.runCommand "default.pa" {} ''
+  sed 's/module-udev-detect$/module-udev-detect tsched=0/' \
+    ${pkgs.pulseaudio}/etc/pulse/default.pa > $out
+''; 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

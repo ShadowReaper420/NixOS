@@ -12,9 +12,8 @@
 
   with pkgs; [
     
-    
+    prismlauncher-unwrapped
     bottles
-#    prismlauncher
     steamtinkerlaunch
     #openmw
     winetricks
@@ -25,7 +24,9 @@
     protonup-qt
     xivlauncher
     ryubing
+    #quantframe
     
+  
     
   ];
 

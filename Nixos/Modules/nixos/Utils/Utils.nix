@@ -50,10 +50,7 @@
     kdePackages.partitionmanager
     kdePackages.qt6ct
     planify
-    #inputs.winapps.packages."${system}".winapps
-    #inputs.winapps.packages."${system}".winapps-launcher
-    #inputs.winboat.packages."${system}".winboat
-    #freerdp
+    winboat
 
 
     #kdePackages.kdenlive
@@ -80,6 +77,7 @@
     lua-language-server
     ispell
     fd
+    gvfs 
 
   ]
   ++
@@ -113,11 +111,12 @@
         lazygit
         nexusmods-app-unfree
         vintagestory
+        #quantframe
       ]);
 
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [
+    plugins = with pkgs; [
       thunar-archive-plugin
     ];
   };
@@ -138,7 +137,7 @@
       thunderbird
       kdePackages.ktorrent
       discord
-      vesktop
+      #vesktop
     ];
   };
 }

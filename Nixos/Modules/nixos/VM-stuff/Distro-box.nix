@@ -8,7 +8,7 @@
    enable = true;
   };
 
-#environment.systemPackages = [ pkgs.distrobox pkgs.boxbuddy ];
+environment.systemPackages = [ pkgs.distrobox pkgs.boxbuddy ];
 
 
 }
