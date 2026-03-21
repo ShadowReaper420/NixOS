@@ -20,9 +20,8 @@
   modules.desktops.niri.enable = true;
   #modules.desktops.mangowc.enable = true;
   modules.desktops-tools.kanshi.enable = true;
-
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -43,6 +42,7 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  programs.nix-ld.enable = true;
 #The things I do for skyrim modding
   security.pam.loginLimits = [{
     domain = "${userSettings.username}";

@@ -6,6 +6,7 @@
 
   virtualisation.docker = {
    enable = true;
+   enableOnBoot = true;
   };
 
 environment.systemPackages = [ pkgs.distrobox pkgs.boxbuddy ];

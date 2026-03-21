@@ -9,14 +9,15 @@
   winapps,
   ...
 }: {
-
-  
+ 
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   environment.systemPackages = 
-    (with pkgs; [
+  (with pkgs; [
     wget
+    dotnet-runtime
+    #nexusmods-app-unfree
     kitty
     fuse
     kdePackages.ark
@@ -31,10 +32,9 @@
     kdePackages.qtstyleplugin-kvantum
     kicad
     davinci-resolve
-    libreoffice
     obs-studio
     blender
-    krita
+    #krita
     gimp
     #brave  
     kdePackages.kwalletmanager
@@ -51,11 +51,12 @@
     kdePackages.qt6ct
     planify
     winboat
+    ollama
 
 
     #kdePackages.kdenlive
 
-    ]
+  ]
   ++
   [
     #lsp and other Dev crap 
@@ -104,15 +105,14 @@
     #  inputs.nix-qml.packages.${systemSettings.system}.qml-ts-mode
 
   ])
-      ++
-      (with pkgs-stable; [
-        prismlauncher
-        floorp-bin
-        lazygit
-        nexusmods-app-unfree
-        vintagestory
-        #quantframe
-      ]);
+  ++
+  (with pkgs-stable; [
+    prismlauncher
+    floorp-bin
+    lazygit
+    libreoffice
+    #quantframe
+  ]);
 
   programs.thunar = {
     enable = true;
@@ -121,7 +121,7 @@
     ];
   };
 
-  
+
   services.tumbler.enable = true;
   services.gvfs.enable = true;
 

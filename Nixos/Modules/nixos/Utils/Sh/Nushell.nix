@@ -89,7 +89,7 @@
         # Note: zoxide only supports Nushell v0.89.0+.
 
 
-       $env.path ++= ["~/.local/bin"]
+       $env.path ++= ["~/.local/.bin/"]
        $env.path ++= ["~/.config/emacs/bin/"]
 
       '';
