@@ -25,8 +25,8 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
-      theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
-      enable = true;
+      #theme = "${pkgs.kdePackages.breeze-grub}/grub/themes/breeze";
+      #enable = true;
       useOSProber = true;
       efiSupport = true;
       devices = ["nodev"];
@@ -51,6 +51,7 @@
     value = "32768";
   }];
 
+  systemd.enableEmergencyMode = false;
 
   #services.mullvad-vpn.enable = true;
   services.flatpak.enable = true;

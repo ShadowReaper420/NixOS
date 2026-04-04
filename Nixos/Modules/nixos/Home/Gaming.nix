@@ -27,7 +27,7 @@
     eden
     vintagestory
     nexusmods-app-unfree 
-    
+    heroic-unwrapped  
     ]
     ++
     [

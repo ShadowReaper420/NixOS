@@ -32,9 +32,8 @@ in
       cage
       swww
       waypaper
-      inputs.stasis.packages.${system}.stasis
+      #inputs.stasis.packages.${system}.stasis
       waybar
-
       rofi
       wl-clipboard
       hyprlock

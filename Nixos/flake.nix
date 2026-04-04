@@ -82,16 +82,21 @@
     chaotic,
     flake-parts,
     ...
-  } @ inputs: flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./Modules/Temp) {
+  } @ inputs: flake-parts.lib.mkFlake {inherit inputs;} {
+
 
 
     imports = [];
 
     systems = ["x86_64-linux"];
-
+    
     flake =
+
+
       let
-        #________SYSTEM SETTINGS________#
+
+
+              #________SYSTEM SETTINGS________#
         systemSettings = {
           system = "x86_64-linux"; #System Arch
           hostname = "nixos"; # hostname
@@ -113,7 +118,6 @@
           fileManager = "dolphin"; # Sets the file manager, used in keybinds.
           terminal = "kitty"; # Sets your terminal. I only have Kitty installed by default, but this is used in keybinds, so change this if you install another one.
         };
-
         pkgs-stable = import inputs.nixpkgs-stable {
           system = pkgs.stdenv.hostPlatform.system;
           config.allowUnfree = true;
@@ -150,7 +154,6 @@
               #inputs.microvm.nixosModules.microvm
               inputs.nvf.nixosModules.default
               inputs.dankMaterialShell.nixosModules.dank-material-shell
-              inputs.nirinit.nixosModules.nirinit
 
               {
 

@@ -78,7 +78,8 @@
     lua-language-server
     ispell
     fd
-    gvfs 
+    gvfs
+    jetbrains.idea
 
   ]
   ++
@@ -90,7 +91,7 @@
     ranger
     btop
     #lazygit
-
+    television
   ]
   ++
   [
