@@ -1,0 +1,83 @@
+{ inputs, self, pkgs, den, ... }:
+
+{
+  den.asepcts.stylix = {
+
+    flake-file = {
+      inputs = {
+        stylix = {
+          url = "github:nix-community/stylix";
+          inputs.nixpkgs.follows = "nixpkgs";
+        }; 
+
+      };      
+    };
+
+    imports = [inputs.stylix.nixosModules.stylix];
+
+    nixos = {
+      stylix = {
+        enable = true;
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+        autoEnable = false;
+      };
+
+    };
+    home-manager= {
+
+      #gtk.gtk4.theme = config.gtk.theme;
+      qt = {
+        enable = true;
+        platformTheme.name = "qtct";
+        style = {
+          name = "kvantum";
+          package = pkgs.catppuccin-kvantum.override {
+            variant = "mocha";
+            accent = "blue";
+          };
+        };
+      };
+      home.packages = with pkgs; [
+        libsForQt5.qtstyleplugin-kvantum
+        libsForQt5.qt5ct
+      ];
+
+      stylix = {
+        enable = true;
+        #image = ../.dotfiles/Wallpapers/Kath.png; # ignore this it wont actually be used for anything but the option is require for the time being
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+        autoEnable = true;
+        targets = {
+          kitty.enable = true;
+          lazygit.enable = true;
+          qt.enable = false;
+          gtk.enable = true;
+          btop.enable = true;
+          kde.enable = false;
+          emacs.enable = true;
+
+
+        };
+      };
+      home.pointerCursor = {
+        gtk.enable = true;
+        # x11.enable = true;
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Classic";
+        size = 16;
+      };
+
+
+      gtk = {
+        enable = true;
+        iconTheme = {
+          package = pkgs.callPackage ./BeautyLine-custom.nix {};
+          name = "BeautyLine";
+        };
+      };
+
+    };
+
+  };
+
+}

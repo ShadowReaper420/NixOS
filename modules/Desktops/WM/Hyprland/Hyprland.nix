@@ -1,7 +1,8 @@
-
-
+{den, inputs, ...}:
 {
-  den.aspects.hyprland = {inputs, lib, ...}: {
+  den.aspects.hyprland = {lib, ...}: {
+
+    includes = [den.kanshi den.WhichKey];
 
     flake-file = {
 
@@ -23,7 +24,6 @@
 
       };
 
-
     };
 
     imports = [
@@ -36,6 +36,7 @@
       environment.systemPackages = 
       (with pkgs; [
         rofi
+        kitty
         wayland-utils
         awww
         rofi
@@ -43,7 +44,7 @@
         linux-wallpaperengine
       ]);
 
-      porgrams.dank-material-shell.enable = true;
+      programs.dank-material-shell.enable = true;
 
       programs.hyprland = {
         enable = true;
@@ -52,7 +53,14 @@
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
 
       }; 
+    };
 
+    home-manager = {config, ...}: {
+      
+      home.file."${config.xdg.configHome}" = {
+        source = ./.dotfiles;
+        recursive = true;
+      };
 
     };
 
