@@ -3,9 +3,12 @@
 # instead of having to reboot each time.
 { inputs, den, ... }:
 {
-
+  
   # USER TODO: remove this tty-autologin used for the VM
   den.aspects.igloo.includes = [ (den.batteries.tty-autologin "tux") ];
+  includes = with den.aspects; [
+    Home-PC  
+  ];
 
   perSystem =
     { pkgs, ... }:

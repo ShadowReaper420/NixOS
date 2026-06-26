@@ -1,13 +1,8 @@
-{ inputs, self, den, ... }:
+{ inputs, self, ... }:
+
 {
-  den.aspects.Home-PC = {
-    includes = [
-     den.hyprland
-     den.flugel
-     den.gaming
-     den.utils
-     den.emacs
-    ];
+  flake.nixosModules.ModuleName = { pkgs, ...}: {
+
 
   };
 }

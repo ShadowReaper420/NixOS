@@ -1,0 +1,64 @@
+{
+  "pins": {
+    "den": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "denful",
+        "repo": "den"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3932adfe8ef02d322168aa5b07d9371d8ec1664d",
+      "url": "https://github.com/denful/den/archive/3932adfe8ef02d322168aa5b07d9371d8ec1664d.tar.gz",
+      "hash": "sha256-uLIfN5z+7q/hhZpNRwRINbLkdI2EPfk1XgxeJuRfkwo="
+    },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "5d320ab301cfaaca7d32514f13815d19d109f5f4",
+      "url": "https://github.com/nix-community/home-manager/archive/5d320ab301cfaaca7d32514f13815d19d109f5f4.tar.gz",
+      "hash": "sha256-qPNd6lUohHP5gcJhqQ7rLV87RwIx0xYR2A4Frb9Zjc4="
+    },
+    "import-tree": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "denful",
+        "repo": "import-tree"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "d321337efd0f23a9eb14a42adb7b2c29313ab274",
+      "url": "https://github.com/denful/import-tree/archive/d321337efd0f23a9eb14a42adb7b2c29313ab274.tar.gz",
+      "hash": "sha256-Jjuz5CmSkur8KvLDoGa+vylEp+RkQtv4mt/qcMznpH0="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixpkgs-unstable",
+      "artifact": "nixexprs.tar.xz",
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1020805.89570f24e97e/nixexprs.tar.xz",
+      "hash": "sha256-8d2wCNWKnd86GzKZvbuqqlS+HqMrheXkvRf0qGJ/oA0="
+    },
+    "with-inputs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "denful",
+        "repo": "with-inputs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bae062d25220d7970e1d73856b966e8287853f28",
+      "url": "https://github.com/denful/with-inputs/archive/bae062d25220d7970e1d73856b966e8287853f28.tar.gz",
+      "hash": "sha256-jsPUcrjTv+JbPJjp5g3TX8t38QTmuZY9niQlHAUuGy0="
+    }
+  },
+  "version": 8
+}

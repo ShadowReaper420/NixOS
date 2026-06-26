@@ -2,7 +2,7 @@
 {
   den.aspects.hyprland = {lib, ...}: {
 
-    includes = [den.kanshi den.WhichKey];
+    includes = with den.aspects; [kanshi WhichKey];
 
     flake-file = {
 
