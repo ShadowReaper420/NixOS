@@ -26,9 +26,9 @@
 
     };
 
-    imports = [
-      inputs.dms.nixosModules.dank-material-shell
-    ];
+    #imports = [
+     # inputs.dms.nixosModules.dank-material-shell
+    #];
 
 
     nixos = {pkgs, inputs, ...}: {
