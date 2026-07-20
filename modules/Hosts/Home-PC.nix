@@ -1,11 +1,11 @@
 {
   den.aspects.Home-PC = {den, hosts, ...}: {
-    includes = with den; [
-      hyprland
-      flugel
-      gaming
-      utils
-      emacs
+    includes = [
+      den.aspects.hyprland
+      den.aspects.flugel
+      den.aspects.gaming
+      den.aspects.utils
+      den.aspects.emacs
     ];
 
 
