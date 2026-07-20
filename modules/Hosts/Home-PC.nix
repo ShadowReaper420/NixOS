@@ -1,6 +1,6 @@
 {
   den.aspects.Home-PC = {den, hosts, ...}: {
-    includes = with den.aspects; [
+    includes = with den; [
       hyprland
       flugel
       gaming
