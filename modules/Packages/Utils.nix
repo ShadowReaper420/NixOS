@@ -11,7 +11,7 @@
 
 
 {
-  den.aspects.Utils = {
+  den.aspects.utils = {
     nixos = {
 
       #remove once https://github.com/NixOS/nixpkgs/issues/514113#issuecomment-4338976393 is resolved
