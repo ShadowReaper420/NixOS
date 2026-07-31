@@ -4,7 +4,7 @@
   # tux user at igloo host.
   #den.hosts.x86_64-linux.igloo.users.tux = { };
 
-  den.hosts.x86_64-linux.Home-PC.users.flugel = { };
+  #den.hosts.x86_64-linux.Home-PC.users.flugel = { };
   
 
 }

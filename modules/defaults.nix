@@ -13,6 +13,7 @@
       den.provides.hostname
       den.provides.inputs'
       den.provides.self'
+      #den.aspects.hyprland
     ];
   
 

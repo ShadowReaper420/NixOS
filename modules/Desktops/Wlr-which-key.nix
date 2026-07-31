@@ -1,4 +1,4 @@
-{ inputs, self, den, ... }:
+{ inputs, self, ... }:
 
 {
 

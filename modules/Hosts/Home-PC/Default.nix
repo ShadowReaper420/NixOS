@@ -1,5 +1,10 @@
+{self, den, ...}:
 {
-  den.aspects.Home-PC = {den, hosts, ...}: {
+
+  den.hosts.x86_64-linux.Home-PC.users.flugel = { };
+
+
+  den.aspects.Home-PC = {den, host, ...}: {
     includes = [
       den.aspects.hyprland
       den.aspects.flugel
@@ -8,6 +13,9 @@
       den.aspects.emacs
     ];
 
+    provides.to-users.homeManager = { pkgs, ... }: {
+      home.packages = [];
+    };
 
 
 
@@ -16,7 +24,7 @@
         #TODO clean this shit up
 
         boot.kernelPackages = pkgs.linuxPackages_latest;
-        
+
         nix.settings.experimental-features = ["nix-command" "flakes"];
 
         programs.nix-ld.enable = true; 

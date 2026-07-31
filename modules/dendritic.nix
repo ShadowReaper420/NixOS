@@ -20,7 +20,7 @@
       };
 
     };
-
+    
 
 
     # pkgs-stable = import inputs.nixpkgs-stable {
@@ -28,13 +28,14 @@
     #   config.allowUnfree = true;
 
     # };
-    # pkgs = import inputs.nixpkgs {
-    #   system = pkgs.stdenv.hostPlatform.system;
-    #   config.allowUnfree = true;
-    #   config.permittedInsecurePackages = [
-    #     "nexusmods-app-unfree-0.21.1"
-    #     "openclaw-2026.4.21"
-    #   ];
+     # pkgs = import inputs.nixpkgs {
+     #   system = pkgs.stdenv.hostPlatform.system;
+     #   config.allowUnfree = true;
+     #   config.permittedInsecurePackages = [
+     #     "nexusmods-app-unfree-0.21.1"
+     #     #"openclaw-2026.4.21"
+     #   ];
+       
     #   overlays = [
     #     #inputs.niri.overlays.niri
     #   ];

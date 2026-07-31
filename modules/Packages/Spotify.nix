@@ -1,13 +1,17 @@
 { inputs, self, den, pkgs, ... }:
 {
+
+
+  flake-file = {
+
+    inputs = {
+      spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    };
+  };
+
+
   den.aspects.spotify = {
 
-    flake-file = {
-
-      inputs = {
-        spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-      };
-    }; 
 
     nixos = {
       programs.spicetify =
