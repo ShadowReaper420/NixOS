@@ -1,8 +1,14 @@
-{  pkgs, den, ... }: {
+{den, ... }: {
 
-  den.aspects.gaming = {
+  den.aspects.gaming = {lib, ...}: {
 
-    nixos = {
+    
+    includes = [
+     (den.batteries.unfree ["steam" "steam-unwrapped" "vintagestory" "7zz" "uasm"  ])
+     (den.batteries.insecure ["nexusmods-app-unfree-0.21.1" ])
+    ];
+
+    nixos = {pkgs, ...}: {
       environment.systemPackages = 
 
       ( with pkgs; [
@@ -23,8 +29,9 @@
         heroic-unwrapped
         umu-launcher
         prismlauncher
+        pcsx2
+        
       ]);
-
 
       programs.steam = {
         enable = true;

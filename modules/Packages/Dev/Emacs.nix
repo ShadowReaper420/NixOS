@@ -1,6 +1,6 @@
-{ inputs, pkgs, self, den, ... }:
+{den, ... }:
 {
-  den.aspects.emacs = {
+  den.aspects.emacs = {pkgs, ...}: {
     nixos = {
 
       services.emacs = {

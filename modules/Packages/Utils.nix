@@ -1,27 +1,20 @@
-{
-  config,
-  lib,
-  pkgs,
-  pkgs-stable,
-  inputs,
-  den,
-  ...
-}:
-
-
+{  den, ... }:
 
 {
-  den.aspects.utils = {
-    nixos = {
+  den.aspects.utils = {pkgs, inputs, lib, ...}: {
 
-      #remove once https://github.com/NixOS/nixpkgs/issues/514113#issuecomment-4338976393 is resolved
-      nixpkgs.overlays = [
-        (_: prev: {
-          openldap = prev.openldap.overrideAttrs {
-            doCheck = !prev.stdenv.hostPlatform.isi686;
-          };
-        })
-      ];
+    includes = [
+      (den.batteries.unfree [ "7zz" ])
+    ];
+
+    nixos = {pkgs, lib, ...}: {
+
+
+      # fonts.packages = with pkgs; [
+      #   font-awesome
+      #   material-symbols
+      #   material-icons
+      # ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
 
 
@@ -123,7 +116,7 @@
         kdePackages.qtimageformats
       ])
       ++
-      (with pkgs-stable; [
+      (with pkgs; [
         prismlauncher
         floorp-bin
         lazygit
@@ -140,7 +133,7 @@
       ]);
 
       programs.thunar = {
-        enable = true;
+        enable = false;
         plugins = with pkgs; [
           thunar-archive-plugin
         ];

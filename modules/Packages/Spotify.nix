@@ -10,13 +10,23 @@
   };
 
 
-  den.aspects.spotify = {
 
+  den.aspects.spotify =  {
 
-    nixos = {
+    includes = [
+     (den.batteries.unfree ["spotify"])
+     (den.batteries.insecure [])
+    ];
+
+    nixos =  {pkgs, ...}:{
+
+      imports = [
+        inputs.spicetify-nix.nixosModules.default
+      ];
+
       programs.spicetify =
         let
-          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
         in
         {
           enable = true;
