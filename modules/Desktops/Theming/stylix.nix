@@ -74,9 +74,8 @@
             lib,
             stdenvNoCC,
             fetchFromGitHub,
-            #breeze-icons,
+            breeze-icons,
             gtk3,
-            gnome-icon-theme,
             hicolor-icon-theme,
             mint-x-icons,
             candy-icons,
@@ -109,8 +108,7 @@
             # ubuntu-mono is also required but missing in ubuntu-themes (please add it if it is packaged at some point)
             propagatedBuildInputs = [
               candy-icons
-              #breeze-icons
-              gnome-icon-theme
+              breeze-icons
               hicolor-icon-theme
               mint-x-icons
               pantheon.elementary-icon-theme

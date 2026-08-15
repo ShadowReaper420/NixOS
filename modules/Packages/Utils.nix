@@ -31,6 +31,7 @@
         kdePackages.ark
         unrar 
         kdePackages.kservice
+        ktorrent
         cpio
         libadwaita
         zenity

@@ -26,7 +26,12 @@
 
   den.aspects.hyprland = {lib, ...}: {
 
-    includes = with den.aspects; [kanshi];
+    includes = with den.aspects; [
+      kanshi
+      dolphin
+      stylix
+      sddm
+    ];
 
 
     #imports = [
