@@ -4,7 +4,7 @@
     includes = [
       den.batteries.define-user
       den.batteries.primary-user
-      (den.batteries.user-shell "fish")
+      (den.batteries.user-shell "nushell")
     ];
     user = {
       extraGroups = [

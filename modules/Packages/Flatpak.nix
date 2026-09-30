@@ -1,8 +1,11 @@
-{ den, inputs, }: {
+{ den, inputs, ... }: {
 
   flake-file = {
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak/?ref=latest";
+    
+    inputs = {
+      nix-flatpak = {
+        url = "github:gmodena/nix-flatpak/?ref=latest";
+      };
     };
 
   };

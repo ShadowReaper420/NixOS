@@ -55,7 +55,7 @@
                 enable = true;
                 useOSProber = true;
                 efiSupport = true;
-                devices = ["/dev/nvme1n1p1"];
+                devices = ["nodev"];
               };
             };
     };
