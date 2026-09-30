@@ -1,18 +1,48 @@
 {den, ...}: {
 
+  flake-file = {
+
+    inputs = {
+
+      niri-flake = {
+        url = "github:epireyn/niri-flake";
+      };
+
+      niri-scratchpad-flake = {
+        url = "github:gvolpe/niri-scratchpad";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+      noctalia = {
+        url = "github:noctalia-dev/noctalia-shell";
+        #inputs.nixpkgs.follows = "nixpkgs";
+      };
+
+    };
+
+  };
+
   den.aspects.niri = {
 
-    nixos = {pkgs, lib, config, ...}: {
+    includes = with den.aspects; [
+      kanshi
+      dolphin
+      stylix
+      sddm
+    ];
 
+    nixos = {pkgs, lib, config, inputs, ...}: {
+
+      imports = [
+        inputs.niri.nixosModules.niri
+      ];
 
       # environment.variables.NIXOS_OZONE_WL = "1"; Breaks discord and other x11 apps just keep it commented out for now.
       environment.systemPackages = with pkgs; [
         wayland-utils
         xwayland-satellite
-        cage
         awww      
         waypaper
-        #inputs.stasis.packages.${system}.stasis
         waybar
         rofi
         wl-clipboard
@@ -132,9 +162,9 @@
         binds =
           with config.home-manager.users.${den.user}.lib.niri.actions; {
             #_________Aplication Keybinds_________#
-            "Mod+T".action = spawn userSettings.terminal;
-            "Mod+E".action = spawn userSettings.fileManager;
-            "Mod+F".action = spawn userSettings.browser;
+            "Mod+T".action = spawn "kitty";
+            "Mod+E".action = spawn "dolphin";
+            "Mod+F".action = spawn "floorp";
             "Mod+A".action = spawn "~/.config/rofi/launchers/type-6/launcher.sh";
             "Mod+P".action.screenshot = [];
             #___________Window Keybinds___________#

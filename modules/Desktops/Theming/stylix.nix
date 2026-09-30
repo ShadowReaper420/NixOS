@@ -1,19 +1,25 @@
 { inputs, self, pkgs, den, ... }:
 
 {
+
+
+  flake-file = {
+    inputs = {
+      stylix = {
+        url = "github:nix-community/stylix";
+        inputs.nixpkgs.follows = "nixpkgs";
+      }; 
+
+    };      
+  };
+
   den.aspects.stylix = {
 
-    flake-file = {
-      inputs = {
-        stylix = {
-          url = "github:nix-community/stylix";
-          inputs.nixpkgs.follows = "nixpkgs";
-        }; 
-
-      };      
-    };
 
     nixos = {pkgs, inputs, ...}: {
+
+      imports = [inputs.stylix.nixosModules.stylix];
+
       stylix = {
         enable = true;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";

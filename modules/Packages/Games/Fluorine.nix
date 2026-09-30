@@ -2,7 +2,7 @@
 {
   den.aspects.fluorine = {
 
-    nixos = {pkgs,}: {
+    nixos = {pkgs, ...}: {
       services.envfs.enable = true;
       programs.fuse.userAllowOther = true;
 

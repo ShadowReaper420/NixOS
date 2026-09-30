@@ -29,8 +29,9 @@
     includes = with den.aspects; [
       kanshi
       dolphin
-      stylix
+      #stylix
       sddm
+      
     ];
 
 

@@ -19,7 +19,8 @@
       den.aspects.utils
       den.aspects.emacs
       den.aspects.spotify
-      den.aspects.fluorine
+      den.aspects.niri
+
 
 
     ];

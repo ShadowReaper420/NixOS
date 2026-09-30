@@ -15,7 +15,7 @@
         theme = "sddm-astronaut-theme";
         extraPackages = [ sddm-astronaut ];
 
-        #    wayland.enable = true;
+            wayland.enable = true;
       };
 
       environment.systemPackages = [ sddm-astronaut ];

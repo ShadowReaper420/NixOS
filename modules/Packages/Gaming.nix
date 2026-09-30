@@ -1,5 +1,18 @@
 {den, ... }: {
 
+  flake-file = {
+
+    inputs = {
+      nexusmods-app.url = "github:MattSturgeon/nma-nix";
+      amethyst = "github:ChrisDKN/Amethyst-Mod-Manager";
+
+
+    };
+
+
+  };
+
+  
   den.aspects.gaming = {lib, ...}: {
 
     
@@ -22,7 +35,7 @@
         protonup-qt
         xivlauncher  
         ryubing
-        #quantframe
+        quantframe
         eden
         vintagestory
         nexusmods-app-unfree 
@@ -30,7 +43,9 @@
         umu-launcher
         prismlauncher
         pcsx2
-        
+        gamemode
+        inputs.amethyst.packages.default
+        satisfactorymodmanager
       ]);
 
       programs.steam = {
