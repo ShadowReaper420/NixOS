@@ -16,7 +16,7 @@
   den.aspects.stylix = {
 
 
-    nixos = {pkgs, inputs, ...}: {
+    nixos = {pkgs, ...}: {
 
       imports = [inputs.stylix.nixosModules.stylix];
 
@@ -27,7 +27,7 @@
       };
 
     };
-    home-manager = {pkgs, inputs, ...}: {
+    homeManager = {pkgs, inputs, ...}: {
 
       #gtk.gtk4.theme = config.gtk.theme;
       qt = {
@@ -80,7 +80,7 @@
             lib,
             stdenvNoCC,
             fetchFromGitHub,
-            breeze-icons,
+            #breeze-icons,
             gtk3,
             hicolor-icon-theme,
             mint-x-icons,
@@ -101,7 +101,7 @@
               sparseCheckout = [
                 "BeautyLine-V3"
               ];
-              hash = "sha256-PKO6Mob23NlVgCOJ5guBd/KEZ8KrYPuJyUyomOSOIuU";
+              hash = "sha256-PKO6Mob23NlVgCOJ5guBd/KEZ8KrYPuJyUyomOSOIuU=";
             };
 
             sourceRoot = "${src.name}/BeautyLine-V3";
@@ -114,7 +114,7 @@
             # ubuntu-mono is also required but missing in ubuntu-themes (please add it if it is packaged at some point)
             propagatedBuildInputs = [
               candy-icons
-              breeze-icons
+             # breeze-icons
               hicolor-icon-theme
               mint-x-icons
               pantheon.elementary-icon-theme
@@ -150,7 +150,7 @@
         in{
           enable = true;
           iconTheme =  {
-            package = BeautyLine-custom;
+            package = pkgs.callPackage BeautyLine-custom {};
             name = "BeautyLine";
           };
         };

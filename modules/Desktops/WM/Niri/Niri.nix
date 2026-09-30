@@ -1,10 +1,10 @@
-{den, ...}: {
+{den, inputs, ...}: {
 
   flake-file = {
 
     inputs = {
 
-      niri-flake = {
+      niri = {
         url = "github:epireyn/niri-flake";
       };
 
@@ -31,10 +31,11 @@
       sddm
     ];
 
-    nixos = {pkgs, lib, config, inputs, ...}: {
+    nixos = {pkgs, lib, ...}: {
 
       imports = [
         inputs.niri.nixosModules.niri
+        
       ];
 
       # environment.variables.NIXOS_OZONE_WL = "1"; Breaks discord and other x11 apps just keep it commented out for now.
@@ -48,7 +49,7 @@
         wl-clipboard
         hyprlock
         cliphist
-        inputs.niri-scratchpad-flake.packages.${systemSettings.system}.default
+        inputs.niri-scratchpad-flake.packages.${pkgs.system}.default
         linux-wallpaperengine
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
@@ -102,8 +103,6 @@
 
       };
 
-      #monitor config
-      modules.desktops-tools.kanshi.enable = true;
 
       programs.niri = {
         package = pkgs.niri;

@@ -2,7 +2,7 @@
 
 {
   den.aspects.kanshi = {
-    home-manager = {
+    homeManager = {
       services.kanshi = {
         enable = true;
         settings = [

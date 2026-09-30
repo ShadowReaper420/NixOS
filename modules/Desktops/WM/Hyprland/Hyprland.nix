@@ -24,12 +24,12 @@
 
   };
 
-  den.aspects.hyprland = {lib, ...}: {
+  den.aspects.hyprland = {
 
     includes = with den.aspects; [
       kanshi
       dolphin
-      #stylix
+      stylix
       sddm
       
     ];
@@ -64,7 +64,7 @@
         }; 
       };
 
-      home-manager = {config, ...}: {
+      homeManager = {config, ...}: {
 
         home.file."${config.xdg.configHome}" = {
           source = ./.dotfiles;

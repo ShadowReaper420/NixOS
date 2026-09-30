@@ -1,10 +1,10 @@
-{  den, ... }:
+{  den, inputs, ... }:
 
 {
-  den.aspects.utils = {pkgs, inputs, lib, ...}: {
+  den.aspects.utils = {
 
     includes = [
-      (den.batteries.unfree [ "7zz" ])
+      (den.batteries.unfree [ "7zz" "p7zip" "obsidian" "discord" "discord-unwrapped" ])
     ];
 
     nixos = {pkgs, lib, ...}: {
@@ -31,7 +31,7 @@
         kdePackages.ark
         unrar 
         kdePackages.kservice
-        ktorrent
+        kdePackages.ktorrent
         cpio
         libadwaita
         zenity
@@ -41,7 +41,7 @@
         themechanger
         kdePackages.qtstyleplugin-kvantum
         kicad
-        davinci-resolve
+        #davinci-resolve
         obs-studio
         blender
         #krita
@@ -62,7 +62,6 @@
         planify
         winboat
         ollama
-        openclaw
 
       ]
       ++
@@ -88,7 +87,6 @@
         ispell
         fd
         gvfs
-        jetbrains.idea
         gradle_9 
         jdk25
         maven

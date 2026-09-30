@@ -1,10 +1,10 @@
-{den, ... }: {
+{den, inputs, ... }: {
 
   flake-file = {
 
     inputs = {
       nexusmods-app.url = "github:MattSturgeon/nma-nix";
-      amethyst = "github:ChrisDKN/Amethyst-Mod-Manager";
+      amethyst.url = "github:ChrisDKN/Amethyst-Mod-Manager";
 
 
     };
@@ -13,11 +13,11 @@
   };
 
   
-  den.aspects.gaming = {lib, ...}: {
+  den.aspects.gaming = {
 
     
     includes = [
-     (den.batteries.unfree ["steam" "steam-unwrapped" "vintagestory" "7zz" "uasm"  ])
+     (den.batteries.unfree ["steam" "steam-unwrapped" "vintagestory" "7zz" "uasm" "unrar" ])
      (den.batteries.insecure ["nexusmods-app-unfree-0.21.1" ])
     ];
 
@@ -44,7 +44,7 @@
         prismlauncher
         pcsx2
         gamemode
-        inputs.amethyst.packages.default
+        inputs.amethyst.packages.${pkgs.stdenv.hostPlatform.system}.default
         satisfactorymodmanager
       ]);
 

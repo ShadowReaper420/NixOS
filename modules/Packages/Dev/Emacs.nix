@@ -1,7 +1,7 @@
 {den, ... }:
 {
-  den.aspects.emacs = {pkgs, ...}: {
-    nixos = {
+  den.aspects.emacs = {
+    nixos = {pkgs, ...}: {
 
       services.emacs = {
         enable = true;
@@ -13,7 +13,7 @@
         #libtool
         #libvterm
         emacsPackages.vterm
-        nodejs_25
+        #nodejs_25
         nixd
         nodejs
         #python315
