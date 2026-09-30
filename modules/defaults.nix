@@ -14,15 +14,7 @@
       den.provides.inputs'
       den.provides.self'
       den.aspects.fonts
-      den.aspects.hyprland
-      den.aspects.gaming
-      den.aspects.utils
-      den.aspects.emacs
-      den.aspects.spotify
-      den.aspects.niri
-
-
-
+      den.aspects.os-rebuild
     ];
 
 

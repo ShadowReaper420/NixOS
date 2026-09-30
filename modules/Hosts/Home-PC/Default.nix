@@ -1,9 +1,8 @@
 {self, den, ...}:
 {
 
-  den.hosts.x86_64-linux.home.users.flugel = { };
-
-
+  den.hosts.x86_64-linux.home.users.flugel = {};
+  
   den.aspects.home = {den, host, ...}: {
     includes = [
       den.aspects.hyprland
@@ -16,7 +15,8 @@
       den.aspects.utils
       den.aspects.emacs
       den.aspects.spotify
-      den.aspects.flatpak
+      den.aspects.flatpak 
+      den.aspects.niri
 
     ];
 
