@@ -53,7 +53,7 @@
         kdePackages.qtdeclarative
         kdePackages.qtquick3d  
         kdePackages.qtscxml
-        kdePackages.qt6gtk2
+        #kdePackages.qt6gtk2
         desmume
         r2modman
         wireplumber
