@@ -23,11 +23,21 @@
     provides.to-users.homeManager = { lib, config, pkgs, ... }: {
 
 
+      programs.git = {
+        signing.format = null;
+        enable = true;
+        settings = {
+          user.name = "ShadowReaper420";
+          user.email = "William_Regulus@proton.me";
+        };
+      };
+
+
       home.file."${config.xdg.configHome}" = {
         source = ./.config;
         recursive = true;
       };
-      
+
       #monitor settings for the host
       services.kanshi = {
         enable = true;

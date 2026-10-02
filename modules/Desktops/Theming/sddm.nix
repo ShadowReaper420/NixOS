@@ -14,8 +14,10 @@
 
         theme = "sddm-astronaut-theme";
         extraPackages = [ sddm-astronaut ];
-        CursorTheme = "Bibata-Modern-Classic";
-        CursorSize = 24;
+        settings.Theme = {
+          CursorTheme = "Bibata-Modern-Classic";
+          CursorSize = 24;
+        };
 
         wayland.enable = true;
       };
