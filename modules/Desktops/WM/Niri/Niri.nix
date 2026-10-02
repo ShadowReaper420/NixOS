@@ -25,7 +25,6 @@
   den.aspects.niri = {
 
     includes = with den.aspects; [
-      kanshi
       dolphin
       stylix
       sddm
@@ -35,10 +34,10 @@
 
       imports = [
         inputs.niri.nixosModules.niri
-        
+
       ];
 
-      # environment.variables.NIXOS_OZONE_WL = "1"; Breaks discord and other x11 apps just keep it commented out for now.
+       environment.variables.NIXOS_OZONE_WL = "1";
       environment.systemPackages = with pkgs; [
         wayland-utils
         xwayland-satellite
@@ -112,32 +111,29 @@
     };
 
 
-    home-manager = {pkgs, lib, config,...}: {
+    homeManager = {pkgs, lib, config,...}: {
 
 
 
-      programs.dankMaterialShell = {
-        enable = false;
-        niri = {
-          enableKeybinds = false;
-          enableSpawn = false;
-
-        };
-      };
 
 
       programs.niri.settings = {
         spawn-at-startup = [
           {
-            command = ["swww-daemon"];
+            command = ["awww-daemon"];
           }
+          # {
+          #   command = [ "wl-paste --type text --watch cliphist store"];
+          # }
+          # {
+          #   command = ["wl-paste --type image --watch cliphist store"];
+          #}
+          # { command = [ "sh" "-c" "wl-paste --type text --watch cliphist store" ];
 
-          {
-            command = [ "wl-paste --type text --watch cliphist store"];
-          }
-          {
-            command = ["wl-paste --type image --watch cliphist store"];
-          }
+          # }
+          # { command = [ "sh" "-c" "wl-paste --type image --watch cliphist store" ];
+
+          # }
           {
             command = [ "noctalia"];
           }
@@ -150,16 +146,16 @@
           }
         ];
 
-        environment = {
-          DISPLAY = ":1"; # xwayland-satellite
-        };
+        # environment = {
+        #   DISPLAY = ":1"; # xwayland-satellite
+        # };
 
         screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
 
 
         binds =
-          with config.home-manager.users.${den.user}.lib.niri.actions; {
+          with config.lib.niri.actions; {
             #_________Aplication Keybinds_________#
             "Mod+T".action = spawn "kitty";
             "Mod+E".action = spawn "dolphin";

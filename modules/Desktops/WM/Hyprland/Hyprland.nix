@@ -27,7 +27,6 @@
   den.aspects.hyprland = {
 
     includes = with den.aspects; [
-      kanshi
       dolphin
       stylix
       sddm

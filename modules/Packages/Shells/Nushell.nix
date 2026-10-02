@@ -93,9 +93,7 @@
        $env.path ++= ["~/.config/emacs/bin/"]
 
       '';
-      shellAliases = {
-        os-rebuild = "nh os switch";
-        os-rebuild-test = "sudo nixos-rebuild switch --flake ~/NixOS-Dev/Nixos";
+      shellAliases = { 
         daggerfall = "steam-run ~/Games/Daggerfall-Unity/DaggerfallUnity.x86.64";
         emacs = "emacsclient -c -a 'emacs'";
 

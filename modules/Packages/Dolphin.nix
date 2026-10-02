@@ -21,7 +21,7 @@
 
     };
 
-    home-Manager = {lib, ...}: {
+    homeManager = {lib, ...}: {
 
       xdg.configFile."dolphinrc".text = '' MenuBar=Disabled
 

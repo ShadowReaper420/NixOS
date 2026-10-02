@@ -1,8 +1,9 @@
-{lib, den, pkgs, ...}:
+{lib, den, ...}:
 
 {
   den.aspects.kanshi = {
-    homeManager = {
+ 
+    homeManager = {pkgs, ...}: {
       services.kanshi = {
         enable = true;
         settings = [

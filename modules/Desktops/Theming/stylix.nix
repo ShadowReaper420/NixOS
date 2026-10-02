@@ -27,7 +27,7 @@
       };
 
     };
-    homeManager = {pkgs, inputs, ...}: {
+    homeManager = {pkgs, ...}: {
 
       #gtk.gtk4.theme = config.gtk.theme;
       qt = {
@@ -41,11 +41,7 @@
           };
         };
       };
-      home.packages = with pkgs; [
-        libsForQt5.qtstyleplugin-kvantum
-        libsForQt5.qt5ct
-      ];
-
+      
       stylix = {
         enable = true;
         #image = ../.dotfiles/Wallpapers/Kath.png; # ignore this it wont actually be used for anything but the option is require for the time being
