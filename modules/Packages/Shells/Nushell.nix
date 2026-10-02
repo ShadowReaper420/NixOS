@@ -3,7 +3,7 @@
   den.aspects.nushell = {
 
     nixos = {
-      programs.nushell.enable = true;
+      #programs.nushell.enable = true;
       #keep zsh around as a fallback.
       programs.zsh.enable = true;
     };

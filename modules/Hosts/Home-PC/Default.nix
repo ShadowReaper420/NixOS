@@ -24,7 +24,7 @@
 
 
       home.file."${config.xdg.configHome}" = {
-        source = /.config;
+        source = ./.config;
         recursive = true;
       };
       

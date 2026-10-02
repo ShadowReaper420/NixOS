@@ -4,7 +4,7 @@
   den.aspects.utils = {
 
     includes = [
-      (den.batteries.unfree [ "7zz" "p7zip" "obsidian" "discord" "discord-unwrapped" ])
+      (den.batteries.unfree [ "7zz" "p7zip" "obsidian" "discord" "discord-unwrapped" "discord-canary" "discord-canary-unwrapped" ])
     ];
 
     nixos = {pkgs, lib, ...}: {
@@ -127,7 +127,7 @@
         obsidian
         thunderbird
         kdePackages.ktorrent
-        discord
+        discord-canary
         #quantframe
       ]);
 
