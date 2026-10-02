@@ -1,0 +1,10 @@
+{
+  "workspace": {
+    "library": [
+      "/home/flugel/Work/Repos/NixOS/modules/Desktops/WM/Hyprland/.dotfiles/"
+    ]
+  },
+    "diagonistics": {
+        "globals": ["hl"]
+    }
+}
