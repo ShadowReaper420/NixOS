@@ -8,8 +8,16 @@
       (den.batteries.user-shell "nushell")
       den.aspects.stylix
       den.aspects.niri
-      #den.aspects.hyprland
+      den.aspects.hyprland
       den.aspects.dolphin
+      den.aspects.fluorine
+      #den.aspects.pihole
+      den.aspects.gaming
+      den.aspects.utils
+      den.aspects.emacs
+      den.aspects.os-rebuild
+      den.aspects.spotify
+      den.aspects.flatpak
     ];
     user = {
 
@@ -26,7 +34,7 @@
     };
 
     nixos = {config, ...}: {
-      programs.fish.enable = true;
+      #programs.fish.enable = true;
 
     };
 

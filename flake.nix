@@ -19,7 +19,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland/v0.55.0";
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:shezdy/hyprsplit";
       inputs.hyprland.follows = "hyprland";
@@ -32,10 +32,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nixpak = {
+      url = "github:nixpak/nixpak";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-25.11";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    split-monitor-workspaces = {
+      url = "github:zjeffer/split-monitor-workspaces?ref=release/0.55.x";
+      flake = false;
+    };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

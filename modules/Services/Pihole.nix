@@ -12,14 +12,20 @@
         };
 
         lists = [
-        {
-          url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt";
-          type = "block";
-          enabled = true;
-          description = "hagezi blocklist";
-        }
+          {
+            url = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt";
+            type = "block";
+            enabled = true;
+            description = "hagezi blocklist";
+          }
         ];
       };
+
+      services.pihole-web = {
+        enable = true;
+        ports = [ "443s" ];
+      };
+
     };
 
   }; 

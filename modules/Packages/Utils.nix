@@ -4,7 +4,7 @@
   den.aspects.utils = {
 
     includes = [
-      (den.batteries.unfree [ "7zz" "p7zip" "obsidian" "discord" "discord-unwrapped" "discord-canary" "discord-canary-unwrapped" ])
+      (den.batteries.unfree [ "7zz" "p7zip" "obsidian" "discord" "discord-unwrapped" "discord-canary" "discord-canary-unwrapped" "lsfg-vk" ])
     ];
 
     nixos = {pkgs, lib, ...}: {
@@ -36,7 +36,8 @@
         libadwaita
         zenity
         p7zip-rar
-        vesktop
+        #vesktop
+        godot
         brave
         themechanger
         kdePackages.qtstyleplugin-kvantum
@@ -68,7 +69,9 @@
       [
         #lsp and other Dev crap 
         git
+        visualvm
         nixd
+        gh
         nodejs
         #python315
         #nil
@@ -127,7 +130,7 @@
         obsidian
         thunderbird
         kdePackages.ktorrent
-        discord-canary
+        #discord-canary
         #quantframe
       ]);
 

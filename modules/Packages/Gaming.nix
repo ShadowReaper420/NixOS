@@ -46,6 +46,7 @@
         gamemode
         inputs.amethyst.packages.${pkgs.stdenv.hostPlatform.system}.default
         satisfactorymodmanager
+        xxhash
       ]);
 
       programs.steam = {

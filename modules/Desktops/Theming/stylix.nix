@@ -49,6 +49,7 @@
         autoEnable = true;
         targets = {
           kitty.enable = true;
+          hyprland.enable = false;
           lazygit.enable = true;
           qt.enable = false;
           gtk.enable = true;
@@ -60,6 +61,7 @@
         };
       };
       home.pointerCursor = {
+        enable = true;
         gtk.enable = true;
         # x11.enable = true;
         package = pkgs.bibata-cursors;

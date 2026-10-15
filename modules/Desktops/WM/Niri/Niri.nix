@@ -37,7 +37,7 @@
 
       ];
 
-       environment.variables.NIXOS_OZONE_WL = "1";
+       #environment.variables.NIXOS_OZONE_WL = "1";
       environment.systemPackages = with pkgs; [
         wayland-utils
         xwayland-satellite

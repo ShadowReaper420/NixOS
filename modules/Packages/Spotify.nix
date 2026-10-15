@@ -26,7 +26,7 @@
 
       programs.spicetify =
         let
-          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+          spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
         in
         {
           enable = true;
@@ -37,12 +37,12 @@
             shuffle # shuffle+ (special characters are sanitized out of extension names)
           ];
           enabledCustomApps = with spicePkgs.apps; [
-            newReleases
-            ncsVisualizer
+           # newReleases
+            #ncsVisualizer
           ];
           enabledSnippets = with spicePkgs.snippets; [
-            rotatingCoverart
-            pointer
+            #rotatingCoverart
+            #pointer
           ];
 
           theme = spicePkgs.themes.catppuccin;

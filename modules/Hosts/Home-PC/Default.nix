@@ -9,12 +9,7 @@
       # den.aspects.utils
       # den.aspects.emac
       #den.aspects.hyprland
-      den.aspects.gaming
-      den.aspects.utils
-      den.aspects.emacs
-      den.aspects.os-rebuild
-      den.aspects.spotify
-      den.aspects.flatpak 
+ 
       #den.aspects.niri
       #den.aspects.kanshi
 
@@ -96,6 +91,7 @@
 
           nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
           hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+          hardware.graphics.enable = true; 
 
 
 
