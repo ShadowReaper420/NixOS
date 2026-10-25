@@ -10,14 +10,7 @@
     nixos = {pkgs, lib, ...}: {
 
 
-      # fonts.packages = with pkgs; [
-      #   font-awesome
-      #   material-symbols
-      #   material-icons
-      # ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-
-
+     # programs.nix-index-database.comma.enable = true;
       programs.nix-ld.enable = true;
       nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
@@ -37,6 +30,7 @@
         zenity
         p7zip-rar
         #vesktop
+        discord
         godot
         brave
         themechanger
@@ -49,6 +43,7 @@
         gimp
         #brave  
         kdePackages.kwalletmanager
+        
         kdePackages.qtbase
         kdePackages.qttools
         kdePackages.qtdeclarative

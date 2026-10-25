@@ -10,6 +10,11 @@
       programs.nix-ld.libraries = with pkgs; [
         libGL
         libGLX
+        libxcb
+        nspr
+        nss
+        libgbm
+        fontconfig
         libX11
         libxkbcommon
         stdenv.cc.cc.lib # libstdc++
@@ -17,7 +22,7 @@
       ];
 
     };
-
+ 
     home-Manager = {config, ...}: {
       
       xdg.desktopEntries.fluorine-nxm-handler = {

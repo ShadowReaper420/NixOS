@@ -7,7 +7,7 @@
       den.batteries.primary-user
       (den.batteries.user-shell "nushell")
       den.aspects.stylix
-      den.aspects.niri
+     # den.aspects.niri
       den.aspects.hyprland
       den.aspects.dolphin
       den.aspects.fluorine
