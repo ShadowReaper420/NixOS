@@ -21,7 +21,7 @@
       };
 
       split-monitor-workspaces = {
-        url = "github:zjeffer/split-monitor-workspaces?ref=release/0.55.x";
+        url = "github:zjeffer/split-monitor-workspaces";
         flake = false;
       };
 
@@ -42,7 +42,7 @@
       stylix
       sddm
       which-key
-      keepassxc
+      #keepassxc
       #rofi
 
     ];
@@ -63,6 +63,7 @@
         awww
         rofi
         wl-clipboard
+        kdePackages.kwallet
         hyprshot
         linux-wallpaperengine
         inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -81,10 +82,10 @@
       };
 
       security.polkit.enable = true;
-      
-      
 
-      
+
+
+
 
 
       xdg.mime = {
@@ -420,6 +421,33 @@
             local key = tostring(i % 10)       -- workspace 10 on key 0
             hl.bind("SUPER + " .. key,           smw.workspace(tostring(i)))
             hl.bind("SUPER + SHIFT + " .. key,   smw.move_to_workspace_silent(tostring(i)))
+            end
+          '';
+
+          "00-layout-bind" = ''
+            -- layout_bind{ scrolling = <dispatcher>, scrollcols = <dispatcher>, other = <dispatcher> }
+            -- Returns a function that runs the entry matching the active workspace's layout.
+            function layout_bind(actions)
+            return function()
+            local name
+            local ok, ws = pcall(hl.get_active_workspace)
+            if ok and ws then name = ws.tiled_layout end
+            if name == nil then
+            local ok2, v = pcall(hl.get_config, "general.layout")
+            if ok2 then name = v end
+            end
+            name = tostring(name or "")
+
+            local action
+            if name:find("scrollcols", 1, true) then
+            action = actions.scrollcols
+            elseif name == "scrolling" then
+            action = actions.scrolling
+            else
+            action = actions.other
+            end
+            if action then hl.dispatch(action) end
+            end
             end
           '';
 

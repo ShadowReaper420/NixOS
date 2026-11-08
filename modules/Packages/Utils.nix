@@ -66,6 +66,7 @@
         git
         visualvm
         nixd
+        dotnet-runtime_10
         gh
         nodejs
         #python315

@@ -41,7 +41,7 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     split-monitor-workspaces = {
-      url = "github:zjeffer/split-monitor-workspaces?ref=release/0.55.x";
+      url = "github:zjeffer/split-monitor-workspaces";
       flake = false;
     };
     stylix = {

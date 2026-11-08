@@ -1147,16 +1147,15 @@
     "split-monitor-workspaces": {
       "flake": false,
       "locked": {
-        "lastModified": 1782230079,
-        "narHash": "sha256-AIg6hxip9hP6XWIqpjQOIripCdJQvtKSEubV+qL8mF8=",
+        "lastModified": 1793966182,
+        "narHash": "sha256-qKk/kFvSLIIsBaQM/daZg4vLEL/7s3lgwHQvbUfo0Ws=",
         "owner": "zjeffer",
         "repo": "split-monitor-workspaces",
-        "rev": "d6b45cdb9b30c388bc4ded4adad78a14e523d591",
+        "rev": "2863a6bbb8b4f13e78e91e5ddb099abd603f2ba1",
         "type": "github"
       },
       "original": {
         "owner": "zjeffer",
-        "ref": "release/0.55.x",
         "repo": "split-monitor-workspaces",
         "type": "github"
       }
