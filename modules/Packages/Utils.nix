@@ -88,8 +88,12 @@
         gvfs
         gradle_9 
         jdk25
+        
         maven
         (gradle.override {javaToolchains = [jdk25];})
+        tuios
+        helix
+        
 
       ]
       ++

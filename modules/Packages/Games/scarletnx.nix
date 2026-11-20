@@ -17,8 +17,12 @@ let
       appimageTools,
       fetchurl,
       makeDesktopItem,
-      copyDesktopItems,
-      stdenv,
+      runCommand,
+      runtimeShell,
+      coreutils,
+      dwarfs,
+      squashfsTools,
+      binutils,
     }:
     let
       pname = "scarletnx";
@@ -30,14 +34,67 @@ let
 
       src = fetchurl {
         url = "https://github.com/scarletnx/nightly/releases/latest/download/ScarletNX-linux-x86_64.AppImage";
-        # First build: leave as lib.fakeHash, copy the "got: sha256-..." value from the error.
-        hash = lib.fakeHash;
+        # Matches the nightly this hash was taken from. `latest/download` moves with every upstream push,
+        # so when the build reports a hash mismatch, either update this or pin a release URL (see above).
+        hash = "sha256-4v5t2Fey4/Kgceo/yiDZofmmwoGaNOOyLXy24obcFps=";
       };
 
-      contents = appimageTools.extract { inherit pname version src; };
+      # Unpack the AppImage's filesystem without running its runtime (it is dynamically linked, so it
+      # can't execute in the sandbox: "required file not found"). nixpkgs' appimageTools.extract only
+      # understands SquashFS, while AppImages from newer tooling (uruntime) are often DwarFS, so try
+      # DwarFS first and fall back to SquashFS at the end of the ELF runtime.
+      extracted =
+        runCommand "${pname}-${version}-extracted"
+          {
+            nativeBuildInputs = [
+              # nixpkgs' dwarfs test suite aborts in 6 dwarfsextract_format tests on some revisions, which fails
+              # the whole build. Don't set doCheck = false: that turns tests off in dwarfs' CMake configure, and its
+              # ricepp subproject then tries to download googletest with git (no network in the sandbox). Keep the
+              # build configured as it is and only let the test run's failure be ignored.
+              (dwarfs.overrideAttrs (old: {
+                checkPhase = ''
+                  runHook preCheck
+                  make test -j$NIX_BUILD_CORES || echo "ignoring failing dwarfs tests"
+                  runHook postCheck
+                '';
+              }))
+              squashfsTools
+              binutils # readelf, for the SquashFS fallback
+            ];
+          }
+          ''
+            # dwarfsextract chdirs into the output directory, so it must exist
+            mkdir -p "$out"
+            if dwarfsextract -i ${src} -O auto -o "$out"; then
+              echo "unpacked a DwarFS image"
+            else
+              echo "not a DwarFS image, trying SquashFS" >&2
+              rm -rf "$out"
+              shoff=$(readelf -h ${src} | awk '/Start of section headers/ {print $5}')
+              shentsize=$(readelf -h ${src} | awk '/Size of section headers/ {print $5}')
+              shnum=$(readelf -h ${src} | awk '/Number of section headers/ {print $5}')
+              offset=$((shoff + shentsize * shnum))
+              echo "trying SquashFS at offset $offset" >&2
+              unsquashfs -no-progress -d "$out" -o "$offset" ${src}
+            fi
+            [ -e "$out/AppRun" ] || { echo "no AppRun in the extracted AppImage" >&2; ls -la "$out" >&2; exit 1; }
+          '';
+
+      desktopItem = makeDesktopItem {
+        name = pname;
+        desktopName = "ScarletNX";
+        comment = "ARM64 recompiler with a Nintendo Switch translation layer";
+        exec = pname;
+        icon = pname;
+        categories = [
+          "Game"
+          "Emulator"
+        ];
+      };
     in
-    appimageTools.wrapType2 {
-      inherit pname version src;
+    appimageTools.wrapAppImage {
+      inherit pname version;
+      src = extracted;
 
       # The AppImage bundles its own libraries (it is built with sharun). Games also need a Vulkan 1.3
       # driver from the host: the loader and the audio/window-system libs below are for the wrapper's FHS env.
@@ -60,25 +117,28 @@ let
           libxtst
         ];
 
-      nativeBuildInputs = [ copyDesktopItems ];
-
-      desktopItems = [
-        (makeDesktopItem {
-          name = pname;
-          desktopName = "ScarletNX";
-          comment = "ARM64 recompiler with a Nintendo Switch translation layer";
-          exec = pname;
-          icon = pname;
-          categories = [
-            "Game"
-            "Emulator"
-          ];
-        })
-      ];
-
-      # Reuse the icon shipped inside the AppImage (Wimsy, the mascot) if there is one.
+      # How ScarletNX plays a game inside an AppImage: it deploys a *copy of $APPIMAGE* named after the game
+      # (recompiled/<id>/<id>) and runs that copy; the runtime then takes its name and folder from $APPIMAGE and
+      # loads <id>_code.so (src/nx/runtime/main.c program_path, driver/recompile.c snx_own_runtime). A normal
+      # AppImage is a single file, but here $APPIMAGE is unset and the "runtime" would be sharun's launcher, which
+      # does nothing once copied out ("Failed to find '<id>' in PATH ..."). So bin/scarletnx becomes a small
+      # script that acts as the AppImage file: it sets APPIMAGE to its own path and APPDIR to the unpacked image,
+      # then starts the FHS wrapper. Copies of the script work the same, from wherever the launcher put them.
       extraInstallCommands = ''
-        icon="$(find ${contents} -maxdepth 1 \( -name '*.svg' -o -name '*.png' \) | head -n1)"
+        mkdir -p $out/libexec $out/share/applications
+        mv $out/bin/${pname} $out/libexec/${pname}-fhs
+        cat > $out/bin/${pname} <<'NOLVUS_SCRIPT'
+        #!${runtimeShell}
+        APPIMAGE=$(${coreutils}/bin/readlink -f "$0")
+        export APPIMAGE
+        export APPDIR=${extracted}
+        exec ${placeholder "out"}/libexec/${pname}-fhs "$@"
+        NOLVUS_SCRIPT
+        chmod +x $out/bin/${pname}
+
+        # Desktop entry, and the icon shipped inside the AppImage (Wimsy, the mascot) if there is one.
+        cp ${desktopItem}/share/applications/* $out/share/applications/
+        icon="$(find ${extracted} -maxdepth 1 \( -name '*.svg' -o -name '*.png' \) | head -n1)"
         if [ -n "$icon" ]; then
           ext="''${icon##*.}"
           install -Dm444 "$icon" "$out/share/icons/hicolor/scalable/apps/${pname}.$ext"

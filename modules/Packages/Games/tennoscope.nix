@@ -7,8 +7,7 @@
 #
 # Without OCR (no tesseract in the closure):  den.aspects.tennoscope._.no-ocr
 #
-# Also exposes `packages.x86_64-linux.tennoscope`. Before the first build, run
-# `nix build .#tennoscope.pnpmDeps` and paste the printed hash into `pnpmDeps.hash` below.
+# Also exposes `packages.x86_64-linux.tennoscope`.
 #
 # Including it on a user currently also leaks the `nixos` half to the host (den's transition
 # default, ends 2027-01-01) and prints a warning. Set
@@ -43,6 +42,7 @@ let
       libxcb,
       wayland,
       openssl,
+      sqlite,
       # runtime tools
       tesseract,
       xwininfo,
@@ -76,8 +76,7 @@ let
         sourceRoot = "${finalAttrs.src.name}/app";
         inherit pnpm;
         fetcherVersion = 3;
-        # First build prints the real hash ("got: sha256-..."); paste it here.
-        hash = lib.fakeHash;
+        hash = "sha256-3lp7WX6OOTyj2p2pQ0v7crSHuak1YJ0RlfqUuw+ZctM=";
       };
 
       nativeBuildInputs = [
@@ -105,6 +104,7 @@ let
         libxcb
         wayland
         openssl
+        sqlite # nixpkgs' cargo hook sets LIBSQLITE3_SYS_USE_PKG_CONFIG=1, overriding rusqlite's `bundled`
       ];
 
       # Same as upstream's PKGBUILD / RPM spec: build the frontend, then the binary with

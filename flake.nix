@@ -5,6 +5,7 @@
 
   inputs = {
     amethyst.url = "github:ChrisDKN/Amethyst-Mod-Manager";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     dankMaterialShell = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";

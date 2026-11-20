@@ -88,7 +88,20 @@
 
 
 
-      xdg.mime = {
+      xdg = {
+
+        portal = {
+          config.hyprland = {
+            default = ["hyprland" "gtk"];
+            "org.freedesktop.impl.portal.FileChooser" = "kde";
+          }; 
+
+
+
+        };
+
+
+        mime = {
         enable = true;
         addedAssociations = {
           "inode/directory" = [
@@ -108,6 +121,7 @@
           "x-scheme-handler/unknown" = "floorp.desktop";
         };
 
+      };
       };
 
       environment.sessionVariables = {
@@ -317,10 +331,11 @@
             (bind "SUPER + Q"          "hl.dsp.window.close()")
             (bind "SUPER + P"          ''hl.dsp.exec_cmd("hyprshot -m region --clipboard-only")'' )
             (bind "SUPER + SHIFT+ P"   ''hl.dsp.exec_cmd("hypershot -m window --clipboard-only")'' )
+            
 
 
             #global keybinds
-            #(bind "Control_L" ''hl.dsp.pass({ window = "class:^(discord)$" })'') 
+            (bind "ALT+T" ''hl.dsp.global ( "discord:discord-push-to-talk")'') 
 
             (bind "SUPER + S" ''hl.dsp.exec_cmd("Scratchpad_Menu")'')
             (bind "SUPER + SHIFT + S"  ''hl.dsp.window.move({ workspace = "special:stash" })'')
@@ -403,6 +418,27 @@
               name = "wine-float";
               match = { xwayland = true; class = "\\.exe$"; };
               float = true;
+            }
+            {
+              name =  "Emacs";
+              match.class =  "^Emacs$";
+              opacity = "0.8";
+            }
+            {
+              name = "keepassXC";
+              match.class = "^KeePassXC";
+              no_screen_share = true;
+            }
+            {
+              name = "Dolphin";
+              match.class = "dolphin";
+              opacity = "0.8";
+              no_screen_share = true;
+            }
+            {
+              name = "Gwenview";
+              match.class = "Gwenview";
+              no_screen_share = true;
             }
           ];
         };

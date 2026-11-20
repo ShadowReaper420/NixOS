@@ -20,6 +20,7 @@
         stdenv.cc.cc.lib # libstdc++
         wayland
         dotnet-runtime_10
+        libgpg-error
       ];
 
     };

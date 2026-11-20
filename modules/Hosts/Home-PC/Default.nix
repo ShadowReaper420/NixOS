@@ -12,6 +12,7 @@
  
       #den.aspects.niri
       #den.aspects.kanshi
+      den.batteries.user-aspects
 
     ];
 

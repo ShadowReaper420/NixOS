@@ -18,6 +18,9 @@
       den.aspects.os-rebuild
       den.aspects.spotify
       den.aspects.flatpak
+      den.aspects.nolvus-dashboard
+      den.aspects.scarletnx
+      den.aspects.tennoscope
     ];
     user = {
 
